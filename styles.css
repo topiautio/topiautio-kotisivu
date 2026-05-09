@@ -1,0 +1,255 @@
+/* Yleiset tyylit, jotka nollaavat oletusmarginaalit ja -täytteet kaikilta elementeiltä. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sivun pääfontti ja oletuskirjasinkoko. */
+html {
+    font-family: 'Lato', 'Lucida Grande', 'Segoe UI', Tahoma, sans-serif;
+    font-size: 100%;
+    scroll-behavior: smooth; /* Pehmeä vieritys linkkejä klikatessa */
+}
+
+body {
+    background-color: #121212; /* Tumma tausta */
+    color: #e0e0e0; /* Vaalea teksti */
+    line-height: 1.6; /* Parempi luettavuus rivivälillä */
+}
+
+/* Sivun pääkontti, joka rajoittaa leveyttä ja keskittää sisällön. */
+#page {
+    max-width: 90%;
+    background-color: #121212;
+    margin: 0 auto; /* Keskittää sivun selainikkunassa. */
+    min-height: 100vh;
+}
+
+/* Ylätunnisteen (header) tyylit. */
+header {
+    background-color: #1a202c; /* Tumma liuskekivi */
+    color: #ffffff; /* Valkoinen tekstin väri. */
+    text-align: center; /* Tekstin keskitys. */
+    padding: 2%; /* Sisäinen täyte. */
+    font-size: 200%; /* Suurempi kirjasinkoko. */
+    letter-spacing: 0.1875em; /* Kasvatettu kirjainväli. */
+    border-bottom: 1px solid #2d3748;
+}
+
+/* Navigaation ja alitunnisteen (footer) yhteiset tyylit. */
+nav, footer {
+    background-color: #2d3748; /* Harmaa-sininen sävy */
+    color: #ffffff; /* Valkoinen tekstin väri. */
+    text-align: center; /* Tekstin keskitys. */
+}
+
+/* Navigaatiopalkin erityistyylit. */
+nav {
+    position: sticky; /* Pysyy näytön yläreunassa vieritettäessä. */
+    top: 0; /* Asetetaan yläreunaan. */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    width: 100%; /* Varmistetaan, että nav on koko säiliönsä levyinen */
+}
+
+/* Alitunnisteen (footer) täyte. */
+footer {
+    padding: 1.5em 0;
+    margin-top: 2em;
+    border-top: 1px solid #4a5568;
+}
+
+footer p {
+    margin: 0.5em 0;
+}
+
+footer a {
+    color: #63b3ed;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Navigaation listan (ul) tyylit. */
+ul {
+    list-style-type: none; /* Poistaa listamerkit. */
+    margin: 0;
+    padding: 0;
+    background-color: #2d3748;
+    /* Flexbox parantaa asettelua ja responsiivisuutta */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Navigaation linkkien (a) tyylit. */
+ul li a {
+    display: block; /* Tekee koko alueesta klikattavan. */
+    color: #FFFFFF; /* Valkoinen tekstin väri. */
+    text-align: center; /* Keskittää tekstin. */
+    padding: 1em 1.5em; /* Hieman leveämpi kosketusalue */
+    text-decoration: none; /* Poistaa alleviivauksen. */
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Estää tekstin rivittymisen linkin sisällä */
+}
+
+/* Navigaation linkin tyyli, kun hiiri viedään päälle (hover), mutta linkki ei ole aktiivinen. */
+ul li a:hover:not(.active) {
+  background-color: #4a5568; /* Vaaleampi tausta hoverissa */
+}
+
+/* Aktiivisen navigaatiolinkin tyyli. */
+nav a.active {
+  background-color: #3182ce; /* Kirkkaampi sininen aktiivisena */
+}
+
+/* Tyylit, jotka aktivoituvat, kun sivun sisäiseen linkkiin (esim. #portfolio) siirrytään. */
+#portfolio:target, #esittely:target, #harrastukset:target {
+  border: 2px solid #3182ce; /* Sininen korostusreuna */
+  background-color: #262626; /* Hieman erottuva tausta kohdistetulle */
+  box-shadow: 0 0 15px rgba(49, 130, 206, 0.3);
+}
+
+/* KORJAUS: Varmistetaan, että sticky nav ei peitä otsikoita hypätessä */
+section, #esittely, #portfolio, #harrastukset, #yhteystiedot {
+    scroll-margin-top: 80px; /* Jättää tilaa yläreunaan (navin korkeus + marginaali) */
+}
+
+/* Pääsisältöalueen (main) tyylit. */
+main {
+    width: 100%;
+    padding-top: 1em;
+}
+
+h2, h3, h4 {
+    color: #f7fafc; /* Kirkas otsikkoväri */
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    padding: 1% 0;
+    border-bottom: 1px solid #4a5568;
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+h2 {
+    padding: 1% 0;
+}
+
+#portfolio p, #esittely p, #harrastukset p {
+    margin-bottom: 1em;
+}
+
+/* Yhteiset tyylit sisältöosioille (portfolio, esittely, harrastukset). */
+#portfolio, #esittely, #harrastukset {
+    padding: 2%; /* Sisäinen täyte. */
+    margin: 2%; /* Ulkoinen marginaali. */
+    background-color: #1e1e1e; /* Tummanharmaa korttitausta */
+    border: 1px solid #333; /* Hillitty reuna */
+    border-radius: 0.625em; /* Pyöristetyt kulmat. */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Linkit leipätekstissä */
+p a {
+    color: #63b3ed;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+p a:hover {
+    text-decoration: underline;
+    color: #90cdf4;
+}
+
+/* Google Material Symbols -ikonien tyylit. */
+.material-symbols-outlined {
+    vertical-align: -5px; /* Pystysuuntainen kohdistus. */
+    padding: 0 5px; /* Täyte sivuilla. */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;  /* teksti | kuva */
+    gap: 30px;
+    align-items: start;
+}
+
+.grid-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.4em; /* Pyöristetyt kulmat. */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border: 1px solid #333;
+}
+
+/* Pienillä ruuduilla pinotaan päällekkäin */
+@media (max-width: 850px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .grid-container img {
+        order: -1; /* kuva ennen tekstiä mobiilissa */
+        max-width: 100%;
+        margin-bottom: 1em;
+    }
+    
+    /* Navigaatio mobiilissa: pinotaan tarvittaessa tai pienennetään paddingia */
+    ul li a {
+        padding: 0.8em 1em;
+    }
+}
+
+/* Moderni CSS-rullauskorostus (Scroll-driven Animations) */
+@keyframes scroll-highlight {
+    0%, 100% {
+        border-color: #3182ce;
+        background-color: #1e1e1e;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    30%, 70% {
+        border-color: #3182ce;
+        background-color: #262626;
+        box-shadow: 0 0 15px rgba(49, 130, 206, 0.3);
+    }
+}
+
+/* Ei toimi firefoxilla (ei tuettu) */
+#portfolio, #esittely, #harrastukset {
+    animation: scroll-highlight linear both;
+    animation-timeline: view();
+    animation-range: entry 50% exit 10%;
+}
+
+/* Esittely-osion asettelu (float-ratkaisu) */
+.esittely-wrap {
+    display: block;
+}
+
+.esittely-wrap::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.esittely-image {
+    float: right;
+    width: 300px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    border-radius: 0.4em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border: 1px solid #333;
+}
+
+@media (max-width: 850px) {
+    .esittely-image {
+        float: none;
+        display: block;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+}
