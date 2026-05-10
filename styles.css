@@ -1,3 +1,4 @@
+/* Väriteemat ja varjot keskitetään muuttujiin ylläpidettävyyden vuoksi. */
 :root {
     --bg: #0b1020;
     --bg-accent: #1a1f35;
@@ -12,18 +13,21 @@
     --shadow: 0 12px 36px rgba(2, 6, 23, 0.45);
 }
 
+/* Yleiset reset-tyylit kaikille elementeille. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Sivun peruskirjasin ja pehmeä vieritys sisäisille linkeille. */
 html {
     font-family: 'Lato', 'Lucida Grande', 'Segoe UI', Tahoma, sans-serif;
     font-size: 100%;
     scroll-behavior: smooth;
 }
 
+/* Koko sivun tumma tausta ja perustypografia. */
 body {
     color: var(--text);
     line-height: 1.7;
@@ -34,6 +38,7 @@ body {
     background-attachment: fixed;
 }
 
+/* Pääkontti rajaa sisällön leveyden ja keskittää sen sivulle. */
 #page {
     width: min(1080px, 92%);
     margin: 0 auto;
@@ -41,6 +46,7 @@ body {
     padding-bottom: 2rem;
 }
 
+/* Ylätunniste ja pääotsikko. */
 header {
     margin-top: 2rem;
     padding: 2rem 1.5rem;
@@ -59,6 +65,7 @@ header h1 {
     text-transform: uppercase;
 }
 
+/* Sticky-navigaatio pysyy näkyvissä vierityksessä. */
 nav {
     position: sticky;
     top: 0.75rem;
@@ -71,6 +78,7 @@ nav {
     backdrop-filter: blur(10px);
 }
 
+/* Navigaation listarakenne ja linkit. */
 ul {
     list-style-type: none;
     margin: 0;
@@ -103,6 +111,7 @@ nav a.active {
     color: #ffffff;
 }
 
+/* Aktiivinen osio huomioidaan sticky-navin korkeudella. */
 section, #esittely, #portfolio, #harrastukset, #yhteystiedot {
     scroll-margin-top: 90px;
 }
@@ -112,6 +121,7 @@ main {
     padding-top: 1rem;
 }
 
+/* Pääsisällön otsikot ja leipäteksti. */
 h2, h3, h4 {
     color: var(--heading);
     margin-bottom: 0.65rem;
@@ -140,6 +150,7 @@ p {
     margin-bottom: 1rem;
 }
 
+/* Korttimaiset sisältöosiot (portfolio, esittely, harrastukset). */
 #portfolio, #esittely, #harrastukset {
     padding: clamp(1.1rem, 2.5vw, 1.8rem);
     margin: 1.25rem 0;
@@ -158,12 +169,14 @@ p {
     margin-bottom: 0;
 }
 
+/* Korostus, kun osioon siirrytään sisäisen ankkurin kautta. */
 #portfolio:target, #esittely:target, #harrastukset:target {
     border-color: rgba(96, 165, 250, 0.95);
     background: linear-gradient(165deg, rgba(30, 58, 138, 0.35), rgba(21, 29, 53, 0.82));
     box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.35), 0 14px 32px rgba(30, 58, 138, 0.3);
 }
 
+/* Linkit leipätekstissä. */
 p a {
     color: #93c5fd;
     text-decoration: none;
@@ -175,6 +188,7 @@ p a:hover {
     color: #bfdbfe;
 }
 
+/* Alatunnisteen asettelu ja linkit. */
 footer {
     text-align: center;
     padding: 1.3rem 1rem;
@@ -198,11 +212,13 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Material Symbols -ikonien hienosäätö. */
 .material-symbols-outlined {
     vertical-align: -5px;
     padding: 0 5px;
 }
 
+/* Portfolio-osion ruudukkoasettelu teksti + kuva. */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 300px;
@@ -218,6 +234,7 @@ footer a:hover {
     border: 1px solid var(--border);
 }
 
+/* Esittely-osion kuva kellutetaan tekstin rinnalle isoilla näytöillä. */
 .esittely-wrap {
     display: block;
 }
@@ -238,6 +255,7 @@ footer a:hover {
     border: 1px solid var(--border);
 }
 
+/* Mobiiliruudut: tiiviimpi navigaatio ja yksi palsta. */
 @media (max-width: 850px) {
     #page {
         width: min(1080px, 95%);
