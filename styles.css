@@ -1,179 +1,227 @@
-/* Yleiset tyylit, jotka nollaavat oletusmarginaalit ja -täytteet kaikilta elementeiltä. */
+/* Väriteemat ja varjot keskitetään muuttujiin ylläpidettävyyden vuoksi. */
+:root {
+    --bg: #0b1020;
+    --bg-accent: #1a1f35;
+    --surface: rgba(21, 29, 53, 0.72);
+    --surface-strong: #1b2440;
+    --border: rgba(148, 163, 184, 0.22);
+    --text: #e5e7eb;
+    --text-muted: #cbd5e1;
+    --heading: #f8fafc;
+    --primary: #60a5fa;
+    --primary-strong: #3b82f6;
+    --shadow: 0 12px 36px rgba(2, 6, 23, 0.45);
+}
+
+/* Yleiset reset-tyylit kaikille elementeille. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Sivun pääfontti ja oletuskirjasinkoko. */
+/* Sivun peruskirjasin ja pehmeä vieritys sisäisille linkeille. */
 html {
     font-family: 'Lato', 'Lucida Grande', 'Segoe UI', Tahoma, sans-serif;
     font-size: 100%;
-    scroll-behavior: smooth; /* Pehmeä vieritys linkkejä klikatessa */
+    scroll-behavior: smooth;
 }
 
+/* Koko sivun tumma tausta ja perustypografia. */
 body {
-    background-color: #121212; /* Tumma tausta */
-    color: #e0e0e0; /* Vaalea teksti */
-    line-height: 1.6; /* Parempi luettavuus rivivälillä */
+    color: var(--text);
+    line-height: 1.7;
+    background:
+        radial-gradient(circle at 12% 0%, #1e293b 0%, rgba(30, 41, 59, 0) 42%),
+        radial-gradient(circle at 88% 8%, #1d4ed8 0%, rgba(29, 78, 216, 0) 35%),
+        linear-gradient(170deg, #05070f 0%, #0b1020 45%, #070b16 100%);
+    background-attachment: fixed;
 }
 
-/* Sivun pääkontti, joka rajoittaa leveyttä ja keskittää sisällön. */
+/* Pääkontti rajaa sisällön leveyden ja keskittää sen sivulle. */
 #page {
-    max-width: 90%;
-    background-color: #121212;
-    margin: 0 auto; /* Keskittää sivun selainikkunassa. */
+    width: min(1080px, 92%);
+    margin: 0 auto;
     min-height: 100vh;
+    padding-bottom: 2rem;
 }
 
-/* Ylätunnisteen (header) tyylit. */
+/* Ylätunniste ja pääotsikko. */
 header {
-    background-color: #1a202c; /* Tumma liuskekivi */
-    color: #ffffff; /* Valkoinen tekstin väri. */
-    text-align: center; /* Tekstin keskitys. */
-    padding: 2%; /* Sisäinen täyte. */
-    font-size: 200%; /* Suurempi kirjasinkoko. */
-    letter-spacing: 0.1875em; /* Kasvatettu kirjainväli. */
-    border-bottom: 1px solid #2d3748;
+    margin-top: 2rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.7));
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
 }
 
-/* Navigaation ja alitunnisteen (footer) yhteiset tyylit. */
-nav, footer {
-    background-color: #2d3748; /* Harmaa-sininen sävy */
-    color: #ffffff; /* Valkoinen tekstin väri. */
-    text-align: center; /* Tekstin keskitys. */
+header h1 {
+    color: var(--heading);
+    font-size: clamp(1.8rem, 5vw, 2.7rem);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
-/* Navigaatiopalkin erityistyylit. */
+/* Sticky-navigaatio pysyy näkyvissä vierityksessä. */
 nav {
-    position: sticky; /* Pysyy näytön yläreunassa vieritettäessä. */
-    top: 0; /* Asetetaan yläreunaan. */
+    position: sticky;
+    top: 0.75rem;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    width: 100%; /* Varmistetaan, että nav on koko säiliönsä levyinen */
+    margin-top: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 0.9rem;
+    background: rgba(9, 14, 29, 0.74);
+    box-shadow: 0 10px 24px rgba(2, 6, 23, 0.35);
+    backdrop-filter: blur(10px);
 }
 
-/* Alitunnisteen (footer) täyte. */
-footer {
-    padding: 1.5em 0;
-    margin-top: 2em;
-    border-top: 1px solid #4a5568;
-}
-
-footer p {
-    margin: 0.5em 0;
-}
-
-footer a {
-    color: #63b3ed;
-    text-decoration: none;
-}
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Navigaation listan (ul) tyylit. */
+/* Navigaation listarakenne ja linkit. */
 ul {
-    list-style-type: none; /* Poistaa listamerkit. */
+    list-style-type: none;
     margin: 0;
-    padding: 0;
-    background-color: #2d3748;
-    /* Flexbox parantaa asettelua ja responsiivisuutta */
+    padding: 0.35rem;
     display: flex;
     justify-content: center;
+    gap: 0.25rem;
     flex-wrap: wrap;
 }
 
-/* Navigaation linkkien (a) tyylit. */
 ul li a {
-    display: block; /* Tekee koko alueesta klikattavan. */
-    color: #FFFFFF; /* Valkoinen tekstin väri. */
-    text-align: center; /* Keskittää tekstin. */
-    padding: 1em 1.5em; /* Hieman leveämpi kosketusalue */
-    text-decoration: none; /* Poistaa alleviivauksen. */
-    transition: background-color 0.3s ease;
-    white-space: nowrap; /* Estää tekstin rivittymisen linkin sisällä */
+    display: block;
+    color: var(--text);
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.65rem;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    white-space: nowrap;
 }
 
-/* Navigaation linkin tyyli, kun hiiri viedään päälle (hover), mutta linkki ei ole aktiivinen. */
 ul li a:hover:not(.active) {
-  background-color: #4a5568; /* Vaaleampi tausta hoverissa */
+    background-color: rgba(59, 130, 246, 0.18);
+    color: #ffffff;
+    transform: translateY(-1px);
 }
 
-/* Aktiivisen navigaatiolinkin tyyli. */
 nav a.active {
-  background-color: #3182ce; /* Kirkkaampi sininen aktiivisena */
+    background-color: var(--primary-strong);
+    color: #ffffff;
 }
 
-/* Tyylit, jotka aktivoituvat, kun sivun sisäiseen linkkiin (esim. #portfolio) siirrytään. */
-#portfolio:target, #esittely:target, #harrastukset:target {
-  border: 2px solid #3182ce; /* Sininen korostusreuna */
-  background-color: #262626; /* Hieman erottuva tausta kohdistetulle */
-  box-shadow: 0 0 15px rgba(49, 130, 206, 0.3);
-}
-
-/* KORJAUS: Varmistetaan, että sticky nav ei peitä otsikoita hypätessä */
+/* Aktiivinen osio huomioidaan sticky-navin korkeudella. */
 section, #esittely, #portfolio, #harrastukset, #yhteystiedot {
-    scroll-margin-top: 80px; /* Jättää tilaa yläreunaan (navin korkeus + marginaali) */
+    scroll-margin-top: 90px;
 }
 
-/* Pääsisältöalueen (main) tyylit. */
 main {
     width: 100%;
-    padding-top: 1em;
+    padding-top: 1rem;
 }
 
+/* Pääsisällön otsikot ja leipäteksti. */
 h2, h3, h4 {
-    color: #f7fafc; /* Kirkas otsikkoväri */
-    margin-bottom: 0.5em;
-}
-
-h3 {
-    padding: 1% 0;
-    border-bottom: 1px solid #4a5568;
-    display: inline-block;
-    margin-bottom: 1em;
+    color: var(--heading);
+    margin-bottom: 0.65rem;
 }
 
 h2 {
-    padding: 1% 0;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+
+h3 {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--border);
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    margin-top: 1.1rem;
+}
+
+p {
+    color: var(--text-muted);
 }
 
 #portfolio p, #esittely p, #harrastukset p {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
-/* Yhteiset tyylit sisältöosioille (portfolio, esittely, harrastukset). */
+/* Korttimaiset sisältöosiot (portfolio, esittely, harrastukset). */
 #portfolio, #esittely, #harrastukset {
-    padding: 2%; /* Sisäinen täyte. */
-    margin: 2%; /* Ulkoinen marginaali. */
-    background-color: #1e1e1e; /* Tummanharmaa korttitausta */
-    border: 1px solid #333; /* Hillitty reuna */
-    border-radius: 0.625em; /* Pyöristetyt kulmat. */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: clamp(1.1rem, 2.5vw, 1.8rem);
+    margin: 1.25rem 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
 }
 
-/* Linkit leipätekstissä */
+#portfolio section {
+    margin-bottom: 1.5rem;
+}
+
+#portfolio section:last-child {
+    margin-bottom: 0;
+}
+
+/* Korostus, kun osioon siirrytään sisäisen ankkurin kautta. */
+#portfolio:target, #esittely:target, #harrastukset:target {
+    border-color: rgba(96, 165, 250, 0.95);
+    background: linear-gradient(165deg, rgba(30, 58, 138, 0.35), rgba(21, 29, 53, 0.82));
+    box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.35), 0 14px 32px rgba(30, 58, 138, 0.3);
+}
+
+/* Linkit leipätekstissä. */
 p a {
-    color: #63b3ed;
+    color: #93c5fd;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 p a:hover {
     text-decoration: underline;
-    color: #90cdf4;
+    color: #bfdbfe;
 }
 
-/* Google Material Symbols -ikonien tyylit. */
+/* Alatunnisteen asettelu ja linkit. */
+footer {
+    text-align: center;
+    padding: 1.3rem 1rem;
+    margin-top: 1.25rem;
+    background-color: var(--surface-strong);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+footer p {
+    margin: 0.45rem 0;
+}
+
+footer a {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Material Symbols -ikonien hienosäätö. */
 .material-symbols-outlined {
-    vertical-align: -5px; /* Pystysuuntainen kohdistus. */
-    padding: 0 5px; /* Täyte sivuilla. */
+    vertical-align: -5px;
+    padding: 0 5px;
 }
 
+/* Portfolio-osion ruudukkoasettelu teksti + kuva. */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 300px;  /* teksti | kuva */
+    grid-template-columns: 1fr 300px;
     gap: 30px;
     align-items: start;
 }
@@ -181,50 +229,12 @@ p a:hover {
 .grid-container img {
     width: 100%;
     height: auto;
-    border-radius: 0.4em; /* Pyöristetyt kulmat. */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    border: 1px solid #333;
+    border-radius: 0.4em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border);
 }
 
-/* Pienillä ruuduilla pinotaan päällekkäin */
-@media (max-width: 850px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-    .grid-container img {
-        order: -1; /* kuva ennen tekstiä mobiilissa */
-        max-width: 100%;
-        margin-bottom: 1em;
-    }
-    
-    /* Navigaatio mobiilissa: pinotaan tarvittaessa tai pienennetään paddingia */
-    ul li a {
-        padding: 0.8em 1em;
-    }
-}
-
-/* Moderni CSS-rullauskorostus (Scroll-driven Animations) */
-@keyframes scroll-highlight {
-    0%, 100% {
-        border-color: #3182ce;
-        background-color: #1e1e1e;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
-    30%, 70% {
-        border-color: #3182ce;
-        background-color: #262626;
-        box-shadow: 0 0 15px rgba(49, 130, 206, 0.3);
-    }
-}
-
-/* Ei toimi firefoxilla (ei tuettu) */
-#portfolio, #esittely, #harrastukset {
-    animation: scroll-highlight linear both;
-    animation-timeline: view();
-    animation-range: entry 50% exit 10%;
-}
-
-/* Esittely-osion asettelu (float-ratkaisu) */
+/* Esittely-osion kuva kellutetaan tekstin rinnalle isoilla näytöillä. */
 .esittely-wrap {
     display: block;
 }
@@ -241,11 +251,34 @@ p a:hover {
     margin-left: 30px;
     margin-bottom: 20px;
     border-radius: 0.4em;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border);
 }
 
+/* Mobiiliruudut: tiiviimpi navigaatio ja yksi palsta. */
 @media (max-width: 850px) {
+    #page {
+        width: min(1080px, 95%);
+    }
+
+    nav {
+        top: 0.35rem;
+    }
+
+    ul li a {
+        padding: 0.7rem 0.9rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-container img {
+        order: -1;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
     .esittely-image {
         float: none;
         display: block;
