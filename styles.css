@@ -150,6 +150,27 @@ p {
     margin-bottom: 1rem;
 }
 
+.cta-links {
+    margin-bottom: 1.1rem;
+}
+
+.cta-link {
+    display: inline-block;
+    color: #ffffff;
+    background: linear-gradient(145deg, var(--primary), var(--primary-strong));
+    padding: 0.52rem 0.9rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.cta-link:hover {
+    color: #ffffff;
+    text-decoration: none;
+    filter: brightness(1.06);
+}
+
 /* Korttimaiset sisältöosiot (portfolio, esittely, harrastukset). */
 #portfolio, #esittely, #harrastukset {
     padding: clamp(1.1rem, 2.5vw, 1.8rem);

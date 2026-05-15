@@ -3,15 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Topi Autio – CV | ICT-insinööri, Jyväskylä</title>
-<meta name="description" content="Topi Autio – ICT-insinööriopiskelija (JAMK), Jyväskylä. Osaaminen: kyberturvallisuus, Linux-ylläpito, IT-tuki, verkkoinfrastruktuuri. TryHackMe Top 3%.">
+<title>Topi Autio | CV ja ansioluettelo (ICT, kyberturvallisuus)</title>
+<meta name="description" content="Topi Aution CV: ICT-insinööriopiskelija (JAMK), työkokemus IT-tuesta ja järjestelmäylläpidosta, osaaminen kyberturvallisuudessa, Linuxissa, verkoissa ja automaatiossa.">
 <meta name="author" content="Topi Autio">
 <meta name="keywords" content="Topi Autio, CV, ansioluettelo, ICT, insinööri, kyberturvallisuus, Linux, IT-tuki, JAMK, Jyväskylä">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://topiautio.fi/cv/">
-<meta property="og:title" content="Topi Autio – CV">
-<meta property="og:description" content="ICT-insinööriopiskelija, Jyväskylä. Kyberturvallisuus, Linux, IT-tuki. TryHackMe Top 3%.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Topi Autio | CV ja ansioluettelo">
+<meta property="og:description" content="Topi Aution CV: ICT-insinööriopiskelija (JAMK), IT-tuki, järjestelmäylläpito, kyberturvallisuus ja Linux-osaaminen.">
 <meta property="og:url" content="https://topiautio.fi/cv/">
 <meta property="og:type" content="profile">
+<meta property="og:site_name" content="Topi Autio">
+<meta property="og:locale" content="fi_FI">
+<meta property="og:image" content="https://topiautio.fi/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topi Autio | CV ja ansioluettelo">
+<meta name="twitter:description" content="Topi Aution CV: ICT-insinööriopiskelija (JAMK), IT-tuki, järjestelmäylläpito, kyberturvallisuus ja Linux-osaaminen.">
+<meta name="twitter:url" content="https://topiautio.fi/cv/">
+<meta name="twitter:image" content="https://topiautio.fi/favicon.svg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,6 +71,28 @@
     max-width: 860px;
     margin: 0 auto;
     padding: 48px 40px;
+  }
+
+  .top-nav {
+    margin-bottom: 18px;
+  }
+
+  .top-nav a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 7px 10px;
+  }
+
+  .top-nav a:hover {
+    border-color: var(--accent-mid);
+    color: var(--accent);
   }
 
   /* HEADER */
@@ -360,20 +392,24 @@
   }
 
   /* PRINT */
-  @media print {
+@media print {
     body { background: white; }
     .page { padding: 20px 24px; max-width: 100%; }
+    .top-nav { display: none; }
     .two-col { grid-template-columns: 1fr 260px; }
   }
 </style>
 </head>
 <body>
 <div class="page">
+  <nav class="top-nav" aria-label="Sivunavigaatio">
+    <a href="/">← Takaisin etusivulle</a>
+  </nav>
 
   <!-- HEADER -->
   <div class="header">
     <div>
-      <div class="name">Topi Autio</div>
+      <h1 class="name">Topi Autio</h1>
       <div class="title-tag">ICT Engineering Student &amp; Cybersecurity Enthusiast</div>
     </div>
     <div class="contacts">
@@ -394,8 +430,8 @@
     <div class="main">
 
       <!-- TYÖKOKEMUS -->
-      <div class="section">
-        <div class="section-title">Työkokemus</div>
+      <section class="section">
+        <h2 class="section-title">Työkokemus</h2>
 
         <div class="entry">
           <div class="entry-header">
@@ -448,11 +484,11 @@
           </ul>
         </div>
 
-      </div>
+      </section>
 
       <!-- KOULUTUS -->
-      <div class="section">
-        <div class="section-title">Koulutus</div>
+      <section class="section">
+        <h2 class="section-title">Koulutus</h2>
 
         <div class="entry">
           <div class="entry-header">
@@ -477,7 +513,7 @@
           </ul>
         </div>
 
-      </div>
+      </section>
 
     </div>
 
@@ -494,8 +530,8 @@
       </div>
 
       <!-- KYBERTURVALLISUUS TAIDOT -->
-      <div class="section">
-        <div class="section-title">Kyberturvallisuus</div>
+      <section class="section">
+        <h2 class="section-title">Kyberturvallisuus</h2>
         <div class="skill-group">
           <div class="tags">
             <span class="tag highlight">Jr Penetration Tester</span>
@@ -516,11 +552,11 @@
             <span class="tag">SQLMap</span>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- IT-INFRA -->
-      <div class="section">
-        <div class="section-title">IT-infra & Verkot</div>
+      <section class="section">
+        <h2 class="section-title">IT-infra & Verkot</h2>
         <div class="tags">
           <span class="tag">Linux (Ubuntu)</span>
           <span class="tag">Windows Server</span>
@@ -534,22 +570,22 @@
           <span class="tag">FOG</span>
           <span class="tag">Cisco Packet Tracer</span>
         </div>
-      </div>
+      </section>
 
       <!-- TIETOKANNAT -->
-      <div class="section">
-        <div class="section-title">Tietokannat</div>
+      <section class="section">
+        <h2 class="section-title">Tietokannat</h2>
         <div class="tags">
           <span class="tag">SQL</span>
           <span class="tag">MySQL</span>
           <span class="tag">MongoDB</span>
           <span class="tag">Tietokannan suunnittelu</span>
         </div>
-      </div>
+      </section>
 
       <!-- OHJELMOINTI -->
-      <div class="section">
-        <div class="section-title">Ohjelmointi & Skriptaus</div>
+      <section class="section">
+        <h2 class="section-title">Ohjelmointi & Skriptaus</h2>
         <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">Bash</span>
@@ -559,11 +595,11 @@
           <span class="tag">Git</span>
           <span class="tag">SQF (VBS4)</span>
         </div>
-      </div>
+      </section>
 
       <!-- OMAT PROJEKTIT -->
-      <div class="section">
-        <div class="section-title">Omat projektit</div>
+      <section class="section">
+        <h2 class="section-title">Omat projektit</h2>
         <div class="project-item">
           <div class="project-name"><a href="https://github.com/topiautio" style="color: var(--accent-mid); text-decoration: none;">github.com/topiautio</a></div>
           <div class="project-desc">Kyberturvallisuuteen, automatisointiin ja Linux-ympäristöihin liittyviä henkilökohtaisia projekteja ja skriptejä.</div>
@@ -572,20 +608,20 @@
           <div class="project-name"><a href="https://topiautio.fi" style="color: var(--accent-mid); text-decoration: none;">topiautio.fi</a></div>
           <div class="project-desc">Henkilökohtainen portfolio — projektiesimerkit ja lisätietoja osaamisesta. Rakennettu web-kehityksen opinnoissa.</div>
         </div>
-      </div>
+      </section>
 
       <!-- KIELET -->
-      <div class="section">
-        <div class="section-title">Kielet</div>
+      <section class="section">
+        <h2 class="section-title">Kielet</h2>
         <div class="lang-row"><span>Suomi</span><span class="lang-level">Äidinkieli</span></div>
         <div class="lang-row"><span>Englanti</span><span class="lang-level">Erinomainen (C1)</span></div>
         <div class="lang-row"><span>Ruotsi</span><span class="lang-level">Perustaidot</span></div>
         <div class="lang-row"><span>Saksa</span><span class="lang-level">Perustaidot</span></div>
-      </div>
+      </section>
 
       <!-- SERTIFIKAATIT -->
-      <div class="section">
-        <div class="section-title">Sertifikaatit</div>
+      <section class="section">
+        <h2 class="section-title">Sertifikaatit</h2>
         <ul class="cert-list">
           <li>Jr Penetration Tester<span class="cert-date">02/2025</span></li>
           <li>Web Fundamentals Path<span class="cert-date">02/2025</span></li>
@@ -596,7 +632,7 @@
           <li>Työturvallisuuskortti</li>
           <li>Ensiapu 8h</li>
         </ul>
-      </div>
+      </section>
 
     </div>
   </div>
