@@ -5,30 +5,30 @@ Tämä dokumentti selittää kuinka lisätä uusia artikkeleita topiautio.fi-siv
 ## Rakenne
 
 ```
-/blog/
-  index.html              # Blogin pääsivu (artikkelien listaus)
-  blog-styles.css         # Yleiset blogin tyylit
-  /posts/
-    TEMPLATE.html         # Malli uusille artikkeleille (kopioi tämä)
-    post-styles.css       # Artikkelikohtaiset tyylit
+/blogi/
+  index.html                 # Blogin pääsivu (artikkelien listaus)
+  blogi-tyylit.css           # Yleiset blogin tyylit
+  /julkaisut/
+    MALLI.html               # Malli uusille artikkeleille (kopioi tämä)
+    julkaisu-tyylit.css      # Artikkelikohtaiset tyylit
     /[artikkelin-slug]/
-      index.html          # Yksittäinen artikkeli
+      index.html             # Yksittäinen artikkeli
 ```
 
 ## Uuden artikkelin lisääminen
 
 ### Vaihe 1: Luo uusi kansio
-Luo kansio `/blog/posts/` alle. Käytä kuvaavaa nimiä (esim. `windows11-cachyos`):
+Luo kansio `blogi/julkaisut/` alle. Käytä kuvaavaa nimeä (esim. `windows11-cachyos`):
 
 ```bash
-mkdir /blog/posts/windows11-cachyos
+mkdir -p blogi/julkaisut/windows11-cachyos
 ```
 
 ### Vaihe 2: Kopioi malli
-Kopioi `TEMPLATE.html` uuteen kansioon `index.html`-nimellä:
+Kopioi `MALLI.html` uuteen kansioon `index.html`-nimellä:
 
 ```bash
-cp /blog/posts/TEMPLATE.html /blog/posts/windows11-cachyos/index.html
+cp blogi/julkaisut/MALLI.html blogi/julkaisut/windows11-cachyos/index.html
 ```
 
 ### Vaihe 3: Muokkaa artikkelia
@@ -56,11 +56,11 @@ Avaa `index.html` ja:
    Tuetut kielitunnisteet: `bash`, `python`, `html`, `css`, `javascript`, `java`, jne.
 
 ### Vaihe 4: Päivitä blogin pääsivu
-Muokkaa `/blog/index.html` ja lisää uusi artikkeli `.posts-list`-osioon:
+Muokkaa `blogi/index.html` ja lisää uusi artikkeli `.posts-list`-osioon:
 
 ```html
 <article class="post-card">
-    <h3><a href="/blog/posts/windows11-cachyos/">Artikkelin otsikko</a></h3>
+    <h3><a href="/blogi/julkaisut/windows11-cachyos/">Artikkelin otsikko</a></h3>
     <div class="post-meta">
         <span class="post-date"><span class="material-symbols-outlined">calendar</span>25.01.2025</span>
         <span class="post-reading-time"><span class="material-symbols-outlined">schedule</span>8 min luku</span>
@@ -74,10 +74,10 @@ Jos haluat linkittää artikkelit toisiinsa, päivitä `post-nav`-osio artikkeli
 
 ```html
 <div class="post-nav-item prev">
-    <a href="/blog/posts/[EDELLINEN-ARTIKKELI]/">← Edellinen artikkeli</a>
+    <a href="/blogi/julkaisut/[EDELLINEN-ARTIKKELI]/">← Edellinen artikkeli</a>
 </div>
 <div class="post-nav-item next">
-    <a href="/blog/posts/[SEURAAVA-ARTIKKELI]/">Seuraava artikkeli →</a>
+    <a href="/blogi/julkaisut/[SEURAAVA-ARTIKKELI]/">Seuraava artikkeli →</a>
 </div>
 ```
 
@@ -119,7 +119,7 @@ $ sudo apt install package
 
 ## Tyylit ja CSS
 
-**Älä muokkaa tyylitiedostoja** (`blog-styles.css`, `post-styles.css`) ellei sinulla ole erityistä syytä. Kaikki sisältö-osion styling on jo määritelty.
+**Älä muokkaa tyylitiedostoja** (`blogi-tyylit.css`, `julkaisu-tyylit.css`) ellei sinulla ole erityistä syytä. Kaikki sisältö-osion styling on jo määritelty.
 
 Jos haluat lisätä kuvia, käytä normaaleja img-tageja:
 ```html
@@ -141,20 +141,20 @@ Jos haluat käyttää mukautettuja elementtejä, nämä luokat on saatavilla:
 
 ## Esimerkkiartikkeli
 
-Katsomalla `TEMPLATE.html` näet täyden rakenteen kommentteilla. Kopio siitä ja aloita sieltä.
+Katsomalla `MALLI.html` näet täyden rakenteen kommentteilla. Kopio siitä ja aloita sieltä.
 
 ## Vianmääritys
 
 **Ongelma:** Artikkeli näyttää oudolta tai tyylit eivät toimineet.
 - Varmista, että kopioit kaikki stylesheet-linkit `<head>`-osioon.
-- Tarkista, että polut ovat oikein (`../../styles.css`, `../blog-styles.css`, `post-styles.css`).
+- Tarkista, että polut ovat oikein (`/styles.css`, `/blogi/blogi-tyylit.css`, `/blogi/julkaisut/julkaisu-tyylit.css`).
 
 **Ongelma:** Koodi ei näy kunnolla.
 - Varmista, että käytät `<pre><code>` -rakennetta.
 - Lisää kielitunnus: `class="language-bash"`.
 
 **Ongelma:** Linkit eivät toimi.
-- Absoluutiset polut alkavat `/blog/posts/...`.
+- Absoluutiset polut alkavat `/blogi/julkaisut/...`.
 - Suhteelliset polut käyttävät `../` tai `../../`.
 
 ---
