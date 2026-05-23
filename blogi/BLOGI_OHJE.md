@@ -69,6 +69,22 @@ Muokkaa `blogi/index.html` ja lisää uusi artikkeli `.posts-list`-osioon:
 </article>
 ```
 
+Jos artikkeli ei ole vielä valmis / sivua ei ole olemassa, älä lisää linkkiä vielä. Näytä sen sijaan tila (esim. `Tulossa` tai `Työn alla`):
+
+```html
+<article class="post-card">
+  <h3>
+    <span class="post-title">Artikkelin otsikko</span>
+    <span class="post-status post-status--coming">Tulossa</span>
+  </h3>
+  <div class="post-meta">
+    <span class="post-date"><span class="material-symbols-outlined">calendar</span>Tulossa</span>
+    <span class="post-reading-time"><span class="material-symbols-outlined">schedule</span>Arvio: 5 min luku</span>
+  </div>
+  <p>Lyhyt kuvaus artikkelista.</p>
+</article>
+```
+
 ### Vaihe 5: Lisää navigaatio (valinnainen)
 Jos haluat linkittää artikkelit toisiinsa, päivitä `post-nav`-osio artikkelissa:
 
