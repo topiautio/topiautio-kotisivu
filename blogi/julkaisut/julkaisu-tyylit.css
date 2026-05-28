@@ -1,0 +1,273 @@
+/* Post-specific styles */
+
+/* Back button */
+.post-back {
+    margin-bottom: 1.5rem;
+}
+
+.post-back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.post-back a:hover {
+    color: var(--primary-strong);
+    transform: translateX(-3px);
+}
+
+.post-back .material-symbols-outlined {
+    font-size: 1.2rem;
+}
+
+/* Blog post article container */
+.blog-post {
+    padding: clamp(1.5rem, 3vw, 2rem);
+    margin: 1.5rem 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+}
+
+/* Post header styling */
+.post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.post-header h1 {
+    color: var(--heading);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+/* Post content typography */
+.post-content {
+    line-height: 1.8;
+}
+
+.post-content h2 {
+    color: var(--heading);
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-content h2:first-child {
+    margin-top: 0;
+}
+
+.post-content h3 {
+    color: var(--heading);
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    border-bottom: none;
+    display: block;
+    padding: 0;
+}
+
+.post-content h4 {
+    color: var(--text);
+    font-size: 1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+}
+
+.post-content ul,
+.post-content ol {
+    color: var(--text-muted);
+    margin-left: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Code blocks */
+.post-content pre {
+    background: var(--surface-strong);
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    padding: 1.2rem;
+    overflow-x: auto;
+    margin-bottom: 1.2rem;
+}
+
+.post-content code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: #a8d5ff;
+    line-height: 1.6;
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+}
+
+/* Inline code */
+.post-content p code {
+    background: rgba(96, 165, 250, 0.1);
+    color: var(--primary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 0.95em;
+}
+
+/* Blockquotes */
+.post-content blockquote {
+    border-left: 4px solid var(--primary);
+    padding: 0.5rem 1rem;
+    background: rgba(96, 165, 250, 0.08);
+    margin: 1.5rem 0;
+    border-radius: 0.3rem;
+    color: var(--text);
+    font-style: italic;
+}
+
+/* Tables */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.post-content table th {
+    background: var(--surface-strong);
+    color: var(--heading);
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--border);
+}
+
+.post-content table td {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.post-content table tr:hover {
+    background: rgba(96, 165, 250, 0.05);
+}
+
+/* Images */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.6rem;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border);
+}
+
+/* Post footer */
+.post-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border);
+}
+
+.post-footer p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-footer strong {
+    color: var(--text);
+}
+
+/* Post navigation */
+.post-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.post-nav-item a {
+    display: block;
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.post-nav-item a:hover {
+    border-color: var(--primary);
+    background: rgba(96, 165, 250, 0.08);
+}
+
+.post-nav-item.prev a {
+    text-align: left;
+}
+
+.post-nav-item.next a {
+    text-align: right;
+}
+
+/* Blog return button */
+.blog-return {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.blog-return .cta-link {
+    display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .blog-post {
+        padding: 1.2rem;
+    }
+
+    .post-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .post-content h3 {
+        font-size: 1rem;
+    }
+
+    .post-nav {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .post-nav-item.next a {
+        text-align: left;
+    }
+
+    .post-content pre {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .post-content code {
+        font-size: 0.85rem;
+    }
+}
