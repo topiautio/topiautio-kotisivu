@@ -62,7 +62,7 @@ Muokkaa `blogi/index.html` ja lisää uusi artikkeli `.posts-list`-osioon:
 <article class="post-card">
     <h3><a href="/blogi/julkaisut/windows11-cachyos/">Artikkelin otsikko</a></h3>
     <div class="post-meta">
-        <span class="post-date"><span class="material-symbols-outlined">calendar</span>25.01.2025</span>
+        <span class="post-date"><span class="material-symbols-outlined">calendar_month</span>25.01.2025</span>
         <span class="post-reading-time"><span class="material-symbols-outlined">schedule</span>8 min luku</span>
     </div>
     <p>Lyhyt kuvaus artikkelista. Tämä teksti näkyy listalla.</p>
@@ -78,7 +78,7 @@ Jos artikkeli ei ole vielä valmis / sivua ei ole olemassa, älä lisää linkki
     <span class="post-status post-status--coming">Tulossa</span>
   </h3>
   <div class="post-meta">
-    <span class="post-date"><span class="material-symbols-outlined">calendar</span>Tulossa</span>
+    <span class="post-date"><span class="material-symbols-outlined">calendar_month</span>Tulossa</span>
     <span class="post-reading-time"><span class="material-symbols-outlined">schedule</span>Arvio: 5 min luku</span>
   </div>
   <p>Lyhyt kuvaus artikkelista.</p>
