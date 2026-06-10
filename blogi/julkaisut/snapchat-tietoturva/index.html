@@ -163,6 +163,22 @@
             .post-content ol {
                 list-style-type: disc;
                 padding-left: 1.5rem;
+                display: block;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                gap: 0;
+            }
+            .post-content ul li,
+            .post-content ol li {
+                display: list-item;
+                padding: 0;
+                margin-bottom: 0.5rem;
+            }
+            .post-content ul li a,
+            .post-content ol li a {
+                display: inline;
+                padding: 0;
+                text-align: left;
             }
             .post-content {
                 overflow-wrap: break-word;
