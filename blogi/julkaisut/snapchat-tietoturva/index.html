@@ -40,19 +40,42 @@
         <link rel="stylesheet" href="/styles.css" />
         <link rel="stylesheet" href="/blogi/blogi-tyylit.css" />
         <link rel="stylesheet" href="/blogi/julkaisut/julkaisu-tyylit.css" />
+        <!-- Preload kriittiset fontit -->
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+            as="style"
+        />
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap"
+            as="style"
+        />
+        <!-- Fontit ei estä renderöintiä -->
         <link
             href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
             rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
         />
         <link
             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap"
             rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
         />
         <!-- HUOM! Google Fontsin API vaatii, että icon_names -listan sanat EHDOTTOMASTI aakkosjärjestyksessä. -->
         <link
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap"
             rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
         />
+        <noscript>
+            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap" rel="stylesheet" />
+        </noscript>
 
         <!-- Artikkelikohtaiset täydennystyylit (kutsutaan, .cite, .toc, .sources, .num) -->
         <style>
@@ -239,6 +262,19 @@
                 border: none;
                 border-top: 1px solid var(--border);
                 margin: 2.5rem 0;
+            }
+            /* CLS: estä navin leveyden muutos ikonien latautuessa */
+            nav ul li {
+                min-width: 3.5rem;
+                white-space: nowrap;
+            }
+            /* CLS: estä footerin/pagerin siirtymä */
+            .post-nav, .blog-return {
+                contain: layout;
+            }
+            /* CLS: estä kuvien aiheuttama layout shift */
+            .post-content img {
+                content-visibility: auto;
             }
         </style>
     </head>
