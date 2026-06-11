@@ -1,0 +1,32 @@
+baseURL = "https://topiautio.github.io/topiautio-kotisivu/"
+title = "Topi Autio"
+languageCode = "fi-FI"
+theme = "hugo-profile"
+
+[params]
+  darkMode = true
+  showSocial = true
+  author = "Topi Autio"
+  description = "ICT-insinööriopiskelija | Kyberturvallisuus & Infrastruktuuri"
+  avatar = "images/avatar.jpg"
+
+[menu]
+  [[menu.main]]
+    name = "Etusivu"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Projektit"
+    url = "/projects/"
+    weight = 2
+  [[menu.main]]
+    name = "Blogi"
+    url = "/posts/"
+    weight = 3
+  [[menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 4
+
+[params.social]
+  github = "topiautio"

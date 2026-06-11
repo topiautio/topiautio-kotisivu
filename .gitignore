@@ -1,0 +1,15 @@
+# Hugo
+/resources
+/public
+/node_modules
+.hugo_build.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
