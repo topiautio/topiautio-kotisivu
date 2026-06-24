@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
         <!-- HUOM! Google Fontsin API vaatii, että icon_names -listan sanat EHDOTTOMASTI aakkosjärjestyksessä. Muuten palautuu Error 400. -->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=article,aspect_ratio,description,diamond,exercise,help,mail,waving_hand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=article,aspect_ratio,construction,description,diamond,dns,exercise,help,lan,mail,security,waving_hand&display=swap" rel="stylesheet">
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -47,12 +47,14 @@
         <div id="page">
             <header>
                 <h1>Topi Autio</h1>
+                <p class="header-subtitle">ICT-insinööriopiskelija | Järjestelmähallinta, tietoverkot & kyberturvallisuus</p>
             </header><!--header end-->
             
             <nav>
                 <ul>
                     <li><a href="#esittely"><span class="material-symbols-outlined">waving_hand</span>Esittely</a></li>
                     <li><a href="#portfolio"><span class="material-symbols-outlined">diamond</span>Portfolio</a></li>
+                    <li><a href="#kaytannon-tekeminen"><span class="material-symbols-outlined">construction</span>Käytännön tekeminen</a></li>
                     <li><a href="#harrastukset"><span class="material-symbols-outlined">exercise</span>Harrastukset</a></li>
                     <li><a href="/cv/"><span class="material-symbols-outlined">description</span>CV</a></li>
                     <li><a href="/blogi/"><span class="material-symbols-outlined">article</span>Blogi</a></li>
@@ -63,19 +65,19 @@
             <main>
                 <section id="esittely">
                     <h2><span class="material-symbols-outlined">waving_hand</span>Esittely</h2>
-                    <h3>Tervetuloa</h3>
-                    <p class="cta-links"><a href="/cv/" class="cta-link">Näytä ansioluettelo (CV)</a></p>
+                    <h3>Tervetuloa portfoliooni</h3>
+                    <p class="cta-links">
+                        <a href="/cv/" class="cta-link">Näytä CV (ansioluettelo)</a>
+                        <a href="#kaytannon-tekeminen" class="cta-link cta-secondary">Tutustu projekteihin</a>
+                    </p>
                     
                     <div class="esittely-wrap">
-                    
-                    <p>Hei! Olen Topi Autio, motivoitunut ja nopeasti oppiva tieto- ja viestintätekniikan osaaja Jyväskylästä. Tällä sivustolla esittelen itseni, koulutukseni, työkokemukseni ja osaamiseni. Etsin tällä hetkellä harjoittelupaikkaa. Ota rohkeasti yhteyttä jos sinulla on sopiva mahdollisuus.</p>
-                    
-                    <p>Olen luonteeltani <strong>järjestelmällinen ja tehokas</strong>, ja pidän erityisesti tehtävistä, joissa voin yhdistää hands-on-työskentelyn ja syvällisen teknisen ymmärryksen. Arvostan selkeitä järjestelmiä ja hyvin dokumentoitua kokonaisuutta, ja pyrin aina rakentamaan ratkaisuja, jotka ovat sekä käytännöllisiä että pitkäikäisiä.</p>
-                    
-                    <p>Työskentelen mielelläni uusien teknologioiden parissa ja viihdyn erityisesti ympäristöissä, joissa ongelmanratkaisu ja tekninen analyysi ovat keskeisessä roolissa. Minulla on kokemusta <strong>palvelimista, verkoista, simulaattorijärjestelmistä ja teknisestä tuesta</strong>, ja kehitän osaamistani jatkuvasti itseopiskelun ja projektien kautta.</p>
+                        <p>Hei! Olen Topi Autio, tieto- ja viestintätekniikan insinööriopiskelija Jyväskylän ammattikorkeakoulusta (JAMK), jossa suuntaudun kyberturvallisuuteen ja verkkoinfrastruktuuriin. Etsin tällä hetkellä harjoittelupaikkaa, kesätöitä tai junior-tason työpaikkaa järjestelmähallinnan, tietoverkkojen tai kyberturvallisuuden parista.</p>
+                        
+                        <p>Olen luonteeltani <strong>järjestelmällinen ja tehokas ongelmanratkaisija</strong>. Minulla on aitoa kiinnostusta ja käytännön kokemusta järjestelmähallinnasta (mukaan lukien Linux- ja Windows Server -palvelinympäristöt, Active Directory, Samba ja FOG) sekä tietoverkoista (kuten DNS, DHCP, reitittimet ja lähiverkkoratkaisut). Lisäksi kehitän jatkuvasti osaamistani kyberturvallisuuden alueella itseopiskelun (kuten TryHackMe, jossa kuulun parhaaseen 3 %:iin) sekä käytännön kokeilujen kautta.</p>
+                        
+                        <p>Työskentelen mielelläni hands-on-tehtävissä, joissa voin yhdistää teknisen analyysin ja käytännön ratkaisujen rakentamisen. Pystyn tuomaan välitöntä hyötyä lähituessa ja ylläpidossa aiemman työkokemukseni (Istekki, Keuruun kaupunki) sekä puolustusvoimien VBS4-sysadmin-erityistehtävän ansiosta. Kutsun sinut tutustumaan CV-sivuuni tai alta löytyviin käytännön projekteihini, ja ottamaan yhteyttä!</p>
                     </div>
-                    
-                    
                 </section><!--esittely end-->
 
                 <section id="portfolio">
@@ -129,13 +131,50 @@
 
                         </section>
 
-                        <section>
-                            <h3>Harrastukset</h3>
-                            <div class="grid-container">
-                            <p>Kaikenlaista kikkailua tietokoneilla.</p>
-                            </div>
-                        </section>
                 </section><!--portfolio end-->
+                
+                <section id="kaytannon-tekeminen">
+                    <h2><span class="material-symbols-outlined">construction</span>Käytännön tekeminen</h2>
+                    <p>Tässä on esiteltynä joitakin konkreettisia teknisiä projekteja ja osaamisalueitani, joita kehitän aktiivisesti vapaa-ajallani ja opinnoissani:</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3><span class="material-symbols-outlined">dns</span>Kotipalvelin &amp; Self-hosting</h3>
+                            <p>Ylläpidän omaa TrueNAS Scale -pohjaista kotipalvelintani (Intel N100), johon on määritetty Nextcloud-pilvipalvelu tiedostojakoa ja Samba-verkkojakoja varten. Kotiverkon tietoturvaa ja etäyhteyksiä hallitaan luotettavalla Tailscale VPN -verkolla sekä GL.iNET Flint 2 -reitittimellä.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">TrueNAS</span>
+                                <span class="project-tag">Tailscale</span>
+                                <span class="project-tag">Nextcloud</span>
+                                <span class="project-tag">Samba</span>
+                                <span class="project-tag">Intel N100</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3><span class="material-symbols-outlined">security</span>TryHackMe &amp; Kyberturvallisuus</h3>
+                            <p>Harjoittelen penetraatiotestausta ja tietoturvan perusteita TryHackMe-alustalla. Olen globaalisti parhaassa 3 %:ssa (yli 170 suoritettua huonetta). Olen suorittanut Jr Penetration Tester-, Web Fundamentals- ja Cyber Security 101 -opintopolut ja käytän sujuvasti työkaluja kuten Nmap, Metasploit, Burp Suite ja Wireshark.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">TryHackMe</span>
+                                <span class="project-tag">Nmap</span>
+                                <span class="project-tag">Burp Suite</span>
+                                <span class="project-tag">Metasploit</span>
+                                <span class="project-tag">Wireshark</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3><span class="material-symbols-outlined">lan</span>Simulaattoriverkko (VBS4-sysadmin)</h3>
+                            <p>Osana Ilmasotakoulun erityistehtävää uudistin itsenäisesti simulaattoriluokan lähiverkkorakenteen ja ylläpidin siihen liittyviä Linux- (Ubuntu) ja Windows Server -ympäristöjä (Active Directory, DHCP, DNS, Samba) sekä FOG-palvelinta työasemien nopeaa käyttöönottoa varten.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Linux</span>
+                                <span class="project-tag">Windows Server</span>
+                                <span class="project-tag">Active Directory</span>
+                                <span class="project-tag">DNS/DHCP</span>
+                                <span class="project-tag">FOG Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </section><!--kaytannon-tekeminen end-->
                 
                 <section id="harrastukset">
                     <h2><span class="material-symbols-outlined">exercise</span>Harrastukset</h2>
