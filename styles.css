@@ -65,6 +65,14 @@ header h1 {
     text-transform: uppercase;
 }
 
+header .header-subtitle {
+    margin-top: 0.75rem;
+    font-size: clamp(0.9rem, 2.2vw, 1.15rem);
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    font-weight: 400;
+}
+
 /* Sticky-navigaatio pysyy näkyvissä vierityksessä. */
 nav {
     position: sticky;
@@ -163,12 +171,25 @@ p {
     text-decoration: none;
     font-weight: 700;
     line-height: 1.2;
+    transition: background-color 0.2s, transform 0.2s, filter 0.2s;
 }
 
 .cta-link:hover {
     color: #ffffff;
     text-decoration: none;
     filter: brightness(1.06);
+}
+
+.cta-link.cta-secondary {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    margin-left: 0.5rem;
+}
+
+.cta-link.cta-secondary:hover {
+    background: rgba(96, 165, 250, 0.12);
+    color: #ffffff;
 }
 
 /* Korttimaiset sisältöosiot (portfolio, esittely, harrastukset). */
