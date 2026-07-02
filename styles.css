@@ -27,6 +27,12 @@ html {
     scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 /* Koko sivun tumma tausta ja perustypografia. */
 body {
     color: var(--text);
@@ -87,7 +93,7 @@ nav {
 }
 
 /* Navigaation listarakenne ja linkit. */
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0.35rem;
@@ -97,7 +103,7 @@ ul {
     flex-wrap: wrap;
 }
 
-ul li a {
+nav ul li a {
     display: block;
     color: var(--text);
     text-align: center;
@@ -108,7 +114,7 @@ ul li a {
     white-space: nowrap;
 }
 
-ul li a:hover:not(.active) {
+nav ul li a:hover:not(.active) {
     background-color: rgba(59, 130, 246, 0.18);
     color: #ffffff;
     transform: translateY(-1px);
@@ -307,7 +313,7 @@ footer a:hover {
         top: 0.35rem;
     }
 
-    ul li a {
+    nav ul li a {
         padding: 0.7rem 0.9rem;
     }
 
@@ -392,4 +398,3 @@ footer a:hover {
     font-size: 0.8rem;
     font-family: monospace;
 }
-

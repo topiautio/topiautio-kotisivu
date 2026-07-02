@@ -10,4 +10,3 @@ disableKinds = ["taxonomy", "term"]
 
 [permalinks]
   blogi = "/blogi/:slug/"
-  julkaisut = "/blogi/julkaisut/:slug/"
