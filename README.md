@@ -1,26 +1,19 @@
 # topiautio-kotisivu
 
-Static GitHub Pages portfolio and CV site for Topi Autio (https://topiautio.fi/).
+Topi Aution portfolio- ja CV-sivusto (https://topiautio.fi/), nyt rakennettuna Hugolla.
 
-Finnish-language site targeting IT internship opportunities (focus: cybersecurity, system administration) in the Jyväskylä area. Features experience with Linux/Windows servers (VBS4, DHCP, DNS, AD, Samba) from Ilmasotakoulu and prior internships. JAMK ICT engineering student.
-
-- Dark glassmorphism design with Material Symbols icons
-- Single-page (index.html) + blogi/ and cv/ sections
-- SEO-optimized meta tags, OpenGraph, schema
+Suomenkielinen sivusto IT-harjoitteluun ja junior-rooleihin (painotus: kyberturvallisuus, järjestelmähallinta, tietoverkot) Jyväskylän alueella.
 
 ## Tech
-- Pure HTML5 + CSS3 (no JavaScript — kept fast and minimal)
+- Hugo (static site generator)
+- HTML5 + CSS3
 - Google Fonts (Lato + Material Symbols)
-- Deployed via GitHub Pages (CNAME: topiautio.fi)
+- GitHub Pages (CNAME: topiautio.fi)
 
-## Local preview
-Open `index.html` directly in any browser. No build step required.
+## Paikallinen kehitys
+1. `git clone https://github.com/topiautio/topiautio-kotisivu.git`
+2. `cd topiautio-kotisivu`
+3. `hugo server`
 
-## Deployment
-Pushes to `main` automatically publish via GitHub Pages.
-
-Repo: https://github.com/topiautio/topiautio-kotisivu
-
----
-
-*Generated from project files (2026-06-19).*
+## Build
+`hugo`
