@@ -1,0 +1,2 @@
+{{- $legacyPath := printf "blogi/julkaisut/%s/index.html" .File.BaseFileName -}}
+{{- readFile $legacyPath | safeHTML -}}

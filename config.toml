@@ -1,0 +1,13 @@
+baseURL = "https://topiautio.fi/"
+title = "Topi Autio"
+defaultContentLanguage = "fi"
+disableKinds = ["taxonomy", "term"]
+
+[languages]
+  [languages.fi]
+    label = "Suomi"
+    locale = "fi-FI"
+
+[permalinks]
+  blogi = "/blogi/:slug/"
+  julkaisut = "/blogi/julkaisut/:slug/"
