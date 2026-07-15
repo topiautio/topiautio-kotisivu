@@ -1,1 +1,204 @@
-{{- readFile "index.html" | safeHTML -}}
+{{- /* Hugo source template migrated from legacy static HTML. Keep rendered markup stable while removing external file-path coupling. */ -}}
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Etsin IT-harjoittelupaikkaa Jyväskylästä. Kiinnostus kyberturvallisuuden ja järjestelmäylläpidon parissa. Vahva kokemus Linux- ja Windows-palvelimista (VBS4, DHCP, DNS, AD, Samba) Ilmasotakoululla sekä aiemmista IT-harjoitteluista. JAMK ICT-insinööriopiskelija.">
+        <meta name="keywords" content="IT-harjoittelija, IT harjoittelija Jyväskylä, kyberturvallisuus harjoittelija, järjestelmäylläpito harjoittelija, Topi Autio, portfolio, CV, kyberturvallisuus, järjestelmäylläpito">
+        <meta name="author" content="Topi Autio">
+        <meta name="robots" content="index, follow, max-image-preview:large">
+        <meta name="theme-color" content="#0b1020">
+        <meta property="og:locale" content="fi_FI">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Topi Autio | Portfolio ja CV | Etsin IT-harjoittelupaikkaa Jyväskylä">
+        <meta property="og:description" content="Etsin IT-harjoittelupaikkaa Jyväskylästä. Kiinnostus kyberturvallisuuden ja järjestelmäylläpidon parissa. Vahva kokemus Linux- ja Windows-palvelimista (VBS4, DHCP, DNS, AD, Samba) Ilmasotakoululla sekä aiemmista IT-harjoitteluista. JAMK ICT-insinööriopiskelija.">
+        <meta property="og:site_name" content="Topi Autio">
+        <meta property="og:url" content="https://topiautio.fi/">
+        <meta property="og:image" content="https://topiautio.fi/favicon.svg">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Topi Autio | Portfolio ja CV | Etsin IT-harjoittelupaikkaa Jyväskylä">
+        <meta name="twitter:description" content="Etsin IT-harjoittelupaikkaa Jyväskylästä. Kiinnostus kyberturvallisuuden ja järjestelmäylläpidon parissa. Vahva kokemus Linux- ja Windows-palvelimista (VBS4, DHCP, DNS, AD, Samba) Ilmasotakoululla sekä aiemmista IT-harjoitteluista. JAMK ICT-insinööriopiskelija.">
+        <meta name="twitter:url" content="https://topiautio.fi/">
+        <meta name="twitter:image" content="https://topiautio.fi/favicon.svg">
+        <title>Topi Autio | Portfolio ja CV | Etsin IT-harjoittelupaikkaa Jyväskylä</title>
+        <link rel="canonical" href="https://topiautio.fi/">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- HUOM! Google Fontsin API vaatii, että icon_names -listan sanat EHDOTTOMASTI aakkosjärjestyksessä. Muuten palautuu Error 400. -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=article,aspect_ratio,construction,description,diamond,dns,exercise,help,lan,mail,security,waving_hand&display=swap" rel="stylesheet">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Topi Autio",
+                "url": "https://topiautio.fi/",
+                "description": "Etsin IT-harjoittelupaikkaa Jyväskylästä. Kiinnostus kyberturvallisuuden ja järjestelmäylläpidon parissa. Vahva kokemus Linux- ja Windows-palvelimista (VBS4, DHCP, DNS, AD, Samba) Ilmasotakoululla sekä aiemmista IT-harjoitteluista. JAMK ICT-insinööriopiskelija.",
+                "sameAs": [
+                    "https://www.linkedin.com/in/topi-a-558796240/",
+                    "https://github.com/topiautio",
+                    "https://tryhackme.com/p/TopiAutio"
+                ]
+            }
+        </script>
+    </head>
+    
+    <body>
+        <div id="page">
+            <header>
+                <h1>Topi Autio</h1>
+                <p class="header-subtitle">ICT-insinööriopiskelija | Järjestelmähallinta, tietoverkot & kyberturvallisuus</p>
+            </header><!--header end-->
+            
+            <nav>
+                <ul>
+                    <li><a href="#esittely"><span class="material-symbols-outlined">waving_hand</span>Esittely</a></li>
+                    <li><a href="#portfolio"><span class="material-symbols-outlined">diamond</span>Portfolio</a></li>
+                    <li><a href="#kaytannon-tekeminen"><span class="material-symbols-outlined">construction</span>Käytännön tekeminen</a></li>
+                    <li><a href="#harrastukset"><span class="material-symbols-outlined">exercise</span>Harrastukset</a></li>
+                    <li><a href="/cv/"><span class="material-symbols-outlined">description</span>CV</a></li>
+                    <li><a href="/blogi/"><span class="material-symbols-outlined">article</span>Blogi</a></li>
+                    <li><a href="#yhteystiedot"><span class="material-symbols-outlined">mail</span>Yhteystiedot</a></li>
+                </ul>
+            </nav><!--nav end-->
+
+            <main>
+                <section id="esittely">
+                    <h2><span class="material-symbols-outlined">waving_hand</span>Esittely</h2>
+                    <h3>Tervetuloa portfoliooni</h3>
+                    <p class="cta-links">
+                        <a href="/cv/" class="cta-link">Näytä CV (ansioluettelo)</a>
+                        <a href="#kaytannon-tekeminen" class="cta-link cta-secondary">Tutustu projekteihin</a>
+                    </p>
+                    
+                    <div class="esittely-wrap">
+                        <p>Hei! Olen Topi Autio, tieto- ja viestintätekniikan insinööriopiskelija Jyväskylän ammattikorkeakoulusta (JAMK), jossa suuntaudun kyberturvallisuuteen ja verkkoinfrastruktuuriin. Etsin tällä hetkellä harjoittelupaikkaa, kesätöitä tai junior-tason työpaikkaa järjestelmähallinnan, tietoverkkojen tai kyberturvallisuuden parista.</p>
+                        
+                        <p>Olen luonteeltani <strong>järjestelmällinen ja tehokas ongelmanratkaisija</strong>. Minulla on aitoa kiinnostusta ja käytännön kokemusta järjestelmähallinnasta (mukaan lukien Linux- ja Windows Server -palvelinympäristöt, Active Directory, Samba ja FOG) sekä tietoverkoista (kuten DNS, DHCP, reitittimet ja lähiverkkoratkaisut). Lisäksi kehitän jatkuvasti osaamistani kyberturvallisuuden alueella itseopiskelun (kuten TryHackMe, jossa kuulun parhaaseen 3 %:iin) sekä käytännön kokeilujen kautta.</p>
+                        
+                        <p>Työskentelen mielelläni hands-on-tehtävissä, joissa voin yhdistää teknisen analyysin ja käytännön ratkaisujen rakentamisen. Pystyn tuomaan välitöntä hyötyä lähituessa ja ylläpidossa aiemman työkokemukseni (Istekki, Keuruun kaupunki) sekä puolustusvoimien VBS4-sysadmin-erityistehtävän ansiosta. Kutsun sinut tutustumaan CV-sivuuni tai alta löytyviin käytännön projekteihini, ja ottamaan yhteyttä!</p>
+                    </div>
+                </section><!--esittely end-->
+
+                <section id="portfolio">
+                    <h2><span class="material-symbols-outlined">diamond</span>Portfolio</h2>
+                        <section>
+                            <h3>Esittely</h3>
+                            
+                            <p>Motivoitunut ja nopeasti oppiva tieto- ja viestintätekniikan osaaja. Käytännön kokemusta järjestelmien ylläpidosta, teknisestä tuesta ja sisällöntuotannosta. Valmistunut elektroniikka-asentajaksi ja kehittänyt kyberturva- ja infraosaamista itseopiskelulla (TryHackMe) sekä varusmiespalveluksessa.</p>
+                        </section>
+                        
+                        <section>
+                            <h3>Työkokemus (valikoidut)</h3>
+                            
+                            <h4>VBS4 Järjestelmän Ylläpitäjä (Varusmiespalvelus, erityistehtävä)</h4>
+                            <p><em>Ilmasotakoulu, Puolustusvoimat, Tikkakoski — 04.03.2024 – 18.09.2024</em></p>
+                            <p>Sisällön tuottaminen ja ylläpito VBS4-simulaattoriin; koulutusskenaariot, lisäosat ja dokumentaatio.
+                            Simulaattori- ja luokkatilan tekninen ylläpito, palvelimet (Linux Ubuntu, Windows Server) ja palvelut (DHCP, DNS, AD, Samba, FOG).
+                            Verkkoarkkitehtuurin uudistus, tiimin koulutus ja tekninen tuki koulutustapahtumissa.</p>
+                            
+
+                            <h4>Kartoittaja (Harjoittelija)</h4>
+                            <p><em>Keuruun kaupunki / Kunnallistekniikka — 02.10.2023 – 22.12.2023</em></p>
+                            <p>Kenttä- ja paikkatietotyöt ArcGIS Pro -ohjelmistolla, dokumentointi ja tietojen päivitys kaupungin paikkatietojärjestelmään.</p>
+
+                            <h4>Lähitukihenkilö & IT-tukihenkilö (Harjoittelut)</h4>
+                            <p><em>Istekki Oy, Jyväskylä; Keuruun kaupunki — 2022</em></p>
+                            <p>Työasemien elinkaaripäivitykset, käyttöönotot, laitehallinta (Intune, AirWatch, MECM) ja AD-työt sekä loppukäyttäjätuki.</p>
+                        </section>
+
+                        <section>
+                            <h3>Koulutus</h3>
+                            <p><strong>Insinööri, Tieto- ja viestintätekniikka</strong> — Jyväskylän ammattikorkeakoulu (18.08.2025 – ). Erikoistuminen kyberturvallisuuteen</p>
+                            <p><strong>Tieto- ja viestintätekniikan perustutkinto, Elektroniikka-asentaja</strong> — Gradia Jyväskylä (10.08.2020 – 10.02.2023). Painotettu keskiarvo: 4,49. Sisältää web-ohjelmoinnin opintoja ja projektityön.</p>
+                        </section>
+
+                        <section>
+                            <h3>Sertifikaatit & Kurssit</h3>
+                            
+                            <p>TryHackMe: Complete Beginner, Web Fundamentals, Jr Penetration Tester, Cyber Security 101 ym.</p>
+                            <p>eOppiva: Tietosuojan ABC (julkishallinnon henkilöstölle)</p>
+                            <p>Gradia-pätevyyskortit: Sähkötyöturvallisuuskortti (SFS 6002), Tulityökortti, Työturvallisuuskortti, Ensiapu 8h</p>
+                            
+                        </section>
+
+                        <section>
+                            <h3>Osaaminen</h3>
+                            <p>Palvelimet ja verkot: Linux Ubuntu Server, Windows Server, DHCP, DNS, Active Directory, Samba, FOG</p>
+                            <p>Virtualisointi & kontit: Docker; tietokannat: MySQL, MongoDB</p>
+                            <p>Kyberturvallisuus: penetraatiotestaus (TryHackMe), työkalut kuten Nmap, Metasploit, Burp Suite, Wireshark, SQLMap</p>
+                            <p>Työkalut: GitLab, Visual Studio Code, GIMP, Putty/SSH, Packet Tracer, MS Office</p>
+
+                        </section>
+
+                </section><!--portfolio end-->
+                
+                <section id="kaytannon-tekeminen">
+                    <h2><span class="material-symbols-outlined">construction</span>Käytännön tekeminen</h2>
+                    <p>Tässä on esiteltynä joitakin konkreettisia teknisiä projekteja ja osaamisalueitani, joita kehitän aktiivisesti vapaa-ajallani ja opinnoissani:</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3><span class="material-symbols-outlined">dns</span>Kotipalvelin &amp; Self-hosting</h3>
+                            <p>Ylläpidän omaa TrueNAS Scale -pohjaista kotipalvelintani (Intel N100), johon on määritetty Nextcloud-pilvipalvelu tiedostojakoa ja Samba-verkkojakoja varten. Kotiverkon tietoturvaa ja etäyhteyksiä hallitaan luotettavalla Tailscale VPN -verkolla sekä GL.iNET Flint 2 -reitittimellä.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">TrueNAS</span>
+                                <span class="project-tag">Tailscale</span>
+                                <span class="project-tag">Nextcloud</span>
+                                <span class="project-tag">Samba</span>
+                                <span class="project-tag">Intel N100</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3><span class="material-symbols-outlined">security</span>TryHackMe &amp; Kyberturvallisuus</h3>
+                            <p>Harjoittelen penetraatiotestausta ja tietoturvan perusteita TryHackMe-alustalla. Olen globaalisti parhaassa 3 %:ssa (yli 170 suoritettua huonetta). Olen suorittanut Jr Penetration Tester-, Web Fundamentals- ja Cyber Security 101 -opintopolut ja käytän sujuvasti työkaluja kuten Nmap, Metasploit, Burp Suite ja Wireshark.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">TryHackMe</span>
+                                <span class="project-tag">Nmap</span>
+                                <span class="project-tag">Burp Suite</span>
+                                <span class="project-tag">Metasploit</span>
+                                <span class="project-tag">Wireshark</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3><span class="material-symbols-outlined">lan</span>Simulaattoriverkko (VBS4-sysadmin)</h3>
+                            <p>Osana Ilmasotakoulun erityistehtävää uudistin itsenäisesti simulaattoriluokan lähiverkkorakenteen ja ylläpidin siihen liittyviä Linux- (Ubuntu) ja Windows Server -ympäristöjä (Active Directory, DHCP, DNS, Samba) sekä FOG-palvelinta työasemien nopeaa käyttöönottoa varten.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Linux</span>
+                                <span class="project-tag">Windows Server</span>
+                                <span class="project-tag">Active Directory</span>
+                                <span class="project-tag">DNS/DHCP</span>
+                                <span class="project-tag">FOG Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </section><!--kaytannon-tekeminen end-->
+                
+                <section id="harrastukset">
+                    <h2><span class="material-symbols-outlined">exercise</span>Harrastukset</h2>
+                    
+                    <p>Vapaa-ajallani syvennän osaamistani kyberturvallisuuden parissa erityisesti <strong>TryHackMe</strong>-alustalla. Harjoittelen penetraatiotestausta, haavoittuvuuksien tunnistamista ja erilaisten tietoturvatyökalujen käyttöä käytännönläheisten harjoitusten kautta. Pidän jatkuvaa oppimista tärkeänä, ja olen hiljattain lukenut Mikko Hyppösen <cite>Internet</cite>-kirjan, joka tarjosi hyvän katsauksen internetin kehitykseen, tietoturvan historiaan ja modernien uhkien toimintamalleihin.</p>
+
+                    <p>Liikunta ja ulkoilu ovat minulle myös tärkeitä. Harrastan <strong>sähköpyöräilyä</strong> ja talvisin <strong>kävelyä</strong>, jotka auttavat ylläpitämään peruskuntoa ja tarjoavat selkeän vastapainon tekniselle tekemiselle. Patikointi on minulle mieluisa tapa viettää aikaa luonnossa, sillä se yhdistää fyysisen aktiivisuuden, ympäristön havainnoinnin ja rauhallisen etenemisen.</p>
+
+                    <p>Vietän vapaa-aikaani myös pelien parissa. <strong>Civilization VI</strong> tarjoaa minulle pitkäjänteistä strategista haastetta ja mahdollisuuden syventyä järjestelmälliseen päätöksentekoon. <strong>Team Fortress 2</strong> puolestaan toimii kevyempänä, nopeatempoisempana vastapainona, jossa korostuu tiimipohjainen pelaaminen ja reagointikyky.</p>
+                                        
+                    <p>Harrastan lisäksi <strong>self-hostingia</strong>, sillä pidän omien palveluiden ylläpitämisestä teknisesti palkitsevana ja kontrollia tarjoavana vaihtoehtona. Self-hostaan tällä hetkellä <strong>Tailscale-, Nextcloud- ja Samba-palveluita</strong>. Palvelinympäristöni perustuu Topton N8 -emolevyyn, jossa on <strong>Intel N100</strong> -prosessori, ja käyttöjärjestelmänä toimii <strong>TrueNAS Scale</strong>. Kotiverkkoani varten käytän <strong>GL.iNET Flint 2</strong> -reititintä, joka tukee luotettavasti palvelinten ja etäyhteyksien kokoonpanoja. Self-hosting antaa minulle mahdollisuuden ylläpitää omaa infrastruktuuria, testata uusia palveluita ja kehittää järjestelmähallinnan osaamistani käytännössä.</p>
+                    </div>
+                </section><!--harrastukset end-->
+
+            </main><!--main end-->
+        
+            <footer id="yhteystiedot">
+            <p>Email: <a href="mailto:ah2558@student.jamk.fi">ah2558@student.jamk.fi</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/topi-a-558796240/" target="_blank" rel="noopener noreferrer">topi-a-558796240</a></p>
+            <p>GitHub: <a href="https://github.com/topiautio" target="_blank" rel="noopener noreferrer">topiautio</a></p>
+            <p>CV: <a href="/cv/">Avaa CV-sivu</a></p>
+            </footer>
+
+        </div><!--page end-->
+    </body>
+</html>

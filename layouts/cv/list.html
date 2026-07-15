@@ -1,1 +1,648 @@
-{{- readFile "cv/index.html" | safeHTML -}}
+{{- /* Hugo source template migrated from legacy static HTML. Keep rendered markup stable while removing external file-path coupling. */ -}}
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topi Autio | CV ja ansioluettelo (ICT, kyberturvallisuus)</title>
+<meta name="description" content="Topi Aution CV: ICT-insinööriopiskelija (JAMK), työkokemus IT-tuesta ja järjestelmäylläpidosta, osaaminen kyberturvallisuudessa, Linuxissa, verkoissa ja automaatiossa.">
+<meta name="author" content="Topi Autio">
+<meta name="keywords" content="Topi Autio, CV, ansioluettelo, ICT, insinööri, kyberturvallisuus, Linux, IT-tuki, JAMK, Jyväskylä">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://topiautio.fi/cv/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Topi Autio | CV ja ansioluettelo">
+<meta property="og:description" content="Topi Aution CV: ICT-insinööriopiskelija (JAMK), IT-tuki, järjestelmäylläpito, kyberturvallisuus ja Linux-osaaminen.">
+<meta property="og:url" content="https://topiautio.fi/cv/">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Topi Autio">
+<meta property="og:locale" content="fi_FI">
+<meta property="og:image" content="https://topiautio.fi/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topi Autio | CV ja ansioluettelo">
+<meta name="twitter:description" content="Topi Aution CV: ICT-insinööriopiskelija (JAMK), IT-tuki, järjestelmäylläpito, kyberturvallisuus ja Linux-osaaminen.">
+<meta name="twitter:url" content="https://topiautio.fi/cv/">
+<meta name="twitter:image" content="https://topiautio.fi/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Topi Autio",
+  "url": "https://topiautio.fi",
+  "email": "topi@topiautio.fi",
+  "jobTitle": "ICT-insinööriopiskelija",
+  "alumniOf": "Jyväskylän ammattikorkeakoulu",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jyväskylä",
+    "addressCountry": "FI"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/topi-a-558796240/",
+    "https://github.com/topiautio",
+    "https://tryhackme.com/p/TopiAutio"
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --ink: #1A1A18;
+    --ink-light: #5A5A54;
+    --accent: #1B4332;
+    --accent-mid: #2D6A4F;
+    --accent-light: #D8F3DC;
+    --rule: #E0DDD6;
+    --tag-bg: #ECEAE4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+
+  .top-nav {
+    margin-bottom: 18px;
+  }
+
+  .top-nav a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 7px 10px;
+  }
+
+  .top-nav a:hover {
+    border-color: var(--accent-mid);
+    color: var(--accent);
+  }
+
+  /* HEADER */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 36px;
+  }
+
+  .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+
+  .title-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent-mid);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .contacts {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contacts a, .contacts span {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-light);
+    text-decoration: none;
+  }
+
+  .contacts a:hover { color: var(--accent-mid); }
+
+  /* SUMMARY */
+  .summary {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 36px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .summary strong {
+    font-weight: 600;
+    color: #A7F3C0;
+  }
+
+  /* LAYOUT */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+  }
+
+  /* SECTION */
+  .section { margin-bottom: 32px; }
+
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ENTRY */
+  .entry {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .entry:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 2px;
+  }
+
+  .entry-role {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .entry-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink-light);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .entry-org {
+    font-size: 12.5px;
+    color: var(--accent-mid);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .entry-bullets {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .entry-bullets li {
+    font-size: 13px;
+    color: var(--ink-light);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.55;
+  }
+
+  .entry-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent-mid);
+    font-size: 11px;
+  }
+
+  /* ACHIEVEMENT HIGHLIGHT */
+  .achievement {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent-mid);
+    border-radius: 0 4px 4px 0;
+    padding: 6px 10px;
+    font-size: 12.5px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+
+  /* SKILLS SIDEBAR */
+  .skill-group {
+    margin-bottom: 20px;
+  }
+
+  .skill-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 8px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .tag {
+    background: var(--tag-bg);
+    border-radius: 3px;
+    padding: 3px 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+  }
+
+  .tag.highlight {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* THM BADGE */
+  .thm-badge {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+
+  .thm-badge .thm-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #A7F3C0;
+    margin-bottom: 6px;
+  }
+
+  .thm-stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 3px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .thm-stat strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* CERT LIST */
+  .cert-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .cert-list li {
+    font-size: 12.5px;
+    color: var(--ink-light);
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .cert-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-mid);
+    font-size: 10px;
+    top: 1px;
+  }
+
+  .cert-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #AAA;
+    margin-left: 4px;
+  }
+
+  /* LANGUAGE */
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+
+  .lang-row:last-child { border-bottom: none; }
+
+  .lang-level {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink-light);
+  }
+
+  /* PROJECTS */
+  .project-item {
+    margin-bottom: 12px;
+  }
+
+  .project-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .project-desc {
+    font-size: 12px;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  /* PRINT */
+@media print {
+    body { background: white; }
+    .page { padding: 20px 24px; max-width: 100%; }
+    .top-nav { display: none; }
+    .two-col { grid-template-columns: 1fr 260px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="top-nav" aria-label="Sivunavigaatio">
+    <a href="/">← Takaisin etusivulle</a>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <h1 class="name">Topi Autio</h1>
+      <div class="title-tag">ICT Engineering Student &amp; Cybersecurity Enthusiast</div>
+    </div>
+    <div class="contacts">
+      <span>Jyväskylä</span>
+      <a href="mailto:topi@topiautio.fi">topi@topiautio.fi</a>
+      <a href="https://linkedin.com/in/topi-a-558796240">linkedin.com/in/topi-a</a>
+      <a href="https://github.com/topiautio">github.com/topiautio</a>
+      <a href="https://tryhackme.com/p/TopiAutio">tryhackme.com/p/TopiAutio</a>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    ICT-insinööriopiskelija (JAMK), jolla <strong>vahva käytännön tausta</strong> Linux-järjestelmien ylläpidosta, kyberturvallisuudesta ja IT-tuesta. Kokemusta palvelinkonfiguroinnista varusmiespalveluksen erityistehtävässä sekä IT-lähituesta useissa harjoittelupaikoissa. Erityinen kiinnostus kyberturvallisuuden suuntaan — <strong>TryHackMe Top 3%</strong>, Capability Score <strong>58 (Junior Security Professional)</strong> sekä viisi learning path -kokonaisuutta suoritettuina. Etsin mahdollisuutta hyödyntää ja kasvattaa osaamistani käytännön IT-tehtävissä.
+  </div>
+
+  <div class="two-col">
+    <div class="main">
+
+      <!-- TYÖKOKEMUS -->
+      <section class="section">
+        <h2 class="section-title">Työkokemus</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-role">VBS4 Järjestelmän Ylläpitäjä</div>
+            <div class="entry-date">03/2024 – 09/2024</div>
+          </div>
+          <div class="entry-org">Ilmasotakoulu, Puolustusvoimat · Tikkakoski</div>
+          <div class="achievement">Uudisti Ilmasotakoulun VBS-luokan verkkoarkkitehtuurin itsenäisesti</div>
+          <ul class="entry-bullets">
+            <li>Konfiguroi Linux Ubuntu Server- ja Windows Server -ympäristöt sekä verkkopalvelut (DHCP, DNS, Active Directory, Samba, FOG)</li>
+            <li>Vastasi VBS4-luokan teknisestä ylläpidosta, koulutusskenaarioiden rakentamisesta ja dokumentaatiosta</li>
+            <li>Koulutti seuraavan saapumiserän ylläpitäjät itsenäiseen työskentelyyn; toimi SYSADMIN-vastuuhenkilönä</li>
+            <li>Organisoi koulutustapahtumia ja tarjosi teknistä tukea KASI-sotaharjoituksissa</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-role">Kartoittaja (Harjoittelija)</div>
+            <div class="entry-date">10/2023 – 12/2023</div>
+          </div>
+          <div class="entry-org">Keuruun kaupunki / Kunnallistekniikka</div>
+          <ul class="entry-bullets">
+            <li>Kenttäkartoitus ja kaupunki-infrastruktuurin dokumentointi paikkatietojärjestelmään (ArcGIS Pro)</li>
+            <li>Päivitti viheralueiden rajaukset digitaaliseen muotoon ja laati selkeät käyttöohjeet henkilöstölle</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-role">Lähitukihenkilö (Harjoittelija)</div>
+            <div class="entry-date">08/2022 – 09/2022</div>
+          </div>
+          <div class="entry-org">Istekki Oy · Jyväskylä</div>
+          <ul class="entry-bullets">
+            <li>IT-lähituki asiakasympäristöissä: laite-elinkaaripäivitykset, ohjelmistoasennukset, vianmääritys</li>
+            <li>IT-laitekannan hallinta Efecte ITSM -järjestelmässä ja SER-jätteen tietoturvallinen käsittely</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-role">IT-tukihenkilö (Harjoittelija)</div>
+            <div class="entry-date">01/2022 – 04/2022</div>
+          </div>
+          <div class="entry-org">Keuruun kaupunki / Hallintopalvelut</div>
+          <ul class="entry-bullets">
+            <li>Päätelaitteiden (iPad, Android, Windows) käyttöönotto ja hallinta: Microsoft Intune, MECM, VMware AirWatch, Active Directory</li>
+            <li>Tekninen tuki kaupungin ja koulujen henkilöstölle sekä oppilaille</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- KOULUTUS -->
+      <section class="section">
+        <h2 class="section-title">Koulutus</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-role">Insinööri (AMK), Tieto- ja viestintätekniikka</div>
+            <div class="entry-date">2025 – nykyhetki</div>
+          </div>
+          <div class="entry-org">Jyväskylän ammattikorkeakoulu (JAMK)</div>
+          <ul class="entry-bullets">
+            <li>Suuntautuminen: kyberturvallisuus ja verkkoinfrastruktuuri</li>
+            <li>Vahvimmat opintokokonaisuudet: Linux, Tietoverkot, Kyberturvallisuus, Tietokannat, Skriptaaminen — kaikki arvosanalla 5/5</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-role">Elektroniikka-asentaja, ICT-perustutkinto</div>
+            <div class="entry-date">2020 – 2023</div>
+          </div>
+          <div class="entry-org">Gradia Jyväskylä</div>
+          <ul class="entry-bullets">
+            <li>Painotettu keskiarvo 4,49 · Lisäksi 60 osp vapaavalintaisia tutkinnon osia: ohjelmiston toteuttaminen sekä sähkö- &amp; automaatioala</li>
+          </ul>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- THM -->
+      <div class="thm-badge">
+        <div class="thm-title">TryHackMe</div>
+        <div class="thm-stat"><span>Sijoitus</span><strong>Top 3% (#47 303)</strong></div>
+        <div class="thm-stat"><span>Capability Score</span><strong>58 / 100 (Junior)</strong></div>
+        <div class="thm-stat"><span>Huoneita suoritettu</span><strong>171</strong></div>
+        <div class="thm-stat"><span>Pisin putki</span><strong>90 päivää</strong></div>
+        <div class="thm-stat"><span>Ansiomerkit</span><strong>27 kpl</strong></div>
+      </div>
+
+      <!-- KYBERTURVALLISUUS TAIDOT -->
+      <section class="section">
+        <h2 class="section-title">Kyberturvallisuus</h2>
+        <div class="skill-group">
+          <div class="tags">
+            <span class="tag highlight">Kyberturvallisuus</span>
+            <span class="tag highlight">Jr Penetration Tester</span>
+            <span class="tag highlight">Web Fundamentals</span>
+            <span class="tag">OWASP Top 10</span>
+            <span class="tag">Linux PrivEsc</span>
+            <span class="tag">Kryptologia</span>
+            <span class="tag">Riskienhallinta</span>
+          </div>
+        </div>
+        <div class="skill-group" style="margin-top: 10px;">
+          <div class="skill-group-title">Työkalut</div>
+          <div class="tags">
+            <span class="tag">Metasploit</span>
+            <span class="tag">Nmap</span>
+            <span class="tag">Burp Suite</span>
+            <span class="tag">Wireshark</span>
+            <span class="tag">SQLMap</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- IT-INFRA -->
+      <section class="section">
+        <h2 class="section-title">IT-infra & Verkot</h2>
+        <div class="tags">
+          <span class="tag highlight">Linux</span>
+          <span class="tag highlight">Windows</span>
+          <span class="tag highlight">Docker</span>
+          <span class="tag highlight">Active Directory</span>
+          <span class="tag highlight">DNS</span>
+          <span class="tag highlight">DHCP</span>
+          <span class="tag highlight">Tietoverkot</span>
+          <span class="tag">Windows Server</span>
+          <span class="tag">OSI-malli</span>
+          <span class="tag">Lähiverkon suunnittelu</span>
+          <span class="tag">Samba</span>
+          <span class="tag">VirtualBox</span>
+          <span class="tag">FOG</span>
+          <span class="tag">Cisco Packet Tracer</span>
+        </div>
+      </section>
+
+      <!-- TIETOKANNAT -->
+      <section class="section">
+        <h2 class="section-title">Tietokannat</h2>
+        <div class="tags">
+          <span class="tag highlight">SQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Tietokannan suunnittelu</span>
+        </div>
+      </section>
+
+      <!-- OHJELMOINTI -->
+      <section class="section">
+        <h2 class="section-title">Ohjelmointi & Skriptaus</h2>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Bash</span>
+          <span class="tag">PowerShell</span>
+          <span class="tag highlight">JavaScript</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">Git</span>
+          <span class="tag">SQF (VBS4)</span>
+        </div>
+      </section>
+
+      <!-- OMAT PROJEKTIT -->
+      <section class="section">
+        <h2 class="section-title">Omat projektit</h2>
+        <div class="project-item">
+          <div class="project-name"><a href="https://github.com/topiautio" style="color: var(--accent-mid); text-decoration: none;">github.com/topiautio</a></div>
+          <div class="project-desc">Kyberturvallisuuteen, automatisointiin ja Linux-ympäristöihin liittyviä henkilökohtaisia projekteja ja skriptejä.</div>
+        </div>
+        <div class="project-item">
+          <div class="project-name"><a href="https://topiautio.fi" style="color: var(--accent-mid); text-decoration: none;">topiautio.fi</a></div>
+          <div class="project-desc">Henkilökohtainen portfolio — projektiesimerkit ja lisätietoja osaamisesta. Rakennettu web-kehityksen opinnoissa.</div>
+        </div>
+      </section>
+
+      <!-- KIELET -->
+      <section class="section">
+        <h2 class="section-title">Kielet</h2>
+        <div class="lang-row"><span>Suomi</span><span class="lang-level">Äidinkieli</span></div>
+        <div class="lang-row"><span>Englanti</span><span class="lang-level">Erinomainen (C1)</span></div>
+        <div class="lang-row"><span>Ruotsi</span><span class="lang-level">Perustaidot</span></div>
+        <div class="lang-row"><span>Saksa</span><span class="lang-level">Perustaidot</span></div>
+      </section>
+
+      <!-- SERTIFIKAATIT -->
+      <section class="section">
+        <h2 class="section-title">Sertifikaatit</h2>
+        <ul class="cert-list">
+          <li>Jr Penetration Tester<span class="cert-date">02/2025</span></li>
+          <li>Web Fundamentals Path<span class="cert-date">02/2025</span></li>
+          <li>Complete Beginner Path<span class="cert-date">03/2025</span></li>
+          <li>Cyber Security 101<span class="cert-date">01/2025</span></li>
+          <li>SFS 6002 Sähkötyöturvallisuus</li>
+          <li>Tulityökortti</li>
+          <li>Työturvallisuuskortti</li>
+          <li>Ensiapu 8h</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
