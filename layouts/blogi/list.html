@@ -13,12 +13,12 @@
     <meta property="og:title" content="Topi Autio | Blogi">
     <meta property="og:description" content="Oppaat ja artikkelit ICT:stä, kyberturvallisuudesta ja järjestelmäylläpidosta.">
     <meta property="og:site_name" content="Topi Autio">
-    <meta property="og:url" content="https://topiautio.fi/blogi/">
+    <meta property="og:url" content="{{ .Permalink }}">
     <title>Topi Autio | Blogi</title>
-    <link rel="canonical" href="https://topiautio.fi/blogi/">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/blogi/blogi-tyylit.css">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "blogi/blogi-tyylit.css" | relURL }}">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- HUOM! Google Fontsin API vaatii, että icon_names -listan sanat EHDOTTOMASTI aakkosjärjestyksessä. Muuten palautuu Error 400. -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,calendar_month,description,diamond,exercise,schedule,waving_hand&display=swap" rel="stylesheet">
@@ -32,11 +32,11 @@
 
         <nav>
             <ul>
-                <li><a href="/#esittely"><span class="material-symbols-outlined">waving_hand</span>Esittely</a></li>
-                <li><a href="/#portfolio"><span class="material-symbols-outlined">diamond</span>Portfolio</a></li>
-                <li><a href="/#harrastukset"><span class="material-symbols-outlined">exercise</span>Harrastukset</a></li>
-                <li><a href="/cv/"><span class="material-symbols-outlined">description</span>CV</a></li>
-                <li><a href="/blogi/" class="active"><span class="material-symbols-outlined">article</span>Blogi</a></li>
+                <li><a href="{{ site.Home.RelPermalink }}#esittely"><span class="material-symbols-outlined">waving_hand</span>Esittely</a></li>
+                <li><a href="{{ site.Home.RelPermalink }}#portfolio"><span class="material-symbols-outlined">diamond</span>Portfolio</a></li>
+                <li><a href="{{ site.Home.RelPermalink }}#harrastukset"><span class="material-symbols-outlined">exercise</span>Harrastukset</a></li>
+                <li><a href="{{ "cv/" | relURL }}"><span class="material-symbols-outlined">description</span>CV</a></li>
+                <li><a href="{{ "blogi/" | relURL }}" class="active"><span class="material-symbols-outlined">article</span>Blogi</a></li>
             </ul>
         </nav>
 
@@ -48,17 +48,18 @@
 
             <section id="blog-posts">
                 <div class="posts-list">
-                    <!-- Post items are generated here -->
+                    {{ range where .RegularPagesRecursive "Draft" false }}
                     <article class="post-card">
                         <h3>
-                            <a href="/blogi/julkaisut/snapchat-tietoturva/">Snapchatin tietoturva ja yksityisyys: dokumentoidut ongelmat</a>
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                         </h3>
                         <div class="post-meta">
-                            <span class="post-date"><span class="material-symbols-outlined">calendar_month</span>10.06.2026</span>
-                            <span class="post-reading-time"><span class="material-symbols-outlined">schedule</span>8 min luku</span>
+                            <span class="post-date"><span class="material-symbols-outlined">calendar_month</span>{{ .Date | time.Format "02.01.2006" }}</span>
+                            <span class="post-reading-time"><span class="material-symbols-outlined">schedule</span>{{ .Params.readingTime }}</span>
                         </div>
-                        <p>Kriittinen katsaus Snapchatin tietoturvaan ja yksityisyyteen — FTC:n päätökset, oikeusasiakirjat ja nimettyjen toimittajien raportit.</p>
+                        <p>{{ .Summary }}</p>
                     </article>
+                    {{ end }}
 
                     <article class="post-card">
                         <h3>
@@ -91,7 +92,7 @@
             <p>Email: <a href="mailto:ah2558@student.jamk.fi">ah2558@student.jamk.fi</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/topi-a-558796240/" target="_blank" rel="noopener noreferrer">topi-a-558796240</a></p>
             <p>GitHub: <a href="https://github.com/topiautio" target="_blank" rel="noopener noreferrer">topiautio</a></p>
-            <p>CV: <a href="/cv/">Avaa CV-sivu</a></p>
+            <p>CV: <a href="{{ "cv/" | relURL }}">Avaa CV-sivu</a></p>
         </footer>
 
     </div>

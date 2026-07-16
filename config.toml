@@ -1,4 +1,5 @@
-baseURL = "https://topiautio.fi/"
+baseURL = "https://topiautio.fi/hugo/"
+publishDir = "public/hugo"
 title = "Topi Autio"
 defaultContentLanguage = "fi"
 disableHugoGeneratorInject = true
@@ -18,7 +19,7 @@ disableKinds = ["taxonomy", "term"]
   tryhackme = "https://tryhackme.com/p/TopiAutio"
 
 [permalinks]
-  blogi = "/blogi/:slug/"
+  blogi = "/blogi/julkaisut/:slug/"
 
 [[menus.main]]
   name = "Esittely"
