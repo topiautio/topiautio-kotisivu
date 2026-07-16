@@ -1,5 +1,5 @@
 {{- /* Hugo source template migrated from legacy static HTML. Keep rendered markup stable while removing external file-path coupling. */ -}}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fi">
     <head>
         <meta charset="UTF-8" />
@@ -35,7 +35,7 @@
         <!-- Preload kriittiset fontit -->
         <link
             rel="preload"
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap"
             as="style"
         />
         <link
@@ -45,7 +45,7 @@
         />
         <!-- Fontit ei estä renderöintiä -->
         <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap"
             rel="stylesheet"
             media="print"
             onload="this.media='all'"
@@ -64,7 +64,7 @@
             onload="this.media='all'"
         />
         <noscript>
-            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
             <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
             <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap" rel="stylesheet" />
         </noscript>
@@ -272,52 +272,22 @@
     </head>
 
     <body>
+        <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
         <div id="page">
-            <header>
-                <h1>Topi Autio</h1>
-            </header>
-
-            <nav>
-                <ul>
-                    <li>
-                        <a href="{{ site.Home.RelPermalink }}#esittely"
-                            ><span class="material-symbols-outlined"
-                                >waving_hand</span
-                            >Esittely</a
-                        >
-                    </li>
-                    <li>
-                        <a href="{{ site.Home.RelPermalink }}#portfolio"
-                            ><span class="material-symbols-outlined"
-                                >diamond</span
-                            >Portfolio</a
-                        >
-                    </li>
-                    <li>
-                        <a href="{{ site.Home.RelPermalink }}#harrastukset"
-                            ><span class="material-symbols-outlined"
-                                >exercise</span
-                            >Harrastukset</a
-                        >
-                    </li>
-                    <li>
-                        <a href="{{ "cv/" | relURL }}"
-                            ><span class="material-symbols-outlined"
-                                >description</span
-                            >CV</a
-                        >
-                    </li>
-                    <li>
-                        <a href="{{ "blogi/" | relURL }}"
-                            ><span class="material-symbols-outlined"
-                                >article</span
-                            >Blogi</a
-                        >
-                    </li>
-                </ul>
+            <nav class="site-nav" aria-label="Päänavigaatio">
+                <a class="site-mark" href="{{ site.Home.RelPermalink }}" aria-label="Topi Autio, etusivu">TA</a>
+                <div class="nav-scroll">
+                    <ul>
+                        <li><a href="{{ site.Home.RelPermalink }}#esittely">Esittely</a></li>
+                        <li><a href="{{ site.Home.RelPermalink }}#portfolio">Projektit</a></li>
+                        <li><a href="{{ "cv/" | relURL }}">CV</a></li>
+                        <li><a href="{{ "blogi/" | relURL }}" class="active">Blogi</a></li>
+                        <li><a href="{{ site.Home.RelPermalink }}#yhteystiedot">Yhteystiedot</a></li>
+                    </ul>
+                </div>
             </nav>
 
-            <main>
+            <main id="sisalto">
                 <article class="blog-post">
                     <div class="post-back">
                         <a href="{{ "blogi/" | relURL }}"
@@ -365,6 +335,7 @@
 
                         <nav
                             class="toc"
+                            aria-label="Sisällysluettelo"
                             style="
                                 background: var(--surface-strong);
                                 border: 1px solid var(--border);
@@ -1162,7 +1133,7 @@
                     </footer>
                 </article>
 
-                <nav class="post-nav">
+                <nav class="post-nav" aria-label="Kirjoitusten navigaatio">
                     <div class="post-nav-item prev">
                         <a href="{{ "blogi/" | relURL }}">← Takaisin blogiin</a>
                     </div>
@@ -1177,31 +1148,16 @@
             </main>
 
             <footer id="yhteystiedot">
-                <p>
-                    Email:
-                    <a href="mailto:ah2558@student.jamk.fi"
-                        >ah2558@student.jamk.fi</a
-                    >
-                </p>
-                <p>
-                    LinkedIn:
-                    <a
-                        href="https://www.linkedin.com/in/topi-a-558796240/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >topi-a-558796240</a
-                    >
-                </p>
-                <p>
-                    GitHub:
-                    <a
-                        href="https://github.com/topiautio"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >topiautio</a
-                    >
-                </p>
-                <p>CV: <a href="{{ "cv/" | relURL }}">Avaa CV-sivu</a></p>
+                <div>
+                    <p class="section-index">OTA YHTEYTTÄ</p>
+                    <h2>Jäikö jokin kiinnostamaan?</h2>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:topi@topiautio.fi">topi@topiautio.fi</a>
+                    <a href="https://www.linkedin.com/in/topi-a-558796240/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                    <a href="https://github.com/topiautio" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                </div>
+                <p class="footer-note">© {{ now.Year }} Topi Autio · Jyväskylä</p>
             </footer>
         </div>
     </body>
