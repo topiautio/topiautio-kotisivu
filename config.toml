@@ -7,8 +7,8 @@ disableKinds = ["taxonomy", "term"]
 
 [languages]
   [languages.fi]
-    languageName = "Suomi"
-    languageCode = "fi-FI"
+    label = "Suomi"
+    locale = "fi-FI"
 
 [params]
   author = "Topi Autio"
