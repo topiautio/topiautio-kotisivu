@@ -1,2 +1,1220 @@
-{{- $legacyPath := printf "blogi/julkaisut/%s/index.html" .File.BaseFileName -}}
-{{- readFile $legacyPath | safeHTML -}}
+{{- /* Hugo source template migrated from legacy static HTML. Keep rendered markup stable while removing external file-path coupling. */ -}}
+<!doctype html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Kriittinen katsaus Snapchatin tietoturvaan ja yksityisyyteen — FTC:n päätökset, oikeusasiakirjat ja nimettyjen toimittajien raportit."
+        />
+        <meta
+            name="keywords"
+            content="snapchat, tietoturva, yksityisyys, FTC, BIPA, My AI, sosiaalinen media, kyberturvallisuus, Snap Inc"
+        />
+        <meta name="author" content="Topi Autio" />
+        <meta name="robots" content="index, follow" />
+        <meta
+            property="og:title"
+            content="Snapchatin tietoturva ja yksityisyys: dokumentoidut ongelmat | Topi Autio"
+        />
+        <meta
+            property="og:description"
+            content="Kriittinen katsaus Snapchatin tietoturvaan ja yksityisyyteen — FTC:n päätökset, oikeusasiakirjat ja nimettyjen toimittajien raportit."
+        />
+        <meta
+            property="og:url"
+            content="https://topiautio.fi/blogi/julkaisut/snapchat-tietoturva/"
+        />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content="2026-06-10" />
+        <meta property="article:author" content="Topi Autio" />
+        <title>
+            Snapchatin tietoturva ja yksityisyys: dokumentoidut ongelmat | Topi
+            Autio
+        </title>
+        <link
+            rel="canonical"
+            href="https://topiautio.fi/blogi/julkaisut/snapchat-tietoturva/"
+        />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href="/blogi/blogi-tyylit.css" />
+        <link rel="stylesheet" href="/blogi/julkaisut/julkaisu-tyylit.css" />
+        <!-- Preload kriittiset fontit -->
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+            as="style"
+        />
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap"
+            as="style"
+        />
+        <!-- Fontit ei estä renderöintiä -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+            rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap"
+            rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
+        />
+        <!-- HUOM! Google Fontsin API vaatii, että icon_names -listan sanat EHDOTTOMASTI aakkosjärjestyksessä. -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap"
+            rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
+        />
+        <noscript>
+            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap" rel="stylesheet" />
+        </noscript>
+
+        <!-- Artikkelikohtaiset täydennystyylit (kutsutaan, .cite, .toc, .sources, .num) -->
+        <style>
+            .num {
+                display: inline-block;
+                color: var(--primary);
+                font-family: "JetBrains Mono", monospace;
+                font-size: 0.85em;
+                font-weight: 500;
+                background: rgba(96, 165, 250, 0.12);
+                border: 1px solid rgba(96, 165, 250, 0.35);
+                padding: 1px 8px;
+                border-radius: 6px;
+                margin-right: 0.5rem;
+                vertical-align: middle;
+            }
+            h2 .material-symbols-outlined {
+                color: var(--primary);
+                font-size: 1.3em;
+                vertical-align: -3px;
+                margin-right: 0.4rem;
+            }
+            a.cite {
+                color: var(--text);
+                text-decoration: none;
+                border-bottom: 1px dotted var(--primary);
+                transition: all 0.2s ease;
+                padding: 0 1px;
+                max-width: 100%;
+                display: inline;
+            }
+            a.cite:hover {
+                color: var(--primary);
+                border-bottom-style: solid;
+            }
+            a.cite::after {
+                content: " ↗";
+                font-size: 0.75em;
+                color: var(--primary);
+                margin-left: 1px;
+            }
+            .callout {
+                padding: 1rem 1.25rem;
+                background: var(--surface-strong);
+                border: 1px solid var(--border);
+                border-radius: 0.6rem;
+                margin: 1.5rem 0;
+            }
+            .callout-title {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-weight: 600;
+                margin-bottom: 0.6rem;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .callout-title .material-symbols-outlined {
+                font-size: 1.2rem;
+            }
+            .callout p {
+                margin-bottom: 0.5rem;
+            }
+            .callout p:last-child {
+                margin-bottom: 0;
+            }
+            .callout.warn {
+                border-left: 3px solid #ff6b6b;
+            }
+            .callout.warn .callout-title {
+                color: #ff6b6b;
+            }
+            .callout.info {
+                border-left: 3px solid var(--primary);
+            }
+            .callout.info .callout-title {
+                color: var(--primary);
+            }
+            .callout.fact {
+                border-left: 3px solid #ffd166;
+            }
+            .callout.fact .callout-title {
+                color: #ffd166;
+            }
+            .caveat {
+                border: 1px dashed var(--border);
+                border-radius: 0.6rem;
+                padding: 0.9rem 1.1rem;
+                margin: 1.5rem 0;
+                color: var(--text-muted);
+                font-size: 0.95rem;
+            }
+            .caveat strong {
+                color: var(--primary);
+            }
+            .toc {
+                position: static !important;
+                background: var(--surface-strong);
+                border: 1px solid var(--border);
+                border-radius: 0.6rem;
+                padding: 1.1rem 1.4rem;
+                margin: 1.5rem 0 2rem;
+                backdrop-filter: none !important;
+                box-shadow: none !important;
+            }
+            .post-content ul,
+            .post-content ol {
+                list-style-type: disc;
+                padding-left: 1.5rem;
+                display: block;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                gap: 0;
+            }
+            .post-content ul li,
+            .post-content ol li {
+                display: list-item;
+                padding: 0;
+                margin-bottom: 0.5rem;
+            }
+            .post-content ul li a,
+            .post-content ol li a {
+                display: inline;
+                padding: 0;
+                text-align: left;
+            }
+            .post-content {
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+            }
+            .toc-title {
+                font-weight: 600;
+                margin-bottom: 0.8rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: var(--text-muted);
+            }
+            .toc-title .material-symbols-outlined {
+                font-size: 1.1rem;
+            }
+            .toc ol {
+                margin: 0;
+                padding-left: 1.4rem;
+            }
+            .toc a {
+                color: var(--text);
+                text-decoration: none;
+                transition: color 0.15s;
+            }
+            .toc a:hover {
+                color: var(--primary);
+            }
+            .sources {
+                background: var(--surface-strong);
+                border: 1px solid var(--border);
+                border-radius: 0.6rem;
+                padding: 1.4rem 1.6rem;
+                margin-top: 2.5rem;
+                font-size: 0.95rem;
+                color: var(--text-muted);
+            }
+            .sources h3 {
+                margin-top: 0;
+                color: var(--heading);
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 1.05rem;
+            }
+            .sources a {
+                color: var(--primary);
+                text-decoration: none;
+                border-bottom: 1px dotted var(--primary);
+            }
+            .sources a:hover {
+                border-bottom-style: solid;
+            }
+            hr {
+                border: none;
+                border-top: 1px solid var(--border);
+                margin: 2.5rem 0;
+            }
+            /* CLS: estä navin leveyden muutos ikonien latautuessa */
+            nav ul li {
+                min-width: 3.5rem;
+                white-space: nowrap;
+            }
+            /* CLS: estä footerin/pagerin siirtymä */
+            .post-nav, .blog-return {
+                contain: layout;
+            }
+            /* CLS: estä kuvien aiheuttama layout shift */
+            .post-content img {
+                content-visibility: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="page">
+            <header>
+                <h1>Topi Autio</h1>
+            </header>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/#esittely"
+                            ><span class="material-symbols-outlined"
+                                >waving_hand</span
+                            >Esittely</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/#portfolio"
+                            ><span class="material-symbols-outlined"
+                                >diamond</span
+                            >Portfolio</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/#harrastukset"
+                            ><span class="material-symbols-outlined"
+                                >exercise</span
+                            >Harrastukset</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/cv/"
+                            ><span class="material-symbols-outlined"
+                                >description</span
+                            >CV</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/blogi/"
+                            ><span class="material-symbols-outlined"
+                                >article</span
+                            >Blogi</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+
+            <main>
+                <article class="blog-post">
+                    <div class="post-back">
+                        <a href="/blogi/"
+                            ><span class="material-symbols-outlined"
+                                >arrow_back</span
+                            >Takaisin blogiin</a
+                        >
+                    </div>
+
+                    <header class="post-header">
+                        <h1>
+                            Snapchatin tietoturva ja yksityisyys: dokumentoidut
+                            ongelmat
+                        </h1>
+                        <div class="post-meta">
+                            <span class="post-date"
+                                ><span class="material-symbols-outlined"
+                                    >calendar_month</span
+                                >10.06.2026</span
+                            >
+                            <span class="post-reading-time"
+                                ><span class="material-symbols-outlined"
+                                    >schedule</span
+                                >8 min luku</span
+                            >
+                        </div>
+                    </header>
+
+                    <div class="post-content">
+                        <!-- MUOKKAA TÄMÄN JÄLKEEN -->
+
+                        <h2 id="intro"><span class="num">01</span>Johdanto</h2>
+                        <p>
+                            Snapchat on vuodesta 2011 markkinoinut viestejään
+                            "katoavina" ja sisältöään kertakäyttöisenä, ja
+                            yhtiö on asemoitunut yksityisempänä vaihtoehtona
+                            Facebookin ja Instagramin kaltaisille julkisille
+                            alustoille. Snapchatin markkinoinnin ja yhtiön
+                            todellisten käytäntöjen välillä on kuitenkin
+                            toistuvasti ollut ristiriita, ja useat
+                            viranomaiset sekä riippumattomat tutkijat ovat
+                            dokumentoineet sen.
+                        </p>
+                        <p>
+                            Käyn läpi FTC:n päätöksiä, oikeusasiakirjoja ja
+                            nimettyjen toimittajien raportteja.
+                        </p>
+
+                        <nav
+                            class="toc"
+                            style="
+                                background: var(--surface-strong);
+                                border: 1px solid var(--border);
+                                border-radius: 0.6rem;
+                                padding: 1.1rem 1.4rem;
+                                margin: 0 0 2rem;
+                            "
+                        >
+                            <div class="toc-title">
+                                <span class="material-symbols-outlined"
+                                    >list</span
+                                >
+                                Sisällysluettelo
+                            </div>
+                            <ol>
+                                <li><a href="#intro">Johdanto</a></li>
+                                <li>
+                                    <a href="#snapchatdb"
+                                        >Tietomurto 2013: 4,6 miljoonan
+                                        käyttäjän tiedot vuosivat</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#ftc"
+                                        >FTC 2014: Snapchat huijasi käyttäjiä,
+                                        ilman rahallista sakkoa</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#snaplion"
+                                        >SnapLion: työntekijät vakoilivat
+                                        käyttäjiä sisäisellä työkalulla</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#snapmap"
+                                        >Snap Map: vapaaehtoinen, mutta silti
+                                        arveluttava</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#osoitekirja"
+                                        >Osoitekirjan joukkokeruu oli FTC:n
+                                        mukaan petos</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#myai"
+                                        >My AI: OpenAI-pohjainen botti tuli
+                                        oletuksena käyttöön</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#bipa"
+                                        >Illinois BIPA: $35 miljoonan korvaus
+                                        kasvotiedoista</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#raha"
+                                        >Snapin liiketoiminta: $4,6 miljardia
+                                        mainosrahaa 2023</a
+                                    >
+                                </li>
+                                <li><a href="#yhteenveto">Yhteenveto</a></li>
+                            </ol>
+                        </nav>
+
+                        <h2 id="snapchatdb">
+                            <span class="num">02</span
+                            ><span class="material-symbols-outlined"
+                                >database</span
+                            >Tietomurto 2013: 4,6 miljoonan käyttäjän tiedot
+                            vuosivat
+                        </h2>
+                        <p>
+                            Joulukuussa 2013 nimettömät hakkerit julkaisivat
+                            verkkosivustolla nimeltä
+                            <strong>SnapchatDB!</strong> tietokannan, joka
+                            sisälsi
+                            <a
+                                href="https://www.theguardian.com/media/2014/jan/01/hackers-reveal-46m-mobile-numbers-snapchat"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                ><strong>4,6 miljoonan</strong>
+                                Snapchat-käyttäjän käyttäjänimet ja
+                                puhelinnumerot</a
+                            >
+                            (osin peitettyinä, kaksi viimeistä numeroa jätettiin
+                            näkyviin). Tietomurto hyödynsi Snapchatin Find
+                            Friends -ominaisuuden haavoittuvuutta.
+                        </p>
+                        <p>
+                            Haavoittuvuudesta oli varoitettu etukäteen.
+                            Australialainen tietoturvatutkijaryhmä
+                            <a
+                                href="https://gibsonsec.org/snapchat/"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                ><strong>Gibson Security</strong></a
+                            >
+                            julkaisi elokuussa 2013 raportin, jossa kuvattiin
+                            tarkalleen sama hyökkäysvektori. Snap Inc. kertoi
+                            tuolloin julkisesti, ettei haavoittuvuutta ollut.
+                            Käytännössä yhtiö korjasi sen kuitenkin nopeasti
+                            vuodon jälkeen.
+                        </p>
+
+                        <div class="callout fact">
+                            <div class="callout-title">
+                                <span class="material-symbols-outlined"
+                                    >lightbulb</span
+                                >Taustaa
+                            </div>
+                            <p>
+                                Vuodosta tuli yksi varhaisimmista esimerkeistä
+                                tilanteesta, jossa tietoturvatutkijoiden
+                                varoitus sivuutettiin ja seuraukset olivat
+                                massiiviset. Tapaus nosti esiin myös sen, että
+                                Snapchat säilytti puhelinnumeroita ja
+                                käyttäjänimiä palvelimillaan huolimatta
+                                brändilupauksestaan kevyestä, katoavasta
+                                viestinnästä. Snapchatin oman
+                                <a
+                                    href="https://help.snapchat.com/hc/en-us/articles/7012357237396-Frequently-Asked-Privacy-Questions"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="cite"
+                                    >tietosuojakäytännön</a
+                                >
+                                mukaan avaamattomat snapit voivat säilyä
+                                palvelimilla jopa 30 päivää.
+                            </p>
+                        </div>
+
+                        <p>
+                            4,6 miljoonan käyttäjän tiedot sisältänyt
+                            SnapchatDB!-sivusto ei ollut ainoa seuraus.
+                            <a
+                                href="https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                >FTC arvioi myöhemmin</a
+                            >, että haavoittuvuus altisti käyttäjät ”kalliille
+                            roskapostille, tietojenkalastelulle ja muulle
+                            ei-toivotulle yhteydenotolle”.
+                        </p>
+
+                        <h2 id="ftc">
+                            <span class="num">03</span>
+                            <span class="material-symbols-outlined">gavel</span
+                            >FTC 2014: Snapchat huijasi käyttäjiä, ilman
+                            rahallista sakkoa
+                        </h2>
+                        <p>
+                            Toukokuussa 2014 Yhdysvaltain
+                            <a
+                                href="https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                ><strong
+                                    >Federal Trade Commission (FTC)</strong
+                                ></a
+                            >
+                            hyväksyi yksimielisellä äänestyksellä (5–0)
+                            sovintoesityksen, jossa FTC syytti Snapchatia
+                            <strong>kuluttajien harhaanjohtamisesta</strong>
+                            kolmella eri tavalla:
+                        </p>
+                        <ol>
+                            <li>
+                                <strong>”Katoavien” viestien myytti.</strong>
+                                Kolmannen osapuolen sovellukset latasivat
+                                snappeja miljoonia kertoja, videokuvat säilyivät
+                                <em>salaamattomina</em> vastaanottajan
+                                laitteella, ja kuvakaappauksen tunnistus ei
+                                toiminut laitteissa, joissa oli iOS 7:ää
+                                vanhempi käyttöjärjestelmä. Lähettäjä ei siis
+                                saanut ilmoitusta kuvakaappauksesta.
+                            </li>
+                            <li>
+                                <strong
+                                    >Paikkatiedon keruu vastoin
+                                    käytäntöä.</strong
+                                >
+                                Snapchat keräsi Android-käyttäjien
+                                sijaintitietoja, vaikka sen tietosuojakäytäntö
+                                sanoi, ettei se ”seuraa tai käytä” tällaisia
+                                tietoja.
+                            </li>
+                            <li>
+                                <strong>Yhteystietojen joukkokeruu.</strong>
+                                iOS-käyttäjien rekisteröitymisen yhteydessä
+                                Snapchat keräsi <em>kaikki</em> käyttäjän
+                                osoitekirjan nimet ja puhelinnumerot, vaikka
+                                tietosuojakäytäntö väitti kerättävän vain
+                                sähköpostin, puhelinnumeron ja
+                                Facebook-tunnuksen.
+                            </li>
+                        </ol>
+
+                        <div class="callout warn">
+                            <div class="callout-title">
+                                <span class="material-symbols-outlined"
+                                    >error</span
+                                >Sakon sijaan valvontaa
+                            </div>
+                            <p>
+                                Sovinto
+                                <strong>ei sisältänyt rahallista sakkoa</strong
+                                >. Sen sijaan FTC määräsi Snapchatin 20 vuoden
+                                ajaksi riippumattoman yksityisyysasiantuntijan
+                                valvontaan ja kielsi yhtiötä jatkossa
+                                esittämästä vääriä tai harhaanjohtavia väitteitä
+                                käyttäjätietojensa yksityisyydestä tai
+                                turvallisuudesta. Sopimus on FTC:n muotoilema
+                                tuomio siitä, että Snapchatin markkinointi ja
+                                käytäntö olivat ristiriidassa, mutta yhtiölle ei
+                                koitunut välitöntä taloudellista rangaistusta.
+                            </p>
+                        </div>
+
+                        <p>
+                            Seuraamusmaksut olisivat teknisesti olleet
+                            mahdollisia: jokaisesta consent orderin
+                            rikkomuksesta voi seurata jopa
+                            <a
+                                href="https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                >$16 000 siviilisakko</a
+                            >. Alkuvaiheen sovinnossa niitä ei kuitenkaan
+                            asetettu.
+                        </p>
+
+                        <h2 id="snaplion">
+                            <span class="num">04</span
+                            ><span class="material-symbols-outlined"
+                                >vpn_key</span
+                            >SnapLion: työntekijät vakoilivat käyttäjiä
+                            sisäisellä työkalulla
+                        </h2>
+                        <p>
+                            Toukokuussa 2019
+                            <a
+                                href="https://www.vice.com/en/article/snapchat-employees-abused-data-access-spy-on-users-snaplion/"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                ><em>Motherboard</em> (VICE)</a
+                            >
+                            raportoi, että Snapchatilla oli sisäinen työkalu
+                            nimeltä <strong>SnapLion</strong>. Sen avulla
+                            työntekijät pääsivät käsiksi käyttäjätietoihin. Snap
+                            Inc. oli alun perin rakentanut työkalun
+                            lainvalvontapyyntöjen käsittelyä varten, mutta useat
+                            työntekijät käyttivät sitä väärin: he katselivat
+                            käyttäjien sijaintitietoja, hakivat ”kadonneita”
+                            snappeja ja selailivat puhelinnumeroita.
+                        </p>
+                        <p>
+                            Sisäpiirin lähteiden mukaan väärinkäytökset olivat
+                            toistuvia, eivät yksittäistapauksia. Snap Inc. ei
+                            aluksi kommentoinut asiaa julkisesti, mutta
+                            myöhemmin vahvisti, että ”pieni joukko
+                            työntekijöitä” oli erotettu tai kurinpidollisessa
+                            menettelyssä.
+                        </p>
+
+                        <div class="callout fact">
+                            <div class="callout-title">
+                                <span class="material-symbols-outlined"
+                                    >search</span
+                                >Miksi tämä on tärkeä tapaus
+                            </div>
+                            <p>
+                                SnapLion on konkreettinen todiste siitä, että
+                                <em>tekninen</em> kyky hakea ”kadonneita”
+                                viestejä on aina ollut Snap Inc.:n
+                                työntekijöiden ulottuvilla, riippumatta siitä,
+                                mitä sovelluksen käyttöliittymässä luvataan.
+                                Tämä kumoaa ”katoavuuden” markkinointilupauksen
+                                myös sisäisestä näkökulmasta.
+                            </p>
+                        </div>
+
+                        <h2 id="snapmap">
+                            <span class="num">05</span
+                            ><span class="material-symbols-outlined">map</span
+                            >Snap Map: vapaaehtoinen, mutta silti arveluttava
+                        </h2>
+                        <p>
+                            <a
+                                href="https://www.theverge.com/2017/6/23/15864552/snapchat-snap-map-privacy-threat"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                >Snap Map</a
+                            >
+                            julkaistiin kesäkuussa 2017. Ominaisuus jakaa
+                            käyttäjän sijainnin kartalla valitsemalle
+                            kaverijoukolle, reaaliajassa.
+                        </p>
+                        <p>
+                            Vastoin monia yksityisyyshuolia Snapchatin mukaan
+                            <strong
+                                >sijainnin jakaminen on oletuksena pois päältä
+                                ja vaatii käyttäjän oman aktivoinnin</strong
+                            >. Useat riippumattomat arviot vahvistavat tämän:
+                            ominaisuus ei lähetä sijaintia ilman käyttäjän
+                            suostumusta.
+                        </p>
+                        <p>
+                            Opt-in-malli ei kuitenkaan poista kaikkia
+                            huolenaiheita:
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>Sosiaalinen paine.</strong> Kun ystävät
+                                näkyvät kartalla, käyttäjä voi kokea painetta
+                                liittyä mukaan, erityisesti teini-ikäisten
+                                keskuudessa.
+                            </li>
+                            <li>
+                                <strong>Seurannan jatkuvuus.</strong> Kun
+                                sijainti on kerran aktivoitu, sovellus päivittää
+                                sitä taustalla, ellei käyttäjä erikseen aseta
+                                Ghost Mode -tilaan.
+                            </li>
+                            <li>
+                                <strong>Snap Inc. näkee silti kaiken.</strong>
+                                Vaikka käyttäjä on Ghost Modessa muilta
+                                käyttäjiltä, Snapchat kerää ja säilyttää
+                                sijaintitietoja <em>omaan</em> käyttöönsä. Tätä
+                                yhtiö ei ole kiistänyt.
+                            </li>
+                        </ul>
+
+                        <p>
+                            Käyttäjän valinta on siis se,
+                            <em>kenelle</em> sijainti näytetään, ei se,
+                            <em>kerääkö</em> Snapchat sitä.
+                        </p>
+
+                        <h2 id="osoitekirja">
+                            <span class="num">06</span
+                            ><span class="material-symbols-outlined"
+                                >contacts</span
+                            >Osoitekirjan joukkokeruu oli FTC:n mukaan petos
+                        </h2>
+                        <p>
+                            <a
+                                href="https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                >FTC:n 2014 sovintoasiakirjan</a
+                            >
+                            mukaan Snapchat pyysi iOS-käyttäjiä
+                            rekisteröitymisen yhteydessä ”antamaan
+                            matkapuhelinnumeronsa löytääkseen ystäviä
+                            Snapchatista”. Samaan aikaan sovellus kuitenkin
+                            latasi <strong>koko osoitekirjan</strong>, nimet ja
+                            numerot mukaan lukien, ja lähetti ne Snap Inc.:n
+                            palvelimille.
+                        </p>
+                        <p>
+                            Käytäntö jatkui siihen asti, kun Apple muutti iOS
+                            6:ssa käyttöoikeusmallia niin, että osoitekirjan
+                            käyttö vaatii erillisen suostumuksen. Vuosien ajan
+                            Snapchatilla oli pääsy miljoonien käyttäjien koko
+                            sosiaaliseen verkostoon, usein ilman näiden
+                            <em>kavereiden</em> suostumusta, koska tiedot
+                            tulivat ystävän osoitekirjasta.
+                        </p>
+
+                        <div class="callout info">
+                            <div class="callout-title">
+                                <span class="material-symbols-outlined"
+                                    >hub</span
+                                >Verkostoefekti
+                            </div>
+                            <p>
+                                Vaikka yksittäinen käyttäjä olisi kieltäytynyt
+                                jakamasta omia yhteystietojaan, hänen
+                                puhelinnumeronsa saattoi päätyä Snapchatin
+                                tietokantaan
+                                <em>toisen käyttäjän</em> osoitekirjan kautta.
+                                Tämä on yksi mobiilisovellusten yleisimmistä
+                                yksityisyysongelmista, ja FTC katsoi Snapchatin
+                                kohdalla, että tämä oli erityisen ongelmallista,
+                                koska käyttäjille ei kerrottu siitä.
+                            </p>
+                        </div>
+
+                        <h2 id="myai">
+                            <span class="num">07</span
+                            ><span class="material-symbols-outlined"
+                                >smart_toy</span
+                            >My AI: OpenAI-pohjainen botti tuli oletuksena
+                            käyttöön
+                        </h2>
+                        <p>
+                            Helmikuussa 2023 Snapchat esitteli
+                            <strong>My AI</strong> -ominaisuuden, joka perustuu
+                            OpenAI:n GPT-teknologiaan.
+                            <a
+                                href="https://techcrunch.com/2023/02/27/snapchat-launches-an-ai-chatbot-powered-by-openais-gpt-technology/"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                >TechCrunchin mukaan</a
+                            >
+                            käyttöönotto alkoi Snapchat+ -tilaajista ja laajeni
+                            myöhemmin kaikille.
+                        </p>
+                        <p>
+                            Maaliskuussa 2023
+                            <em>The Washington Postin</em> tekniikkakolumnisti
+                            <a
+                                href="https://www.washingtonpost.com/technology/2023/03/14/snapchat-myai/"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                ><strong>Geoffrey Fowler</strong></a
+                            >
+                            testasi My AI:ta useissa skenaarioissa. Kun Fowler
+                            kertoi olevansa 15-vuotias ja järjestävänsä
+                            syntymäpäiväjuhlia, botti ehdotti aluksi
+                            olutmerkkejä (lagereita, aleja, stouteja ja
+                            IPA-oluita) ja muistutti juomisiästä. Myöhemmin
+                            samassa keskustelussa se neuvoi pureskelemaan
+                            purukumia tai minttuja alkoholin hajun peittämiseen
+                            ja suositteli ilmanraikastimia, kynttilöitä tai
+                            eteerisiä öljyjä marihuanan hajun häivyttämiseen.
+                            Botti unohti samalla, että kyse oli lapsen
+                            syntymäpäiväjuhlista. Kun Fowler ilmoitti olevansa
+                            koululainen, botti kirjoitti 475 sanan esseen W.E.B.
+                            Du Boisista. Lisäksi se auttoi piilottamaan
+                            Snapchat-sovelluksen vanhemmilta, jotka halusivat
+                            poistaa sen.
+                        </p>
+                        <p>
+                            Erillisessä
+                            <strong>Center for Humane Technology</strong>
+                            -järjestön testissä (Aza Raskin) botti neuvoi
+                            13-vuotiaksi tekeytyvää käyttäjää ensimmäisen kerran
+                            seksin harrastamisessa 31-vuotiaan kumppanin kanssa:
+                            ”you could consider setting the mood with candles or
+                            music.” Raportin ydinhavainto oli, että My AI unohti
+                            käyttäjän iän pidemmissä keskusteluissa. Snapin
+                            tiedottaja Liz Markman vastasi, että My AI on
+                            kokeellinen tuote eikä siltä pidä hakea neuvoja:
+                            ”Please do not share any secrets with MyAI and do
+                            not rely on it for advice.” Markmanin mukaan yhtiö
+                            kehittää parhaillaan uusia lapsilukko-ominaisuuksia
+                            vanhemmille.
+                        </p>
+
+                        <div class="callout warn">
+                            <div class="callout-title">
+                                <span class="material-symbols-outlined"
+                                    >report</span
+                                >Mitä tämä tarkoittaa yksityisyydelle
+                            </div>
+                            <p>
+                                Jokainen My AI -keskustelu lähetetään Snap
+                                Inc.:n palvelimille ja edelleen OpenAI:n
+                                käsiteltäväksi. Käyttäjien, myös alaikäisten,
+                                keskustelut päätyvät kolmannen osapuolen
+                                koulutusaineistoksi, ellei käyttäjä erikseen
+                                kiellä sitä. Kieltämisasetus on piilossa syvällä
+                                sovelluksen valikoissa.
+                            </p>
+                        </div>
+
+                        <p>
+                            Alaikäisten turvallisuuteen liittyvät huolet eivät
+                            rajoittuneet My AI:hin. Kesäkuussa 2023 senaattori
+                            Michael Bennet lähetti OpenAI:lle ja Snapille
+                            kirjeen, jossa vaadittiin selvitystä generatiivisen
+                            tekoälyn vaaroista nuorille käyttäjille.
+                        </p>
+
+                        <h2 id="bipa">
+                            <span class="num">08</span
+                            ><span class="material-symbols-outlined">face</span
+                            >Illinois BIPA: $35 miljoonan korvaus kasvotiedoista
+                        </h2>
+                        <p>
+                            Marraskuussa 2022 Snap Inc. hyväksyi
+                            <a
+                                href="https://www.snapillinoisbipasettlement.com/"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                ><strong>$35 miljoonan</strong></a
+                            >
+                            ryhmäkanteen sovinnon Illinoisin osavaltion
+                            <strong
+                                >Biometric Information Privacy Act
+                                (BIPA)</strong
+                            >
+                            -lain nojalla. Kanteen taustalla oli Snapchatin
+                            linssi- ja suodatinominaisuuksien tapa kerätä ja
+                            käsitellä käyttäjien kasvotietoja (3D-kasvomalleja)
+                            ilman BIPA:n edellyttämää nimenomaista suostumusta.
+                        </p>
+                        <p>
+                            Sovinnon piiriin kuuluivat Illinoisin asukkaat,
+                            jotka olivat käyttäneet Snapchatin linssejä 17.
+                            marraskuuta 2015 jälkeen.
+                            <a
+                                href="https://topclassactions.com/lawsuit-settlements/closed-settlements/snapchat-biometric-privacy-35m-class-action-settlement/"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                >Alkuvaiheen arvio</a
+                            >
+                            maksusta oli $58–$117 hakijaa kohti, mutta
+                            lopullinen korvaus jäi
+                            <strong>$16,36:een</strong> per hakija, kun
+                            oikeutettuja hakijoita oli selvästi ennakoitua
+                            vähemmän. Asianajajille sovinto osoitti noin $12
+                            miljoonaa palkkioita.
+                        </p>
+
+                        <div class="callout fact">
+                            <div class="callout-title">
+                                <span class="material-symbols-outlined"
+                                    >balance</span
+                                >Miksi BIPA on poikkeuksellinen
+                            </div>
+                            <p>
+                                Illinois on ainoa Yhdysvaltain osavaltio, jossa
+                                on kattava biometrisen datan yksityisyyslaki.
+                                Muualla maailmassa vastaavaa suojaa ei ole,
+                                joten käytännössä miljoonat käyttäjät muissa
+                                osavaltioissa ovat olleet samassa tilanteessa
+                                ilman oikeudellista suojaa.
+                            </p>
+                        </div>
+
+                        <h2 id="raha">
+                            <span class="num">09</span
+                            ><span class="material-symbols-outlined"
+                                >attach_money</span
+                            >Snapin liiketoiminta: $4,6 miljardia mainosrahaa
+                            2023
+                        </h2>
+                        <p>
+                            <a
+                                href="https://investor.snap.com/news/news-details/2024/Snap-Inc.-Announces-Fourth-Quarter-and-Full-Year-2023-Financial-Results/default.aspx"
+                                target="_blank"
+                                rel="noopener"
+                                class="cite"
+                                >Snap Inc.:n vuoden 2023 tilinpäätöksen</a
+                            >
+                            mukaan yhtiön
+                            <strong
+                                >kokonaisliikevaihto oli $4 606
+                                miljoonaa</strong
+                            >. Snapin oman vuosikertomuksen mukaan ”lähes
+                            kaikki” tämä liikevaihto tulee mainonnasta.
+                        </p>
+                        <p>
+                            Käyttäjätiedot (sijainti, käyttäytyminen,
+                            yhteystiedot, keskustelut) ovat liiketoimintamallin
+                            ydin, eivät sivutuote. Kun yhtiö tekee $4,6
+                            miljardia vuodessa pääasiassa kohdennetulla
+                            mainonnalla, tietojenkeruun rajoittaminen on suora
+                            uhka liikevaihdolle.
+                        </p>
+                        <p>
+                            Snap Inc. ei ole ollut GAAP-tilinpäätöksessä
+                            kannattava: vuoden 2023
+                            <strong>nettotappio oli $1 322 miljoonaa</strong>.
+                            Oikaistu liikevoitto (Adjusted EBITDA) oli kuitenkin
+                            positiivinen $162 miljoonaa, ja yhtiö on
+                            lähestymässä kassavirtapositiivisuutta. Tästä
+                            huolimatta yhtiöllä on taloudellinen kannustin
+                            kerätä ja hyödyntää tietoja mahdollisimman
+                            aggressiivisesti. Käyttäjädatasta saatava mainostulo
+                            on selvästi suurin yksittäinen tulonlähde, ja
+                            jokaisen yksityisyyspäätöksen taustalla painaa tämä
+                            liiketoimintarealiteetti.
+                        </p>
+
+                        <h2 id="yhteenveto">
+                            <span class="num">10</span
+                            ><span class="material-symbols-outlined">flag</span
+                            >Yhteenveto
+                        </h2>
+                        <p>
+                            Snapchatin yksityisyyden ja tietoturvan tilaa
+                            luonnehtii parhaiten
+                            <em>toistuvasti vahvistettu epäluotettavuus</em>.
+                            Yhtiö on:
+                        </p>
+                        <ul>
+                            <li>
+                                saanut FTC:n tuomion käyttäjien
+                                harhaanjohtamisesta (2014),
+                            </li>
+                            <li>
+                                kärsinyt 4,6 miljoonan käyttäjän massavuodosta
+                                (2013),
+                            </li>
+                            <li>
+                                sallinut työntekijöiden väärinkäyttää
+                                <a
+                                    href="https://www.vice.com/en/article/snapchat-employees-abused-data-access-spy-on-users-snaplion/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="cite"
+                                    >sisäistä SnapLion-työkalua</a
+                                >
+                                käyttäjien vakoiluun (2019),
+                            </li>
+                            <li>
+                                maksanut
+                                <a
+                                    href="https://www.snapillinoisbipasettlement.com/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="cite"
+                                    >$35 miljoonan BIPA-korvauksen</a
+                                >
+                                kasvotietojen keruusta Illinoisissa (2022), ja
+                            </li>
+                            <li>
+                                julkaissut tekoälybotin, joka
+                                <a
+                                    href="https://www.washingtonpost.com/technology/2023/03/14/snapchat-myai/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="cite"
+                                    >tuotti ongelmallista sisältöä
+                                    alaikäisille</a
+                                >
+                                (2023).
+                            </li>
+                        </ul>
+
+                        <p>
+                            Yksikään näistä ei ole yksittäinen vahinko. Ne
+                            muodostavat toistuvan kaavan, jossa markkinointi
+                            lupaa yksityisyyttä ja käytäntö tuottaa valvontaa.
+                            Kysymys ei ole, onko Snapchat
+                            <em>tehnyt</em> väärin, vaan onko se
+                            <em>oppinut</em> virheistään.
+                        </p>
+
+                        <hr
+                            style="
+                                border: none;
+                                border-top: 1px solid var(--border);
+                                margin: 2.5rem 0;
+                            "
+                        />
+
+                        <section class="sources">
+                            <h3>
+                                <span class="material-symbols-outlined"
+                                    >menu_book</span
+                                >Lisälähteet
+                            </h3>
+                            <p style="margin-bottom: 14px">
+                                Suurin osa artikkelin lähteistä on linkitetty
+                                suoraan tekstiin. Tässä vielä sama lista
+                                koottuna.
+                            </p>
+                            <ol>
+                                <li>
+                                    <a
+                                        href="https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >FTC: Snapchat Settles Charges (2014)</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.theguardian.com/media/2014/jan/01/hackers-reveal-46m-mobile-numbers-snapchat"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >The Guardian: Hackers reveal 4.6m
+                                        mobile numbers (2014)</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://gibsonsec.org/snapchat/"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >Gibson Security: Snapchat Information
+                                        Disclosure (2013)</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.vice.com/en/article/snapchat-employees-abused-data-access-spy-on-users-snaplion/"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >VICE / Motherboard: SnapLion abuse
+                                        (2019)</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.theverge.com/2017/6/23/15864552/snapchat-snap-map-privacy-threat"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >The Verge: Snapchat's newest feature is
+                                        also its biggest privacy threat
+                                        (2017)</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://techcrunch.com/2023/02/27/snapchat-launches-an-ai-chatbot-powered-by-openais-gpt-technology/"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >TechCrunch: Snapchat launches My AI
+                                        powered by OpenAI (2023)</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.washingtonpost.com/technology/2023/03/14/snapchat-myai/"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >The Washington Post: Snapchat tried to
+                                        make a safe AI (2023)</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.snapillinoisbipasettlement.com/"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >Snapchat Illinois BIPA Settlement:
+                                        official site</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://topclassactions.com/lawsuit-settlements/closed-settlements/snapchat-biometric-privacy-35m-class-action-settlement/"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >Top Class Actions: Snapchat BIPA $35M
+                                        settlement</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://investor.snap.com/news/news-details/2024/Snap-Inc.-Announces-Fourth-Quarter-and-Full-Year-2023-Financial-Results/default.aspx"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >Snap Inc.: Q4 and Full Year 2023
+                                        Financial Results</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://en.wikipedia.org/wiki/Snap_Inc."
+                                        target="_blank"
+                                        rel="noopener"
+                                        >Wikipedia: Snap Inc.</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://help.snapchat.com/hc/en-us/articles/7012357237396-Frequently-Asked-Privacy-Questions"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >Snapchat: Frequently Asked Privacy
+                                        Questions (retention policy)</a
+                                    >
+                                </li>
+                            </ol>
+                        </section>
+
+                        <!-- MUOKKAUS PÄÄTTYY TÄHÄN -->
+                    </div>
+
+                    <footer class="post-footer">
+                        <p><strong>Kirjoittaja:</strong> Topi Autio</p>
+                        <p><strong>Viimeksi päivitetty:</strong> 10.06.2026</p>
+                    </footer>
+                </article>
+
+                <nav class="post-nav">
+                    <div class="post-nav-item prev">
+                        <a href="/blogi/">← Takaisin blogiin</a>
+                    </div>
+                    <div class="post-nav-item next">
+                        <!-- Ei seuraavaa artikkelia vielä -->
+                    </div>
+                </nav>
+
+                <div class="blog-return">
+                    <a href="/blogi/" class="cta-link">← Takaisin blogiin</a>
+                </div>
+            </main>
+
+            <footer id="yhteystiedot">
+                <p>
+                    Email:
+                    <a href="mailto:ah2558@student.jamk.fi"
+                        >ah2558@student.jamk.fi</a
+                    >
+                </p>
+                <p>
+                    LinkedIn:
+                    <a
+                        href="https://www.linkedin.com/in/topi-a-558796240/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >topi-a-558796240</a
+                    >
+                </p>
+                <p>
+                    GitHub:
+                    <a
+                        href="https://github.com/topiautio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >topiautio</a
+                    >
+                </p>
+                <p>CV: <a href="/cv/">Avaa CV-sivu</a></p>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,12 +1,41 @@
 baseURL = "https://topiautio.fi/"
 title = "Topi Autio"
 defaultContentLanguage = "fi"
+disableHugoGeneratorInject = true
 disableKinds = ["taxonomy", "term"]
 
 [languages]
   [languages.fi]
-    label = "Suomi"
-    locale = "fi-FI"
+    languageName = "Suomi"
+    languageCode = "fi-FI"
+
+[params]
+  author = "Topi Autio"
+  description = "Topi Aution portfolio ja CV: ICT-insinööriopiskelija, järjestelmähallinta, tietoverkot ja kyberturvallisuus."
+  email = "topi@topiautio.fi"
+  linkedin = "https://www.linkedin.com/in/topi-a-558796240/"
+  github = "https://github.com/topiautio"
+  tryhackme = "https://tryhackme.com/p/TopiAutio"
 
 [permalinks]
   blogi = "/blogi/:slug/"
+
+[[menus.main]]
+  name = "Esittely"
+  url = "/#esittely"
+  weight = 10
+
+[[menus.main]]
+  name = "Portfolio"
+  url = "/#portfolio"
+  weight = 20
+
+[[menus.main]]
+  name = "CV"
+  url = "/cv/"
+  weight = 30
+
+[[menus.main]]
+  name = "Blogi"
+  url = "/blogi/"
+  weight = 40

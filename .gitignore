@@ -1,0 +1,7 @@
+# Hugo build output and local locks
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Local visual regression output
+screenshots/
