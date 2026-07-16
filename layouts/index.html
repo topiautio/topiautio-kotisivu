@@ -14,17 +14,17 @@
         <meta property="og:title" content="Topi Autio | Portfolio ja CV | Etsin IT-harjoittelupaikkaa Jyväskylä">
         <meta property="og:description" content="Etsin IT-harjoittelupaikkaa Jyväskylästä. Kiinnostus kyberturvallisuuden ja järjestelmäylläpidon parissa. Vahva kokemus Linux- ja Windows-palvelimista (VBS4, DHCP, DNS, AD, Samba) Ilmasotakoululla sekä aiemmista IT-harjoitteluista. JAMK ICT-insinööriopiskelija.">
         <meta property="og:site_name" content="Topi Autio">
-        <meta property="og:url" content="https://topiautio.fi/">
-        <meta property="og:image" content="https://topiautio.fi/favicon.svg">
+        <meta property="og:url" content="{{ .Permalink }}">
+        <meta property="og:image" content="{{ "favicon.svg" | absURL }}">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="Topi Autio | Portfolio ja CV | Etsin IT-harjoittelupaikkaa Jyväskylä">
         <meta name="twitter:description" content="Etsin IT-harjoittelupaikkaa Jyväskylästä. Kiinnostus kyberturvallisuuden ja järjestelmäylläpidon parissa. Vahva kokemus Linux- ja Windows-palvelimista (VBS4, DHCP, DNS, AD, Samba) Ilmasotakoululla sekä aiemmista IT-harjoitteluista. JAMK ICT-insinööriopiskelija.">
-        <meta name="twitter:url" content="https://topiautio.fi/">
-        <meta name="twitter:image" content="https://topiautio.fi/favicon.svg">
+        <meta name="twitter:url" content="{{ .Permalink }}">
+        <meta name="twitter:image" content="{{ "favicon.svg" | absURL }}">
         <title>Topi Autio | Portfolio ja CV | Etsin IT-harjoittelupaikkaa Jyväskylä</title>
-        <link rel="canonical" href="https://topiautio.fi/">
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="canonical" href="{{ .Permalink }}">
+        <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+        <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
         <!-- HUOM! Google Fontsin API vaatii, että icon_names -listan sanat EHDOTTOMASTI aakkosjärjestyksessä. Muuten palautuu Error 400. -->
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=article,aspect_ratio,construction,description,diamond,dns,exercise,help,lan,mail,security,waving_hand&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
                 "@context": "https://schema.org",
                 "@type": "Person",
                 "name": "Topi Autio",
-                "url": "https://topiautio.fi/",
+                "url": {{ .Permalink | jsonify | safeJS }},
                 "description": "Etsin IT-harjoittelupaikkaa Jyväskylästä. Kiinnostus kyberturvallisuuden ja järjestelmäylläpidon parissa. Vahva kokemus Linux- ja Windows-palvelimista (VBS4, DHCP, DNS, AD, Samba) Ilmasotakoululla sekä aiemmista IT-harjoitteluista. JAMK ICT-insinööriopiskelija.",
                 "sameAs": [
                     "https://www.linkedin.com/in/topi-a-558796240/",
@@ -57,8 +57,8 @@
                     <li><a href="#portfolio"><span class="material-symbols-outlined">diamond</span>Portfolio</a></li>
                     <li><a href="#kaytannon-tekeminen"><span class="material-symbols-outlined">construction</span>Käytännön tekeminen</a></li>
                     <li><a href="#harrastukset"><span class="material-symbols-outlined">exercise</span>Harrastukset</a></li>
-                    <li><a href="/cv/"><span class="material-symbols-outlined">description</span>CV</a></li>
-                    <li><a href="/blogi/"><span class="material-symbols-outlined">article</span>Blogi</a></li>
+                    <li><a href="{{ "cv/" | relURL }}"><span class="material-symbols-outlined">description</span>CV</a></li>
+                    <li><a href="{{ "blogi/" | relURL }}"><span class="material-symbols-outlined">article</span>Blogi</a></li>
                     <li><a href="#yhteystiedot"><span class="material-symbols-outlined">mail</span>Yhteystiedot</a></li>
                 </ul>
             </nav><!--nav end-->
@@ -68,7 +68,7 @@
                     <h2><span class="material-symbols-outlined">waving_hand</span>Esittely</h2>
                     <h3>Tervetuloa portfoliooni</h3>
                     <p class="cta-links">
-                        <a href="/cv/" class="cta-link">Näytä CV (ansioluettelo)</a>
+                        <a href="{{ "cv/" | relURL }}" class="cta-link">Näytä CV (ansioluettelo)</a>
                         <a href="#kaytannon-tekeminen" class="cta-link cta-secondary">Tutustu projekteihin</a>
                     </p>
                     
@@ -196,7 +196,7 @@
             <p>Email: <a href="mailto:ah2558@student.jamk.fi">ah2558@student.jamk.fi</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/topi-a-558796240/" target="_blank" rel="noopener noreferrer">topi-a-558796240</a></p>
             <p>GitHub: <a href="https://github.com/topiautio" target="_blank" rel="noopener noreferrer">topiautio</a></p>
-            <p>CV: <a href="/cv/">Avaa CV-sivu</a></p>
+            <p>CV: <a href="{{ "cv/" | relURL }}">Avaa CV-sivu</a></p>
             </footer>
 
         </div><!--page end-->

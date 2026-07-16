@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="Kriittinen katsaus Snapchatin tietoturvaan ja yksityisyyteen — FTC:n päätökset, oikeusasiakirjat ja nimettyjen toimittajien raportit."
+            content="{{ .Description }}"
         />
         <meta
             name="keywords"
@@ -16,31 +16,22 @@
         <meta name="robots" content="index, follow" />
         <meta
             property="og:title"
-            content="Snapchatin tietoturva ja yksityisyys: dokumentoidut ongelmat | Topi Autio"
+            content="{{ .Title }} | {{ site.Title }}"
         />
         <meta
             property="og:description"
-            content="Kriittinen katsaus Snapchatin tietoturvaan ja yksityisyyteen — FTC:n päätökset, oikeusasiakirjat ja nimettyjen toimittajien raportit."
+            content="{{ .Description }}"
         />
-        <meta
-            property="og:url"
-            content="https://topiautio.fi/blogi/julkaisut/snapchat-tietoturva/"
-        />
+        <meta property="og:url" content="{{ .Permalink }}" />
         <meta property="og:type" content="article" />
-        <meta property="article:published_time" content="2026-06-10" />
+        <meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}" />
         <meta property="article:author" content="Topi Autio" />
-        <title>
-            Snapchatin tietoturva ja yksityisyys: dokumentoidut ongelmat | Topi
-            Autio
-        </title>
-        <link
-            rel="canonical"
-            href="https://topiautio.fi/blogi/julkaisut/snapchat-tietoturva/"
-        />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="stylesheet" href="/styles.css" />
-        <link rel="stylesheet" href="/blogi/blogi-tyylit.css" />
-        <link rel="stylesheet" href="/blogi/julkaisut/julkaisu-tyylit.css" />
+        <title>{{ .Title }} | {{ site.Title }}</title>
+        <link rel="canonical" href="{{ .Permalink }}" />
+        <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml" />
+        <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
+        <link rel="stylesheet" href="{{ "blogi/blogi-tyylit.css" | relURL }}" />
+        <link rel="stylesheet" href="{{ "blogi/julkaisut/julkaisu-tyylit.css" | relURL }}" />
         <!-- Preload kriittiset fontit -->
         <link
             rel="preload"
@@ -289,35 +280,35 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="/#esittely"
+                        <a href="{{ site.Home.RelPermalink }}#esittely"
                             ><span class="material-symbols-outlined"
                                 >waving_hand</span
                             >Esittely</a
                         >
                     </li>
                     <li>
-                        <a href="/#portfolio"
+                        <a href="{{ site.Home.RelPermalink }}#portfolio"
                             ><span class="material-symbols-outlined"
                                 >diamond</span
                             >Portfolio</a
                         >
                     </li>
                     <li>
-                        <a href="/#harrastukset"
+                        <a href="{{ site.Home.RelPermalink }}#harrastukset"
                             ><span class="material-symbols-outlined"
                                 >exercise</span
                             >Harrastukset</a
                         >
                     </li>
                     <li>
-                        <a href="/cv/"
+                        <a href="{{ "cv/" | relURL }}"
                             ><span class="material-symbols-outlined"
                                 >description</span
                             >CV</a
                         >
                     </li>
                     <li>
-                        <a href="/blogi/"
+                        <a href="{{ "blogi/" | relURL }}"
                             ><span class="material-symbols-outlined"
                                 >article</span
                             >Blogi</a
@@ -329,7 +320,7 @@
             <main>
                 <article class="blog-post">
                     <div class="post-back">
-                        <a href="/blogi/"
+                        <a href="{{ "blogi/" | relURL }}"
                             ><span class="material-symbols-outlined"
                                 >arrow_back</span
                             >Takaisin blogiin</a
@@ -337,20 +328,17 @@
                     </div>
 
                     <header class="post-header">
-                        <h1>
-                            Snapchatin tietoturva ja yksityisyys: dokumentoidut
-                            ongelmat
-                        </h1>
+                        <h1>{{ .Title }}</h1>
                         <div class="post-meta">
                             <span class="post-date"
                                 ><span class="material-symbols-outlined"
                                     >calendar_month</span
-                                >10.06.2026</span
+                                >{{ .Date | time.Format "02.01.2006" }}</span
                             >
                             <span class="post-reading-time"
                                 ><span class="material-symbols-outlined"
                                     >schedule</span
-                                >8 min luku</span
+                                >{{ .Params.readingTime }}</span
                             >
                         </div>
                     </header>
@@ -1170,13 +1158,13 @@
 
                     <footer class="post-footer">
                         <p><strong>Kirjoittaja:</strong> Topi Autio</p>
-                        <p><strong>Viimeksi päivitetty:</strong> 10.06.2026</p>
+                        <p><strong>Viimeksi päivitetty:</strong> {{ .Lastmod | time.Format "02.01.2006" }}</p>
                     </footer>
                 </article>
 
                 <nav class="post-nav">
                     <div class="post-nav-item prev">
-                        <a href="/blogi/">← Takaisin blogiin</a>
+                        <a href="{{ "blogi/" | relURL }}">← Takaisin blogiin</a>
                     </div>
                     <div class="post-nav-item next">
                         <!-- Ei seuraavaa artikkelia vielä -->
@@ -1184,7 +1172,7 @@
                 </nav>
 
                 <div class="blog-return">
-                    <a href="/blogi/" class="cta-link">← Takaisin blogiin</a>
+                    <a href="{{ "blogi/" | relURL }}" class="cta-link">← Takaisin blogiin</a>
                 </div>
             </main>
 
@@ -1213,7 +1201,7 @@
                         >topiautio</a
                     >
                 </p>
-                <p>CV: <a href="/cv/">Avaa CV-sivu</a></p>
+                <p>CV: <a href="{{ "cv/" | relURL }}">Avaa CV-sivu</a></p>
             </footer>
         </div>
     </body>

@@ -9,20 +9,20 @@
 <meta name="author" content="Topi Autio">
 <meta name="keywords" content="Topi Autio, CV, ansioluettelo, ICT, insinööri, kyberturvallisuus, Linux, IT-tuki, JAMK, Jyväskylä">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://topiautio.fi/cv/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 <meta property="og:title" content="Topi Autio | CV ja ansioluettelo">
 <meta property="og:description" content="Topi Aution CV: ICT-insinööriopiskelija (JAMK), IT-tuki, järjestelmäylläpito, kyberturvallisuus ja Linux-osaaminen.">
-<meta property="og:url" content="https://topiautio.fi/cv/">
+<meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Topi Autio">
 <meta property="og:locale" content="fi_FI">
-<meta property="og:image" content="https://topiautio.fi/favicon.svg">
+<meta property="og:image" content="{{ "favicon.svg" | absURL }}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Topi Autio | CV ja ansioluettelo">
 <meta name="twitter:description" content="Topi Aution CV: ICT-insinööriopiskelija (JAMK), IT-tuki, järjestelmäylläpito, kyberturvallisuus ja Linux-osaaminen.">
-<meta name="twitter:url" content="https://topiautio.fi/cv/">
-<meta name="twitter:image" content="https://topiautio.fi/favicon.svg">
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:image" content="{{ "favicon.svg" | absURL }}">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -404,7 +404,7 @@
 <body>
 <div class="page">
   <nav class="top-nav" aria-label="Sivunavigaatio">
-    <a href="/">← Takaisin etusivulle</a>
+    <a href="{{ site.Home.RelPermalink }}">← Takaisin etusivulle</a>
   </nav>
 
   <!-- HEADER -->
