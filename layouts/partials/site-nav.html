@@ -1,0 +1,29 @@
+<nav class="site-nav" aria-label="Päänavigaatio">
+    <a class="site-mark" href="{{ site.Home.RelPermalink }}" aria-label="Topi Autio, etusivu">TA</a>
+
+    <div class="desktop-nav">
+        <ul>
+            <li><a href="{{ site.Home.RelPermalink }}#esittely">Esittely</a></li>
+            <li><a href="{{ site.Home.RelPermalink }}#portfolio">Projektit</a></li>
+            <li><a href="{{ "cv/" | relURL }}">CV</a></li>
+            <li><a href="{{ "blogi/" | relURL }}"{{ if eq .active "blog" }} class="active" aria-current="page"{{ end }}>Blogi</a></li>
+            <li><a href="{{ site.Home.RelPermalink }}#yhteystiedot">Yhteystiedot</a></li>
+        </ul>
+    </div>
+
+    <details class="mobile-nav">
+        <summary>
+            <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span>Valikko</span>
+        </summary>
+        <div class="mobile-nav-panel">
+            <ul>
+                <li><a href="{{ site.Home.RelPermalink }}#esittely">Esittely</a></li>
+                <li><a href="{{ site.Home.RelPermalink }}#portfolio">Projektit</a></li>
+                <li><a href="{{ "cv/" | relURL }}">CV</a></li>
+                <li><a href="{{ "blogi/" | relURL }}"{{ if eq .active "blog" }} class="active" aria-current="page"{{ end }}>Blogi</a></li>
+                <li><a href="{{ site.Home.RelPermalink }}#yhteystiedot">Yhteystiedot</a></li>
+            </ul>
+        </div>
+    </details>
+</nav>

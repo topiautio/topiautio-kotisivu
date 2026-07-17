@@ -1,101 +1,107 @@
-{{- /* Hugo source template migrated from legacy static HTML. Keep rendered markup stable while removing external file-path coupling. */ -}}
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Topi Aution blogi: Oppaat ja artikkelit ICT:stä, kyberturvallisuudesta, järjestelmäylläpidosta ja teknisistä projekteista.">
-    <meta name="keywords" content="blogi, oppaat, tutoriaalit, ICT, kyberturvallisuus, Linux, Windows, järjestelmäylläpito">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Topi Aution IT-blogi: käytännön oppaita ja artikkeleita Linuxista, järjestelmähallinnasta, kyberturvallisuudesta, verkoista ja omista projekteista.">
+    <meta name="keywords" content="Topi Autio, IT-blogi, kyberturvallisuusblogi, Linux, järjestelmähallinta, tietoverkot, self-hosting, CachyOS, tekniset projektit">
     <meta name="author" content="Topi Autio">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08120f">
     <meta property="og:locale" content="fi_FI">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Topi Autio | Blogi">
-    <meta property="og:description" content="Oppaat ja artikkelit ICT:stä, kyberturvallisuudesta ja järjestelmäylläpidosta.">
+    <meta property="og:title" content="Topi Autio | IT- ja kyberturvallisuusblogi">
+    <meta property="og:description" content="Käytännön oppaita ja artikkeleita Linuxista, järjestelmähallinnasta, kyberturvallisuudesta, verkoista ja omista projekteista.">
     <meta property="og:site_name" content="Topi Autio">
     <meta property="og:url" content="{{ .Permalink }}">
-    <title>Topi Autio | Blogi</title>
+    <meta property="og:image" content="{{ "favicon.svg" | absURL }}">
+    <meta property="og:image:alt" content="Topi Aution IT-blogi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Topi Autio | IT- ja kyberturvallisuusblogi">
+    <meta name="twitter:description" content="Oppaita Linuxista, järjestelmähallinnasta, verkoista, kyberturvallisuudesta ja teknisistä projekteista.">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:image" content="{{ "favicon.svg" | absURL }}">
+    <meta name="twitter:image:alt" content="Topi Aution IT-blogi">
+    <title>Topi Autio | IT- ja kyberturvallisuusblogi</title>
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&amp;icon_names=calendar_month,schedule&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
     <link rel="stylesheet" href="{{ "blogi/blogi-tyylit.css" | relURL }}">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- HUOM! Google Fontsin API vaatii, että icon_names -listan sanat EHDOTTOMASTI aakkosjärjestyksessä. Muuten palautuu Error 400. -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,calendar_month,description,diamond,exercise,schedule,waving_hand&display=swap" rel="stylesheet">
+    <script src="{{ "navigation.js" | relURL }}" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Topi Aution IT- ja kyberturvallisuusblogi",
+        "url": {{ .Permalink | jsonify | safeJS }},
+        "description": "Käytännön oppaita ja artikkeleita Linuxista, järjestelmähallinnasta, kyberturvallisuudesta, verkoista ja omista projekteista.",
+        "inLanguage": "fi-FI",
+        "author": {
+            "@type": "Person",
+            "name": "Topi Autio",
+            "url": {{ site.Home.Permalink | jsonify | safeJS }}
+        }
+    }
+    </script>
 </head>
 
 <body>
+    <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
     <div id="page">
-        <header>
-            <h1>Topi Autio</h1>
-        </header>
+        {{ partial "site-nav.html" (dict "active" "blog") }}
 
-        <nav>
-            <ul>
-                <li><a href="{{ site.Home.RelPermalink }}#esittely"><span class="material-symbols-outlined">waving_hand</span>Esittely</a></li>
-                <li><a href="{{ site.Home.RelPermalink }}#portfolio"><span class="material-symbols-outlined">diamond</span>Portfolio</a></li>
-                <li><a href="{{ site.Home.RelPermalink }}#harrastukset"><span class="material-symbols-outlined">exercise</span>Harrastukset</a></li>
-                <li><a href="{{ "cv/" | relURL }}"><span class="material-symbols-outlined">description</span>CV</a></li>
-                <li><a href="{{ "blogi/" | relURL }}" class="active"><span class="material-symbols-outlined">article</span>Blogi</a></li>
-            </ul>
-        </nav>
+        <main id="sisalto">
+            <header class="blog-shell">
+                <p class="eyebrow">MUISTIINPANOJA JA OPPAITA</p>
+                <h1>Blogi</h1>
+                <p>Kirjoitan teknisistä projekteista, järjestelmähallinnasta, kyberturvallisuudesta ja asioista, jotka olen joutunut selvittämään käytännössä.</p>
+            </header>
 
-        <main>
-            <section id="blog-intro">
-                <h2>Blogi</h2>
-                <p>Tällä osiolla jaan oppaitani ja artikkeleitani teknisistä projekteista, järjestelmäylläpidosta, kyberturvallisuudesta ja muista ICT-aiheista jotka ovat kiinnostaneet minua.</p>
-            </section>
-
-            <section id="blog-posts">
+            <section id="blog-posts" aria-label="Kirjoitukset">
                 <div class="posts-list">
-                    {{ range where .RegularPagesRecursive "Draft" false }}
+                    {{- range where .RegularPagesRecursive "Draft" false }}
                     <article class="post-card">
-                        <h3>
-                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                        </h3>
                         <div class="post-meta">
-                            <span class="post-date"><span class="material-symbols-outlined">calendar_month</span>{{ .Date | time.Format "02.01.2006" }}</span>
-                            <span class="post-reading-time"><span class="material-symbols-outlined">schedule</span>{{ .Params.readingTime }}</span>
+                            <span class="post-date"><span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>{{ .Date | time.Format "02.01.2006" }}</span>
+                            <span class="post-reading-time"><span class="material-symbols-outlined" aria-hidden="true">schedule</span>{{ .Params.readingTime }}</span>
                         </div>
+                        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
                         <p>{{ .Summary }}</p>
+                        <a class="post-card-link" href="{{ .RelPermalink }}" aria-label="Lue kirjoitus: {{ .Title }}">Lue kirjoitus <span aria-hidden="true">↗</span></a>
                     </article>
-                    {{ end }}
+                    {{- end }}
 
-                    <article class="post-card">
-                        <h3>
-                            <span class="post-title">Windows 11 virtuaalikoneen asennus CachyOS:lle</span>
-                            <span class="post-status post-status--wip">Työn alla</span>
-                        </h3>
-                        <div class="post-meta">
-                            <span class="post-date"><span class="material-symbols-outlined">calendar_month</span>Työn alla</span>
-                            <span class="post-reading-time"><span class="material-symbols-outlined">schedule</span>Arvio: 8 min luku</span>
-                        </div>
-                        <p>Opas Windows 11 virtuaalikoneen asennuksesta KVM:llä ja QEMU:lla CachyOS:ssä. Käsittelee Hyper-V:n konfiguroinnin, GPU passthroughin ja suorituskykyoptimoinnin.</p>
+                    <article class="post-card post-card-muted">
+                        <div class="post-meta"><span>TYÖN ALLA</span></div>
+                        <h2>Windows 11 virtuaalikoneen asennus CachyOS:lle</h2>
+                        <p>Opas Windows 11 -virtuaalikoneen asennuksesta KVM:llä ja QEMU:lla CachyOS:ssä.</p>
                     </article>
 
-                    <article class="post-card">
-                        <h3>
-                            <span class="post-title">Mukautetun sähköpostiosoitteen asennus ProtonMaililla</span>
-                            <span class="post-status post-status--coming">Tulossa</span>
-                        </h3>
-                        <div class="post-meta">
-                            <span class="post-date"><span class="material-symbols-outlined">calendar_month</span>Tulossa</span>
-                            <span class="post-reading-time"><span class="material-symbols-outlined">schedule</span>Arvio: 5 min luku</span>
-                        </div>
-                        <p>Opas mukautetun sähköpostiosoitteen asennuksesta ProtonMaililla käyttäen omaa domainia. Käsittelee DNS-konfiguraation ja sähköpostin vastaanottamisen.</p>
+                    <article class="post-card post-card-muted">
+                        <div class="post-meta"><span>TULOSSA</span></div>
+                        <h2>Mukautettu sähköpostiosoite Proton Maililla</h2>
+                        <p>Oman domainin DNS-määritykset ja sähköpostin käyttöönotto Proton Mailissa.</p>
                     </article>
                 </div>
             </section>
         </main>
 
         <footer id="yhteystiedot">
-            <p>Email: <a href="mailto:ah2558@student.jamk.fi">ah2558@student.jamk.fi</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/topi-a-558796240/" target="_blank" rel="noopener noreferrer">topi-a-558796240</a></p>
-            <p>GitHub: <a href="https://github.com/topiautio" target="_blank" rel="noopener noreferrer">topiautio</a></p>
-            <p>CV: <a href="{{ "cv/" | relURL }}">Avaa CV-sivu</a></p>
+            <div>
+                <p class="section-index">OTA YHTEYTTÄ</p>
+                <h2>Jäikö jokin kiinnostamaan?</h2>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:topi@topiautio.fi">topi@topiautio.fi</a>
+                <a href="https://www.linkedin.com/in/topi-a-558796240/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/topiautio" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="footer-note">© {{ now.Year }} Topi Autio · Jyväskylä</p>
         </footer>
-
     </div>
-
 </body>
 </html>
