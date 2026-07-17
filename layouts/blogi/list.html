@@ -3,17 +3,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Topi Aution blogi: oppaita ja artikkeleita ICT:stä, kyberturvallisuudesta, järjestelmähallinnasta ja teknisistä projekteista.">
+    <meta name="description" content="Topi Aution IT-blogi: käytännön oppaita ja artikkeleita Linuxista, järjestelmähallinnasta, kyberturvallisuudesta, verkoista ja omista projekteista.">
+    <meta name="keywords" content="Topi Autio, IT-blogi, kyberturvallisuusblogi, Linux, järjestelmähallinta, tietoverkot, self-hosting, CachyOS, tekniset projektit">
     <meta name="author" content="Topi Autio">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#08120f">
     <meta property="og:locale" content="fi_FI">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Topi Autio | Blogi">
-    <meta property="og:description" content="Oppaita ja artikkeleita ICT:stä, kyberturvallisuudesta ja järjestelmähallinnasta.">
+    <meta property="og:title" content="Topi Autio | IT- ja kyberturvallisuusblogi">
+    <meta property="og:description" content="Käytännön oppaita ja artikkeleita Linuxista, järjestelmähallinnasta, kyberturvallisuudesta, verkoista ja omista projekteista.">
     <meta property="og:site_name" content="Topi Autio">
     <meta property="og:url" content="{{ .Permalink }}">
-    <title>Topi Autio | Blogi</title>
+    <meta property="og:image" content="{{ "favicon.svg" | absURL }}">
+    <meta property="og:image:alt" content="Topi Aution IT-blogi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Topi Autio | IT- ja kyberturvallisuusblogi">
+    <meta name="twitter:description" content="Oppaita Linuxista, järjestelmähallinnasta, verkoista, kyberturvallisuudesta ja teknisistä projekteista.">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:image" content="{{ "favicon.svg" | absURL }}">
+    <meta name="twitter:image:alt" content="Topi Aution IT-blogi">
+    <title>Topi Autio | IT- ja kyberturvallisuusblogi</title>
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,23 +31,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&amp;icon_names=calendar_month,schedule&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
     <link rel="stylesheet" href="{{ "blogi/blogi-tyylit.css" | relURL }}">
+    <script src="{{ "navigation.js" | relURL }}" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Topi Aution IT- ja kyberturvallisuusblogi",
+        "url": {{ .Permalink | jsonify | safeJS }},
+        "description": "Käytännön oppaita ja artikkeleita Linuxista, järjestelmähallinnasta, kyberturvallisuudesta, verkoista ja omista projekteista.",
+        "inLanguage": "fi-FI",
+        "author": {
+            "@type": "Person",
+            "name": "Topi Autio",
+            "url": {{ site.Home.Permalink | jsonify | safeJS }}
+        }
+    }
+    </script>
 </head>
 
 <body>
     <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
     <div id="page">
-        <nav class="site-nav" aria-label="Päänavigaatio">
-            <a class="site-mark" href="{{ site.Home.RelPermalink }}" aria-label="Topi Autio, etusivu">TA</a>
-            <div class="nav-scroll">
-                <ul>
-                    <li><a href="{{ site.Home.RelPermalink }}#esittely">Esittely</a></li>
-                    <li><a href="{{ site.Home.RelPermalink }}#portfolio">Projektit</a></li>
-                    <li><a href="{{ "cv/" | relURL }}">CV</a></li>
-                    <li><a href="{{ "blogi/" | relURL }}" class="active" aria-current="page">Blogi</a></li>
-                    <li><a href="{{ site.Home.RelPermalink }}#yhteystiedot">Yhteystiedot</a></li>
-                </ul>
-            </div>
-        </nav>
+        {{ partial "site-nav.html" (dict "active" "blog") }}
 
         <main id="sisalto">
             <header class="blog-shell">

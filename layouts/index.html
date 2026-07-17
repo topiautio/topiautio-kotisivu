@@ -3,25 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Topi Autio on ICT-insinööriopiskelija Jyväskylästä. Käytännön kokemusta järjestelmähallinnasta, tietoverkoista, IT-tuesta ja kyberturvallisuudesta.">
+    <meta name="description" content="Jyväskyläläinen ICT-insinööriopiskelija etsii IT-harjoittelu-, osa-aika- ja junioritehtäviä. Kokemusta IT-tuesta, palvelimista, verkoista ja kyberturvallisuudesta.">
+    <meta name="keywords" content="Topi Autio, IT-harjoittelija Jyväskylä, ICT-insinööriopiskelija, IT-tuki, järjestelmähallinta, Linux, Windows Server, tietoverkot, kyberturvallisuus, portfolio, CV">
     <meta name="author" content="Topi Autio">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#08120f">
     <meta property="og:locale" content="fi_FI">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Topi Autio | ICT, järjestelmähallinta ja kyberturvallisuus">
-    <meta property="og:description" content="ICT-insinööriopiskelija, jolla on käytännön kokemusta järjestelmähallinnasta, tietoverkoista, IT-tuesta ja kyberturvallisuudesta.">
+    <meta property="og:title" content="Topi Autio | IT-harjoittelija ja ICT-opiskelija Jyväskylässä">
+    <meta property="og:description" content="ICT-insinööriopiskelija, jolla on käytännön kokemusta IT-tuesta, Linux- ja Windows-palvelimista, tietoverkoista ja kyberturvallisuudesta.">
     <meta property="og:site_name" content="Topi Autio">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:image" content="{{ "favicon.svg" | absURL }}">
+    <meta property="og:image:alt" content="Topi Autio – ICT-portfolio">
     <meta name="twitter:card" content="summary">
-    <title>Topi Autio | ICT, järjestelmähallinta ja kyberturvallisuus</title>
+    <meta name="twitter:title" content="Topi Autio | IT-harjoittelija ja ICT-opiskelija Jyväskylässä">
+    <meta name="twitter:description" content="Kokemusta IT-tuesta, palvelimista, tietoverkoista ja kyberturvallisuudesta. Tutustu projekteihin ja CV:hen.">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:image" content="{{ "favicon.svg" | absURL }}">
+    <meta name="twitter:image:alt" content="Topi Autio – ICT-portfolio">
+    <title>Topi Autio | IT-harjoittelija ja ICT-opiskelija Jyväskylässä</title>
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
+    <script src="{{ "navigation.js" | relURL }}" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -30,11 +38,25 @@
         "url": {{ .Permalink | jsonify | safeJS }},
         "email": "topi@topiautio.fi",
         "jobTitle": "ICT-insinööriopiskelija",
+        "description": "Jyväskyläläinen ICT-insinööriopiskelija, jolla on kokemusta IT-tuesta, järjestelmähallinnasta, tietoverkoista ja kyberturvallisuudesta.",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Jyväskylä",
             "addressCountry": "FI"
         },
+        "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Jyväskylän ammattikorkeakoulu"
+        },
+        "knowsAbout": [
+            "Linux",
+            "Windows Server",
+            "Active Directory",
+            "Tietoverkot",
+            "IT-tuki",
+            "Järjestelmähallinta",
+            "Kyberturvallisuus"
+        ],
         "sameAs": [
             "https://www.linkedin.com/in/topi-a-558796240/",
             "https://github.com/topiautio",
@@ -48,18 +70,7 @@
     <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
 
     <div id="page">
-        <nav class="site-nav" aria-label="Päänavigaatio">
-            <a class="site-mark" href="{{ site.Home.RelPermalink }}" aria-label="Topi Autio, etusivu">TA</a>
-            <div class="nav-scroll">
-                <ul>
-                    <li><a href="#esittely">Esittely</a></li>
-                    <li><a href="#portfolio">Projektit</a></li>
-                    <li><a href="{{ "cv/" | relURL }}">CV</a></li>
-                    <li><a href="{{ "blogi/" | relURL }}">Blogi</a></li>
-                    <li><a href="#yhteystiedot">Yhteystiedot</a></li>
-                </ul>
-            </div>
-        </nav>
+        {{ partial "site-nav.html" (dict "active" "home") }}
 
         <main id="sisalto">
             <header class="hero" id="esittely">

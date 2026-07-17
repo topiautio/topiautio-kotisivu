@@ -12,7 +12,7 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
   author = "Topi Autio"
-  description = "Topi Aution portfolio ja CV: ICT-insinööriopiskelija, järjestelmähallinta, tietoverkot ja kyberturvallisuus."
+  description = "Topi Aution portfolio: jyväskyläläinen ICT-insinööriopiskelija, IT-tuki, järjestelmähallinta, tietoverkot ja kyberturvallisuus."
   email = "topi@topiautio.fi"
   linkedin = "https://www.linkedin.com/in/topi-a-558796240/"
   github = "https://github.com/topiautio"
@@ -27,7 +27,7 @@ disableKinds = ["taxonomy", "term"]
   weight = 10
 
 [[menus.main]]
-  name = "Portfolio"
+  name = "Projektit"
   url = "/#portfolio"
   weight = 20
 

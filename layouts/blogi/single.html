@@ -13,7 +13,10 @@
             content="snapchat, tietoturva, yksityisyys, FTC, BIPA, My AI, sosiaalinen media, kyberturvallisuus, Snap Inc"
         />
         <meta name="author" content="Topi Autio" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="theme-color" content="#08120f" />
+        <meta property="og:locale" content="fi_FI" />
+        <meta property="og:site_name" content="Topi Autio" />
         <meta
             property="og:title"
             content="{{ .Title }} | {{ site.Title }}"
@@ -24,14 +27,45 @@
         />
         <meta property="og:url" content="{{ .Permalink }}" />
         <meta property="og:type" content="article" />
+        <meta property="og:image" content="{{ "favicon.svg" | absURL }}" />
+        <meta property="og:image:alt" content="{{ .Title }}" />
         <meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}" />
+        <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02" }}" />
         <meta property="article:author" content="Topi Autio" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="{{ .Title }}" />
+        <meta name="twitter:description" content="{{ .Description }}" />
+        <meta name="twitter:url" content="{{ .Permalink }}" />
+        <meta name="twitter:image" content="{{ "favicon.svg" | absURL }}" />
+        <meta name="twitter:image:alt" content="{{ .Title }}" />
         <title>{{ .Title }} | {{ site.Title }}</title>
         <link rel="canonical" href="{{ .Permalink }}" />
         <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml" />
         <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
         <link rel="stylesheet" href="{{ "blogi/blogi-tyylit.css" | relURL }}" />
         <link rel="stylesheet" href="{{ "blogi/julkaisut/julkaisu-tyylit.css" | relURL }}" />
+        <script src="{{ "navigation.js" | relURL }}" defer></script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": {{ .Title | jsonify | safeJS }},
+            "description": {{ .Description | jsonify | safeJS }},
+            "url": {{ .Permalink | jsonify | safeJS }},
+            "datePublished": "{{ .Date.Format "2006-01-02" }}",
+            "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+            "inLanguage": "fi-FI",
+            "author": {
+                "@type": "Person",
+                "name": "Topi Autio",
+                "url": {{ site.Home.Permalink | jsonify | safeJS }}
+            },
+            "publisher": {
+                "@type": "Person",
+                "name": "Topi Autio"
+            }
+        }
+        </script>
         <!-- Preload kriittiset fontit -->
         <link
             rel="preload"
@@ -274,18 +308,7 @@
     <body>
         <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
         <div id="page">
-            <nav class="site-nav" aria-label="Päänavigaatio">
-                <a class="site-mark" href="{{ site.Home.RelPermalink }}" aria-label="Topi Autio, etusivu">TA</a>
-                <div class="nav-scroll">
-                    <ul>
-                        <li><a href="{{ site.Home.RelPermalink }}#esittely">Esittely</a></li>
-                        <li><a href="{{ site.Home.RelPermalink }}#portfolio">Projektit</a></li>
-                        <li><a href="{{ "cv/" | relURL }}">CV</a></li>
-                        <li><a href="{{ "blogi/" | relURL }}" class="active">Blogi</a></li>
-                        <li><a href="{{ site.Home.RelPermalink }}#yhteystiedot">Yhteystiedot</a></li>
-                    </ul>
-                </div>
-            </nav>
+            {{ partial "site-nav.html" (dict "active" "blog") }}
 
             <main id="sisalto">
                 <article class="blog-post">
