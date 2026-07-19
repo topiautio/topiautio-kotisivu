@@ -80,3 +80,13 @@ Siksi pidän tilin olemassa. En käytä Snapchatia varsinaisena viestisovellukse
 Eli jos seuraavan kerran kysyt minulta ”onksul snäppi?”, vastaus on: ”Juu, valitettavasti on.”
 
 Lähettäisin tämän linkin heti perään.
+
+## Jos lähetin tämän jutun sinulle
+
+En pyydä poistamaan Snapchatia saman tien. [Asenna Signal](https://signal.org/download/) sen rinnalle ja siirrä sinne aluksi yksi keskustelu. Vaikka tämä keskustelu. Jos Signal tuntuu viikon jälkeen huonommalta, Snapchat ei ole kadonnut mihinkään.
+
+Signalissa voi aloittaa keskustelun [käyttäjänimellä, linkillä tai QR-koodilla](https://support.signal.org/hc/en-us/articles/6712070553754-Phone-Number-Privacy-and-Usernames) paljastamatta toiselle puhelinnumeroaan. Siellä on katoavat viestit, [kerran katsottavat kuvat ja videot](https://support.signal.org/hc/en-us/articles/360038443071-View-Once-Media) sekä [tarinat](https://support.signal.org/hc/en-us/articles/5008009166234-Stories). Näitä varten ei siis tarvitse käyttää Snapchatia.
+
+Jos Signal näyttää tyhjältä, syy on sama kuin Snapchatin suosiossa: kaikki odottavat, että muut menevät ensin. Snapchatista tuli oletus, koska ihmiset vetivät kaverinsa sinne yksi kerrallaan. Parempi vaihtoehto leviää täsmälleen samalla tavalla.
+
+Seuraavan kerran, kun olet aloittamassa uutta keskustelua, kokeile kysyä: ”Löytyykö Signal?” Snapchat-tilin voi pitää varalla. Sen ei tarvitse olla paikka, johon jokainen uusi keskustelu automaattisesti päätyy.
