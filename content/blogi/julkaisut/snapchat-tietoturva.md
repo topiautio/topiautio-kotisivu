@@ -1,97 +1,64 @@
 ---
-title: "Kuinka yksityinen Snapchat oikeastaan on?"
+title: "Älä käytä Snapchatia. Se ei ole niin yksityinen kuin luulet."
 date: 2026-06-10
 lastmod: 2026-07-19
 slug: "snapchat-tietoturva"
-description: "Mitä Snapchatin tietovuoto, FTC-sovinto, SnapLion, Snap Map ja My AI kertovat palvelun tietoturvasta ja yksityisyydestä?"
-summary: "Mitä Snapchatin tietovuoto, FTC-sovinto, SnapLion, Snap Map ja My AI kertovat palvelun tietoturvasta ja yksityisyydestä?"
-readingTime: "7 min luku"
+description: "Miksi asensin Snapchatin vastentahtoisesti, miksi katoava viesti ei vakuuta minua ja mitä käyttäisin mieluummin."
+summary: "Minulla on Snapchat, vaikka en oikeastaan haluaisi käyttää sitä. Tässä syy — ja parempi vaihtoehto."
+readingTime: "4 min luku"
 keywords:
   - Snapchat
-  - tietoturva
+  - tietosuoja
   - yksityisyys
-  - FTC
-  - Snap Map
-  - My AI
+  - Signal
 ---
 
-Snapchat rakensi maineensa katoavien kuvien ja viestien varaan. Ajatus on helppo ymmärtää: kun viesti häviää keskustelusta pian avaamisen jälkeen, se tuntuu yksityisemmältä kuin tavallinen julkaisu sosiaalisessa mediassa.
+Minulla on Snapchat-tili. En oikeastaan haluaisi, että olisi.
 
-Katoaminen sovelluksen näkymästä ei kuitenkaan tarkoita, ettei vastaanottaja voisi tallentaa viestiä tai ettei palvelu käsittelisi siihen liittyviä tietoja. Snapchatin historiasta löytyy myös tapauksia, joissa yhtiön lupaukset ja käytännöt eivät ole vastanneet toisiaan.
+Yksi kaverini painosti minua asentamaan sovelluksen, koska hän hoitaa siellä lähes kaiken viestittelynsä. Me keskustelimme jo WhatsAppissa, mutta hänen mielestään Snapchat oli yksityisempi ja turvallisempi. Viestithän katoavat viimeistään 24 tunnin kuluttua.
 
-Tässä kirjoituksessa käyn läpi tunnetuimpia tapauksia ja sitä, mitä niistä voi päätellä nykyisen käyttäjän kannalta. Osa tapauksista on yli kymmenen vuoden takaa, joten ne eivät sellaisinaan kuvaa sovelluksen nykyistä teknistä toteutusta. Ne kertovat silti siitä, miksi yksityisyyttä koskeviin lupauksiin kannattaa suhtautua tarkasti.
+Toinen perustelu oli se, että Snapchatilla saa helposti otettua kuvia. Niin saa puhelimen omalla kamerallakin. Omassani kamera aukeaa painamalla virtapainiketta kahdesti, minkä jälkeen kuvan voi lähettää millä tahansa viestisovelluksella.
 
-## Vuoden 2013 tietovuoto
+Luin ennen asentamista Snapchatin tietosuojaselosteen. Huokaisin ja asensin sovelluksen silti.
 
-Joulukuussa 2013 verkkoon julkaistiin noin 4,6 miljoonan Snapchat-käyttäjän käyttäjänimet ja puhelinnumerot. Tietoja oli kerätty automatisoidusti Snapchatin Find Friends -toiminnon kautta.
+## Katoava viesti ei ole salainen viesti
 
-Tietoturvaryhmä [Gibson Security](https://gibsonsec.org/snapchat/) oli kuvannut rajapinnan ongelmia jo ennen vuotoa. Sen mukaan palvelu ei rajoittanut riittävästi puhelinnumeroilla tehtäviä hakuja. Hyökkääjä pystyi siksi kokeilemaan suuria määriä numeroita ja yhdistämään niitä käyttäjätunnuksiin. [The Guardianin uutisen](https://www.theguardian.com/media/2014/jan/01/hackers-reveal-46m-mobile-numbers-snapchat) mukaan vuotanut tietokanta julkaistiin SnapchatDB-nimisellä sivustolla.
+Snapchatin houkutus perustuu pitkälti tunteeseen siitä, ettei keskustelusta jää jälkeä. Sovelluksen oma ohje kertoo kuitenkin suoraan, että vastaanottaja voi tallentaa viestin keskusteluun tai ottaa siitä kuvakaappauksen. Jos kuva viedään puhelimen kuvakirjastoon, lähettäjä ei voi enää poistaa sitä vastaanottajan laitteelta.
 
-Tapaus oli ennen kaikkea rajapinnan suojausvirhe. Se ei todistanut, että Snapchatin viestisisältö olisi vuotanut, mutta käyttäjänimen ja puhelinnumeron yhdistelmä riitti altistamaan käyttäjiä roskapostille, tietojenkalastelulle ja muille yhteydenotoille. Vakavuutta lisäsi se, että ongelmasta oli kerrottu etukäteen.
+Snap ei myöskään lupaa, että viesti poistuu palvelimilta tietyllä kellonlyömällä. Tietoja voidaan säilyttää esimerkiksi väärinkäytösilmoituksen, lakisääteisen velvollisuuden tai varmuuskopioiden vuoksi. [Snapchatin oman ohjeen](https://help.snapchat.com/hc/en-us/articles/7012334940948-When-does-Snapchat-delete-Snaps-and-Chats) mukaan tavalliset keskustelut poistuvat oletuksena 24 tuntia sen jälkeen, kun kaikki osallistujat ovat lukeneet ne, mutta asetukset, tallentaminen ja muut poikkeukset muuttavat tätä.
 
-## FTC puuttui harhaanjohtaviin lupauksiin
+Katoaminen on käyttöliittymän ominaisuus. Se ei ole lupaus siitä, ettei kuvasta tai viestistä ole kopiota missään.
 
-Yhdysvaltain kuluttajansuojaviranomainen FTC käsitteli Snapchatin toimintaa vuonna 2014. [FTC:n mukaan](https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false) yhtiö oli antanut käyttäjille harhaanjohtavan kuvan sekä viestien katoamisesta että keräämistään tiedoista.
+Snapchat on ollut tästä vaikeuksissa ennenkin. Yhdysvaltain kuluttajansuojaviranomainen [FTC puuttui jo vuonna 2014](https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false) palvelun lupauksiin katoavista viesteistä. FTC:n mukaan kuvia ja videoita pystyi tallentamaan useilla tavoilla, eikä kuvakaappauksesta aina lähtenyt ilmoitusta. Samassa jutussa käsiteltiin myös paikkatiedon ja osoitekirjan keräämistä tavalla, joka ei vastannut silloisia lupauksia.
 
-FTC nosti esiin esimerkiksi seuraavat asiat:
+## Se varsinainen huokaus
 
-- Vastaanottaja pystyi tallentamaan kuvia ja videoita kolmannen osapuolen sovelluksilla.
-- Videot saattoivat jäädä vastaanottajan laitteelle salaamattomina, vaikka ne eivät enää näkyneet Snapchatissa.
-- Kuvakaappauksesta ei aina lähtenyt lähettäjälle ilmoitusta.
-- Android-sovellus välitti paikkatietoa vastoin silloisen tietosuojaselosteen väitettä.
-- iOS-sovellus keräsi osoitekirjasta nimiä ja puhelinnumeroita kertomatta siitä riittävän selvästi.
+[Snapin nykyinen tietosuojaseloste](https://values.snap.com/privacy/privacy-policy?lang=fi-FI) on pitkä, mutta sen sisältö on lopulta aika tuttu: palvelu kerää tilitiedot, käyttötiedot, laitetiedot ja tiedot siitä, kenen kanssa olet tekemisissä. Laitetietoihin voivat kuulua esimerkiksi mainostunnisteet, asennetut sovellukset ja puhelimen antureista saadut tiedot. Luvalla mukaan tulevat osoitekirja, kamera, kuvat, mikrofoni ja tarkka sijainti.
 
-Snapchat sopi asian FTC:n kanssa. Sovintoon ei kuulunut rahallista seuraamusta, mutta yhtiön piti ottaa käyttöön kattava tietosuojaohjelma ja teettää siitä riippumattomia arvioita 20 vuoden ajan. Kyse oli sovinnosta, ei oikeuden antamasta tuomiosta, jossa kaikki väitteet olisi käsitelty yksi kerrallaan.
+Osoitekirjan kohdalla oma kielteinen päätös ei edes ratkaise kaikkea. Snap voi saada puhelinnumeroni tai muita yhteystietojani toisen käyttäjän lataamasta osoitekirjasta. Palvelu käyttää keräämiään tietoja myös kiinnostuksen kohteiden päättelemiseen sekä sisällön ja mainosten kohdentamiseen.
 
-Sovelluksesta katoava viesti ja oikeasti poistettu tieto ovat eri asioita. Viesti voi hävitä lähettäjän näytöltä, vaikka vastaanottaja olisi jo tehnyt siitä kopion. Siksi Snapchatissa ei kannata lähettää mitään sellaista, jonka tallentuminen aiheuttaisi vakavaa haittaa.
+Snap sanoo myös suoraan, ettei se käytä kavereille lähetettyjen yksityisten viestien sisältöä mainosten tai suositusten kohdentamiseen. Silti keskustelu voi näyttää tyhjältä samalla, kun palvelulle on jäänyt varsin tarkka kuva laitteestani, sijainnistani ja siitä, miten käytän sovellusta.
 
-## SnapLion ja työntekijöiden pääsy tietoihin
+[Käyttöehdoissa](https://www.snap.com/terms) käyttäjä antaa Snapille oikeuden käsitellä palveluun lähettämäänsä sisältöä palvelun ylläpitämistä, kehittämistä ja markkinointia varten. Tämä ei tarkoita, että Snap omistaisi kuvani. Julkiselle sisällölle annettava käyttölupa on silti hyvin laaja. Minusta se sopii huonosti yhteen sen mielikuvan kanssa, että Snapchat olisi paikka, jossa asiat vain käväisevät ja katoavat.
 
-Vuonna 2019 [Motherboard kertoi](https://www.vice.com/en/article/snapchat-employees-abused-data-access-spy-on-users-snaplion/) SnapLion-nimisestä sisäisestä työkalusta. Se oli rakennettu muun muassa viranomaisten tietopyyntöjen käsittelyyn. Lehden haastattelemien entisten työntekijöiden mukaan osa työntekijöistä oli käyttänyt sisäisiä työkaluja väärin ja tarkastellut esimerkiksi käyttäjien sijaintitietoja, puhelinnumeroita ja tallennettuja Snap-kuvia.
+## Miksi sitä sitten käytetään?
 
-Kyse on journalistisesta selvityksestä, ei viranomaisen ratkaisusta tai tuomioistuimen vahvistamasta tapahtumakuvauksesta. Se ei myöskään osoita, että kuka tahansa työntekijä olisi voinut palauttaa kaikki jo kadonneet viestit.
+Oma veikkaukseni: koska muutkin käyttävät.
 
-SnapLion muistuttaa siitä, ettei ulkopuolinen hyökkääjä ole palvelun ainoa tietoturvariski. Työntekijöillä voi olla käyttäjätietoihin laajempi pääsy kuin käyttäjä näkee. Siksi käyttöoikeuksia pitää rajata, valvoa ja kirjata myös organisaation sisällä.
+Snapchat tarjosi aikanaan jotain, mitä muissa suosituissa sovelluksissa ei vielä ollut. Ihmiset latasivat sen, pyysivät kaverit mukaan ja nämä pyysivät omat kaverinsa. Kun tarpeeksi suuri osa porukasta on jo yhdessä palvelussa, paremman kilpailijan on vaikea saada ketään vaihtamaan.
 
-## Snap Map ja My AI keräävät tietoa eri tavalla
+Sama selittänee osan WhatsAppin, Facebookin ja Instagramin suosiosta. Niistä voin kirjoittaa omat ränttinsä joskus myöhemmin. WhatsApp ei ole minulle mikään tietosuojan ihanne, mutta en nähnyt mitään syytä siirtää jo toimivaa keskustelua sieltä vielä yhteen sovellukseen vain siksi, että siinä on kameranappi.
 
-Snap Map näyttää käyttäjän sijainnin tämän valitsemille kavereille. Sijainnin jakaminen muille käyttäjille on [Snapchatin mukaan oletuksena pois käytöstä](https://help.snapchat.com/hc/en-us/articles/24547077410580-Snap-Map-Privacy-Safety-Reminder). Kartta ei siis jaa sijaintia kavereille ilman käyttäjän valintaa.
+## Mitä käyttäisin mieluummin?
 
-Asetuksissa on silti kaksi eri asiaa, jotka on helppo sekoittaa. Ghost Mode piilottaa sijainnin muilta käyttäjiltä, mutta [Snapchat voi edelleen saada sijainnin](https://help.snapchat.com/hc/en-us/articles/7012322854932-How-do-I-turn-on-Ghost-Mode), jos sovelluksella on siihen lupa puhelimen asetuksissa. Taustalla päivittyvä sijainti riippuu niin ikään laitteen käyttöoikeuksista. Jos jatkuvalle seurannalle ei ole tarvetta, sijaintiluvaksi kannattaa valita vain sovelluksen käytön aikana.
+[Signalia](https://signal.org/). Sen viestit ja puhelut ovat päästä päähän salattuja, sillä voi lähettää kuvia ja siinäkin saa viestit katoamaan. Erona on se, ettei koko palvelu perustu mainosten myymiseen eikä katoamista tarvitse sekoittaa salaukseen.
 
-My AI:ssa yksityisyyskysymys on erilainen. Tavallisten keskustelujen on tarkoitus poistua automaattisesti, mutta [Snap kertoo säilyttävänsä My AI:lle lähetetyn sisällön, kunnes käyttäjä poistaa sen](https://help.snapchat.com/hc/en-us/articles/15682296562836-Does-Snap-save-content-shared-with-My-AI). Yhtiön mukaan keskusteluja käytetään My AI:n kehittämiseen ja käyttäjäkokemuksen mukauttamiseen. [Tietojen poistuminen palvelimilta voi kestää jopa 30 päivää](https://help.snapchat.com/hc/en-us/articles/18937378754324-How-do-I-delete-my-data-with-My-AI).
+Jos Signal ei käy, jatkaisin mieluummin siinä sovelluksessa, joka molemmilla jo on, kuin asentaisin Snapchatin yksityisyyden vuoksi. Kuvan voi ottaa puhelimen omalla kameralla.
 
-My AI herätti lisäksi huolta alaikäisten turvallisuudesta heti julkaisunsa jälkeen. *The Washington Postin* [vuonna 2023 tekemissä testeissä](https://www.washingtonpost.com/technology/2023/03/14/snapchat-myai/) botti antoi alaikäisiksi ilmoittautuneille käyttäjille sopimattomia neuvoja. Tämä ei ollut tietomurto, vaan esimerkki siitä, ettei yleiskäyttöisen tekoälybotin turvallisuutta ollut saatu luotettavaksi nuorille käyttäjille.
+## Miksi minulla sitten on Snapchat?
 
-## Illinoisin biometrisiä tietoja koskenut sovinto
+Koska yksi kaverini käyttää sitä lähes kaikkeen yhteydenpitoon, ja haluan pystyä juttelemaan hänen kanssaan. Näin tylsä syy se on.
 
-Snap sopi vuonna 2022 Illinoisissa nostetun ryhmäkanteen 35 miljoonalla dollarilla. Kanteessa väitettiin, että Snapchatin Lenses- ja Filters-toiminnot keräsivät biometrisiä tunnisteita ilman osavaltion BIPA-lain edellyttämiä ilmoituksia ja suostumusta.
+Tilin olemassaolo ei tarkoita, että pitäisin palvelua hyvänä tai luottaisin katoaviin viesteihin. Snapchat on puhelimessani yhden ihmisen tavoittamista varten. En kohtelisi siellä mitään viestiä sellaisena, jonka pitäisi oikeasti pysyä salassa.
 
-[Sovintosopimuksessa](https://angeion-public.s3.amazonaws.com/www.SnapIllinoisBIPASettlement.com/docs/4-Class%20Action%20Settlement%20Agreement%20and%20Release%20%28without%20Exhibits%29%20%28Fully%20Executed%29.pdf) ei ratkaistu, olivatko väitteet totta, eikä Snap myöntänyt rikkoneensa lakia. Sovinnon piiriin kuuluivat Illinoisin asukkaat, jotka olivat käyttäneet kyseisiä ominaisuuksia 17. marraskuuta 2015 alkaen. Korvaukseksi arvioitiin aluksi 58–117 dollaria hyväksyttyä hakemusta kohti, mutta lopullinen maksu oli noin 16,36 dollaria.
-
-Illinoisin laki on poikkeuksellisen vahva, koska se antaa yksityisille ihmisille mahdollisuuden vaatia korvausta rikkomuksista. Osavaltio ei kuitenkaan ole ainoa paikka, jossa biometrisiä tietoja säännellään. Siksi on tarkempaa puhua BIPA-lain poikkeuksellisesta kanneoikeudesta kuin väittää Illinoisin olevan ainoa biometrisiä tietoja suojaava osavaltio.
-
-## Mitä käyttäjän kannattaa tehdä?
-
-Snapchat ei ole ainoa palvelu, joka kerää yhteystietoja, sijaintia ja käyttötietoja. Sen historia antaa kuitenkin hyvän syyn tarkistaa asetukset ja miettiä, mitä palveluun lähettää.
-
-- Älä pidä katoavaa viestiä salaisena. Vastaanottaja voi tallentaa sen myös ilman Snapchatin ilmoitusta.
-- Anna sijaintioikeus vain sovellusta käytettäessä, ellet oikeasti tarvitse taustalla päivittyvää sijaintia.
-- Tarkista Snap Mapista, kenelle sijaintisi näkyy. Ghost Mode ei poista Snapchatilta puhelimen asetuksissa annettua sijaintilupaa.
-- Älä jaa osoitekirjaa, jos kaverien automaattinen etsiminen ei ole sinulle tarpeellista.
-- Älä kirjoita My AI:lle salasanoja, terveystietoja tai muuta arkaluonteista. Poista keskusteluhistoria asetuksista, jos et halua Snapin säilyttävän sitä.
-- Suojaa tili pitkällä yksilöllisellä salasanalla ja kaksivaiheisella tunnistautumisella.
-
-En pitäisi Snapchatia poikkeuksellisen turvattomana pelkän vuoden 2013 vuodon vuoksi. En kuitenkaan luottaisi siihen, että kadonnut viesti on oikeasti poissa. Vastaanottaja voi tallentaa sisällön, ja palvelulle annetut tiedot voivat säilyä pidempään kuin keskustelunäkymä antaa ymmärtää.
-
-## Lähteet
-
-1. [FTC: Snapchat Settles Charges That Promises of Disappearing Messages Were False (2014)](https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false)
-2. [Gibson Security: Snapchat Security Disclosure (2013)](https://gibsonsec.org/snapchat/)
-3. [The Guardian: Hackers publish 4.6 million Snapchat usernames and phone numbers (2014)](https://www.theguardian.com/media/2014/jan/01/hackers-reveal-46m-mobile-numbers-snapchat)
-4. [Motherboard: Snapchat Employees Abused Data Access to Spy on Users (2019)](https://www.vice.com/en/article/snapchat-employees-abused-data-access-spy-on-users-snaplion/)
-5. [Snapchat: Snap Map Privacy & Safety Reminder](https://help.snapchat.com/hc/en-us/articles/24547077410580-Snap-Map-Privacy-Safety-Reminder)
-6. [Snapchat: Does Snap save content shared with My AI?](https://help.snapchat.com/hc/en-us/articles/15682296562836-Does-Snap-save-content-shared-with-My-AI)
-7. [Snapchat: How do I delete my data with My AI?](https://help.snapchat.com/hc/en-us/articles/18937378754324-How-do-I-delete-my-data-with-My-AI)
-8. [The Washington Post: Snapchat tried to make a safe AI. But tests reveal dangers for teens (2023)](https://www.washingtonpost.com/technology/2023/03/14/snapchat-myai/)
-9. [Boone ym. vastaan Snap Inc.: sovintosopimus (2022)](https://angeion-public.s3.amazonaws.com/www.SnapIllinoisBIPASettlement.com/docs/4-Class%20Action%20Settlement%20Agreement%20and%20Release%20%28without%20Exhibits%29%20%28Fully%20Executed%29.pdf)
+Eli jos seuraavan kerran kysyt minulta ”onksul snäppi?”, vastaus on kyllä. Lähettäisin tämän linkin heti perään.
