@@ -43,7 +43,7 @@ FTC nosti esiin esimerkiksi seuraavat asiat:
 
 Snapchat sopi asian FTC:n kanssa. Sovintoon ei kuulunut rahallista seuraamusta, mutta yhtiön piti ottaa käyttöön kattava tietosuojaohjelma ja teettää siitä riippumattomia arvioita 20 vuoden ajan. Kyse oli sovinnosta, ei oikeuden antamasta tuomiosta, jossa kaikki väitteet olisi käsitelty yksi kerrallaan.
 
-Tapaus osoitti silti olennaisen eron käyttöliittymän ja todellisen tietoturvan välillä. Viesti voi kadota käyttäjän näytöltä, vaikka siitä olisi jo tehty kopio. Siksi Snapia ei pidä käyttää sellaisen tiedon lähettämiseen, jonka tallentuminen aiheuttaisi vakavaa haittaa.
+Sovelluksesta katoava viesti ja oikeasti poistettu tieto ovat eri asioita. Viesti voi hävitä lähettäjän näytöltä, vaikka vastaanottaja olisi jo tehnyt siitä kopion. Siksi Snapchatissa ei kannata lähettää mitään sellaista, jonka tallentuminen aiheuttaisi vakavaa haittaa.
 
 ## SnapLion ja työntekijöiden pääsy tietoihin
 
@@ -51,15 +51,15 @@ Vuonna 2019 [Motherboard kertoi](https://www.vice.com/en/article/snapchat-employ
 
 Kyse on journalistisesta selvityksestä, ei viranomaisen ratkaisusta tai tuomioistuimen vahvistamasta tapahtumakuvauksesta. Se ei myöskään osoita, että kuka tahansa työntekijä olisi voinut palauttaa kaikki jo kadonneet viestit.
 
-Tapaus nostaa silti esiin tavallisen mutta tärkeän tietoturvariskin: palvelun omilla ylläpitäjillä voi olla käyttäjätietoihin laajempi pääsy kuin käyttäjä näkee. Pelkkä ulkopuolisilta suojautuminen ei riitä, vaan käyttöoikeuksia pitää rajata, valvoa ja kirjata myös organisaation sisällä.
+SnapLion muistuttaa siitä, ettei ulkopuolinen hyökkääjä ole palvelun ainoa tietoturvariski. Työntekijöillä voi olla käyttäjätietoihin laajempi pääsy kuin käyttäjä näkee. Siksi käyttöoikeuksia pitää rajata, valvoa ja kirjata myös organisaation sisällä.
 
 ## Snap Map ja My AI keräävät tietoa eri tavalla
 
-Snap Map näyttää käyttäjän sijainnin tämän valitsemille kavereille. Sijainnin jakaminen muille käyttäjille on [Snapchatin mukaan oletuksena pois käytöstä](https://help.snapchat.com/hc/en-us/articles/24547077410580-Snap-Map-Privacy-Safety-Reminder), joten ominaisuus ei ole automaattisesti avoin seurantapalvelu.
+Snap Map näyttää käyttäjän sijainnin tämän valitsemille kavereille. Sijainnin jakaminen muille käyttäjille on [Snapchatin mukaan oletuksena pois käytöstä](https://help.snapchat.com/hc/en-us/articles/24547077410580-Snap-Map-Privacy-Safety-Reminder). Kartta ei siis jaa sijaintia kavereille ilman käyttäjän valintaa.
 
 Asetuksissa on silti kaksi eri asiaa, jotka on helppo sekoittaa. Ghost Mode piilottaa sijainnin muilta käyttäjiltä, mutta [Snapchat voi edelleen saada sijainnin](https://help.snapchat.com/hc/en-us/articles/7012322854932-How-do-I-turn-on-Ghost-Mode), jos sovelluksella on siihen lupa puhelimen asetuksissa. Taustalla päivittyvä sijainti riippuu niin ikään laitteen käyttöoikeuksista. Jos jatkuvalle seurannalle ei ole tarvetta, sijaintiluvaksi kannattaa valita vain sovelluksen käytön aikana.
 
-My AI:ssa yksityisyyskysymys on erilainen. Tavallisten keskustelujen on tarkoitus poistua automaattisesti, mutta [Snap kertoo säilyttävänsä My AI:lle lähetetyn sisällön, kunnes käyttäjä poistaa sen](https://help.snapchat.com/hc/en-us/articles/15682296562836-Does-Snap-save-content-shared-with-My-AI). Yhtiön mukaan keskusteluja käytetään My AI:n kehittämiseen ja käyttäjäkokemuksen mukauttamiseen. Tietojen poistuminen palvelimilta voi kestää jopa 30 päivää.
+My AI:ssa yksityisyyskysymys on erilainen. Tavallisten keskustelujen on tarkoitus poistua automaattisesti, mutta [Snap kertoo säilyttävänsä My AI:lle lähetetyn sisällön, kunnes käyttäjä poistaa sen](https://help.snapchat.com/hc/en-us/articles/15682296562836-Does-Snap-save-content-shared-with-My-AI). Yhtiön mukaan keskusteluja käytetään My AI:n kehittämiseen ja käyttäjäkokemuksen mukauttamiseen. [Tietojen poistuminen palvelimilta voi kestää jopa 30 päivää](https://help.snapchat.com/hc/en-us/articles/18937378754324-How-do-I-delete-my-data-with-My-AI).
 
 My AI herätti lisäksi huolta alaikäisten turvallisuudesta heti julkaisunsa jälkeen. *The Washington Postin* [vuonna 2023 tekemissä testeissä](https://www.washingtonpost.com/technology/2023/03/14/snapchat-myai/) botti antoi alaikäisiksi ilmoittautuneille käyttäjille sopimattomia neuvoja. Tämä ei ollut tietomurto, vaan esimerkki siitä, ettei yleiskäyttöisen tekoälybotin turvallisuutta ollut saatu luotettavaksi nuorille käyttäjille.
 
@@ -82,7 +82,7 @@ Snapchat ei ole ainoa palvelu, joka kerää yhteystietoja, sijaintia ja käyttö
 - Älä kirjoita My AI:lle salasanoja, terveystietoja tai muuta arkaluonteista. Poista keskusteluhistoria asetuksista, jos et halua Snapin säilyttävän sitä.
 - Suojaa tili pitkällä yksilöllisellä salasanalla ja kaksivaiheisella tunnistautumisella.
 
-Vanha tietovuoto ei yksin kerro, että Snapchat olisi nykyään poikkeuksellisen turvaton. FTC-sovinto, työntekijöiden käyttöoikeuksia koskevat tiedot ja nykyisten ominaisuuksien tiedonkeruu osoittavat kuitenkin, ettei palvelun lupaamaa katoavuutta pidä sekoittaa vahvaan yksityisyyteen. Käytännössä turvallisin oletus on, että Snapchatissa lähetetty sisältö voidaan tallentaa ja palvelulle annetut tiedot voivat säilyä pidempään kuin keskustelunäkymä antaa ymmärtää.
+En pitäisi Snapchatia poikkeuksellisen turvattomana pelkän vuoden 2013 vuodon vuoksi. En kuitenkaan luottaisi siihen, että kadonnut viesti on oikeasti poissa. Vastaanottaja voi tallentaa sisällön, ja palvelulle annetut tiedot voivat säilyä pidempään kuin keskustelunäkymä antaa ymmärtää.
 
 ## Lähteet
 
@@ -92,5 +92,6 @@ Vanha tietovuoto ei yksin kerro, että Snapchat olisi nykyään poikkeuksellisen
 4. [Motherboard: Snapchat Employees Abused Data Access to Spy on Users (2019)](https://www.vice.com/en/article/snapchat-employees-abused-data-access-spy-on-users-snaplion/)
 5. [Snapchat: Snap Map Privacy & Safety Reminder](https://help.snapchat.com/hc/en-us/articles/24547077410580-Snap-Map-Privacy-Safety-Reminder)
 6. [Snapchat: Does Snap save content shared with My AI?](https://help.snapchat.com/hc/en-us/articles/15682296562836-Does-Snap-save-content-shared-with-My-AI)
-7. [The Washington Post: Snapchat tried to make a safe AI. But tests reveal dangers for teens (2023)](https://www.washingtonpost.com/technology/2023/03/14/snapchat-myai/)
-8. [Boone ym. vastaan Snap Inc.: sovintosopimus (2022)](https://angeion-public.s3.amazonaws.com/www.SnapIllinoisBIPASettlement.com/docs/4-Class%20Action%20Settlement%20Agreement%20and%20Release%20%28without%20Exhibits%29%20%28Fully%20Executed%29.pdf)
+7. [Snapchat: How do I delete my data with My AI?](https://help.snapchat.com/hc/en-us/articles/18937378754324-How-do-I-delete-my-data-with-My-AI)
+8. [The Washington Post: Snapchat tried to make a safe AI. But tests reveal dangers for teens (2023)](https://www.washingtonpost.com/technology/2023/03/14/snapchat-myai/)
+9. [Boone ym. vastaan Snap Inc.: sovintosopimus (2022)](https://angeion-public.s3.amazonaws.com/www.SnapIllinoisBIPASettlement.com/docs/4-Class%20Action%20Settlement%20Agreement%20and%20Release%20%28without%20Exhibits%29%20%28Fully%20Executed%29.pdf)
