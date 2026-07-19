@@ -5,7 +5,7 @@ lastmod: 2026-07-19
 slug: "snapchat-tietoturva"
 description: "Miksi pidän Snapchat-tilin, vaikka en käytä sitä viestittelyyn, ja miksi katoava viesti ei tee palvelusta yksityistä."
 summary: "Minulla on Snapchat lähinnä siksi, että joku kuitenkin kysyy sitä. Yksityiseen viestittelyyn valitsisin muuta."
-readingTime: "4 min luku"
+readingTime: "5 min luku"
 keywords:
   - Snapchat
   - tietosuoja
@@ -43,7 +43,15 @@ Osoitekirjan kohdalla oma kielteinen päätös ei edes ratkaise kaikkea. Snap vo
 
 Snap sanoo myös suoraan, ettei se käytä kavereille lähetettyjen yksityisten viestien sisältöä mainosten tai suositusten kohdentamiseen. Silti keskustelu voi näyttää tyhjältä samalla, kun palvelulle on jäänyt varsin tarkka kuva laitteestani, sijainnistani ja siitä, miten käytän sovellusta.
 
-[Käyttöehdoissa](https://www.snap.com/terms) käyttäjä antaa Snapille oikeuden käsitellä palveluun lähettämäänsä sisältöä palvelun ylläpitämistä, kehittämistä ja markkinointia varten. Tämä ei tarkoita, että Snap omistaisi kuvani. Julkiselle sisällölle annettava käyttölupa on silti hyvin laaja. Minusta se sopii huonosti yhteen sen mielikuvan kanssa, että Snapchat olisi paikka, jossa asiat vain käväisevät ja katoavat.
+[Käyttöehtojen](https://www.snap.com/terms?lang=fi-FI) kohta ”Oikeudet, jotka myönnät meille” on vielä parempaa iltalukemista. Kun luon sisältöä Snapchatilla tai lähetän sitä palveluun, annan Snapille maailmanlaajuisen, maksuttoman, alilisensoitavan ja siirrettävän käyttöluvan. Se saa muun muassa tallentaa, käyttää, näyttää, jäljentää, muuttaa, julkaista, analysoida ja levittää sisältöä. Lupa kattaa myös kuvassa tai videossa esiintyvien ihmisten nimet, kasvot ja äänet. Ehtojen mukaan tätä lupaa käytetään palvelujen pyörittämiseen, kehittämiseen ja markkinointiin.
+
+Kuva pysyy siis minun omistamanani, mutta se ei paljon lämmitä, jos samalla annan näin pitkän luettelon käyttöoikeuksia.
+
+Julkisen sisällön kohdalla ehdot menevät vielä pidemmälle. Jos julkaisen kuvan esimerkiksi julkisessa tarinassa, julkisessa profiilissa, Valokeilassa tai Snap-kartalla, Snap saa maailmanlaajuisen ja peruuttamattoman oikeuden muun muassa muokata, mainostaa, esittää ja levittää sitä. Ehdoissa sanotaan myös suoraan, ettei käytöstä tarvitse maksaa minulle korvausta ja että palvelimelle jääviä kopioita voidaan säilyttää määrittämättömän ajan.
+
+Eli kyllä: jos julkaisisin naamakuvani julkisena sisältönä, ehdot on kirjoitettu niin laveiksi, että Snap voisi teoriassa käyttää sitä oman palvelunsa mainostamiseen maksamatta minulle mitään. En väitä, että se tekisi niin. Tavallisen yksityisen Snapin käyttäminen missä tahansa ulkopuolisessa mainoksessa ei myöskään seuraa ehdoista yhtä suoraviivaisesti, koska yleinen käyttölupa on sidottu lueteltuihin tarkoituksiin ja henkilötietojen käyttöä rajoittaa myös tietosuojalainsäädäntö. Minusta jo se, että tämä raja pitää kaivaa esiin lakitekstin keskeltä, kertoo tarpeeksi.
+
+Yksi tarkennus ehtoihin on silti tehtävä. Samalla sivulla ovat sekä Yhdysvaltain että muun maailman sopimukset. Lause, jonka mukaan Snap voi tarkastaa ja poistaa sisältöä ”milloin tahansa ja mistä tahansa syystä”, kuuluu Yhdysvalloissa käytettävään Snap Inc:n versioon. Suomessa sovellettava Snap Group Limitedin kohta on kapeampi: siinä oikeus tarkastaa ja poistaa sisältöä liittyy epäiltyyn ehtojen tai lain rikkomiseen sekä lakisääteisten velvollisuuksien hoitamiseen. Meihin sovellettava lisenssi on siitä huolimatta aivan riittävän laaja nostamaan kulmakarvojani.
 
 ## Miksi sitä sitten käytetään?
 
@@ -56,6 +64,10 @@ Sama selittänee osan WhatsAppin, Facebookin ja Instagramin suosiosta. Niistä v
 ## Mitä käyttäisin mieluummin?
 
 [Signalia](https://support.signal.org/hc/en-us/articles/360007320391-Is-it-private-Can-I-trust-it). Signal sanoo suoraan, että jokainen viesti ja puhelu on aina päästä päähän salattu. Sillä voi lähettää kuvia ja siinäkin saa viestit katoamaan. [Palvelussa ei myöskään ole mainoksia tai seurantaa](https://signal.org/).
+
+Signal julkaisee myös [sovellustensa ja palvelimensa lähdekoodin](https://github.com/signalapp). Kuka tahansa osaava voi tutkia, mitä koodi tekee, etsiä siitä virheitä ja kyseenalaistaa toteutuksen. Android-versiosta on lisäksi [toistettava koonti](https://github.com/signalapp/Signal-Android/blob/main/reproducible-builds/README.md), jonka avulla puhelimeen asennettua sovellusta voi verrata julkaistusta lähdekoodista koottuun versioon.
+
+Avoin lähdekoodi ei ole taikatemppu eikä yksin todista, että palvelu on turvallinen. Se tekee väitteiden tarkistamisesta kuitenkin aivan eri tavalla mahdollista. Snapchatin ja WhatsAppin varsinaisia sovelluksia ei voi tarkastaa samalla tavalla, koska niiden koko lähdekoodi ei ole julkinen. Niiden kohdalla käyttäjän pitää luottaa enemmän yhtiön sanaan, julkaistuihin teknisiin kuvauksiin ja ulkopuolisiin tutkimuksiin.
 
 Jos Signal ei käy, jatkan mieluummin WhatsAppissa kuin siirrän keskustelun Snapchatiin. WhatsApp on Metan omistama, enkä pidä sitä tietosuojan ihanteena, mutta [henkilökohtaiset viestit ja puhelut ovat sentään päästä päähän salattuja](https://faq.whatsapp.com/820124435853543). Snapchatin lisääminen niiden rinnalle ei paranna tilannetta. Kuvan voi edelleen ottaa puhelimen omalla kameralla.
 
