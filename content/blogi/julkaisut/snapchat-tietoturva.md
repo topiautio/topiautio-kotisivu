@@ -3,8 +3,8 @@ title: "Älä käytä Snapchatia. Se ei ole niin yksityinen kuin luulet."
 date: 2026-06-10
 lastmod: 2026-07-19
 slug: "snapchat-tietoturva"
-description: "Miksi asensin Snapchatin vastentahtoisesti, miksi katoava viesti ei vakuuta minua ja mitä käyttäisin mieluummin."
-summary: "Minulla on Snapchat, vaikka en oikeastaan haluaisi käyttää sitä. Tässä syy — ja parempi vaihtoehto."
+description: "Miksi pidän Snapchat-tilin, vaikka en käytä sitä viestittelyyn, ja miksi katoava viesti ei tee palvelusta yksityistä."
+summary: "Minulla on Snapchat lähinnä siksi, että joku kuitenkin kysyy sitä. Yksityiseen viestittelyyn valitsisin muuta."
 readingTime: "4 min luku"
 keywords:
   - Snapchat
@@ -15,9 +15,9 @@ keywords:
 
 Minulla on Snapchat-tili. En oikeastaan haluaisi, että olisi.
 
-Yksi kaverini painosti minua asentamaan sovelluksen, koska hän hoitaa siellä lähes kaiken viestittelynsä. Me keskustelimme jo WhatsAppissa, mutta hänen mielestään Snapchat oli yksityisempi ja turvallisempi. Viestithän katoavat viimeistään 24 tunnin kuluttua.
+Snapchatia on perusteltu minulle sillä, että se on tavallista viestisovellusta yksityisempi ja turvallisempi. Viestithän katoavat viimeistään 24 tunnin kuluttua.
 
-Toinen perustelu oli se, että Snapchatilla saa helposti otettua kuvia. Niin saa puhelimen omalla kamerallakin. Omassani kamera aukeaa painamalla virtapainiketta kahdesti, minkä jälkeen kuvan voi lähettää millä tahansa viestisovelluksella.
+Toinen kuulemani perustelu on se, että Snapchatilla saa helposti otettua kuvia. Niin saa puhelimen omalla kamerallakin. Omassani kamera aukeaa painamalla virtapainiketta kahdesti, minkä jälkeen kuvan voi lähettää millä tahansa viestisovelluksella.
 
 Luin ennen asentamista Snapchatin tietosuojaselosteen. Huokaisin ja asensin sovelluksen silti.
 
@@ -30,6 +30,10 @@ Snap ei myöskään lupaa, että viesti poistuu palvelimilta tietyllä kellonly�
 Katoaminen on käyttöliittymän ominaisuus. Se ei ole lupaus siitä, ettei kuvasta tai viestistä ole kopiota missään.
 
 Snapchat on ollut tästä vaikeuksissa ennenkin. Yhdysvaltain kuluttajansuojaviranomainen [FTC puuttui jo vuonna 2014](https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false) palvelun lupauksiin katoavista viesteistä. FTC:n mukaan kuvia ja videoita pystyi tallentamaan useilla tavoilla, eikä kuvakaappauksesta aina lähtenyt ilmoitusta. Samassa jutussa käsiteltiin myös paikkatiedon ja osoitekirjan keräämistä tavalla, joka ei vastannut silloisia lupauksia.
+
+Entä varsinainen päästä päähän -salaus? Snapchatin nykyisistä tietosuoja- ja tukiteksteistä en löytänyt yksiselitteistä lupausta, että kaikki kahdenkeskiset viestit, ryhmäkeskustelut ja puhelut olisivat päästä päähän salattuja. [Snap kertoo itse](https://help.snapchat.com/hc/en-us/articles/7012327251348-How-Snap-Inc-Works-with-Law-Enforcement), että Snapeihin ja keskusteluihin liittyviä tietoja voidaan saada esiin lainmukaisen viranomaispyynnön perusteella.
+
+Tämä ei tarkoita, että jokainen Snapchat-viesti makaisi jossain palvelimella selväkielisenä. Se tarkoittaa, etten voi olettaa Snapchatin tarjoavan samaa suojaa kuin viestisovellus, joka lupaa päästä päähän -salauksen suoraan kaikelle viestinnälle.
 
 ## Se varsinainen huokaus
 
@@ -47,18 +51,20 @@ Oma veikkaukseni: koska muutkin käyttävät.
 
 Snapchat tarjosi aikanaan jotain, mitä muissa suosituissa sovelluksissa ei vielä ollut. Ihmiset latasivat sen, pyysivät kaverit mukaan ja nämä pyysivät omat kaverinsa. Kun tarpeeksi suuri osa porukasta on jo yhdessä palvelussa, paremman kilpailijan on vaikea saada ketään vaihtamaan.
 
-Sama selittänee osan WhatsAppin, Facebookin ja Instagramin suosiosta. Niistä voin kirjoittaa omat ränttinsä joskus myöhemmin. WhatsApp ei ole minulle mikään tietosuojan ihanne, mutta en nähnyt mitään syytä siirtää jo toimivaa keskustelua sieltä vielä yhteen sovellukseen vain siksi, että siinä on kameranappi.
+Sama selittänee osan WhatsAppin, Facebookin ja Instagramin suosiosta. Niistä voin kirjoittaa omat ränttinsä joskus myöhemmin. WhatsApp ei ole minulle mikään tietosuojan ihanne, mutta en näe mitään syytä siirtää siellä jo toimivia keskusteluja vielä yhteen sovellukseen vain siksi, että siinä on kameranappi.
 
 ## Mitä käyttäisin mieluummin?
 
-[Signalia](https://signal.org/). Sen viestit ja puhelut ovat päästä päähän salattuja, sillä voi lähettää kuvia ja siinäkin saa viestit katoamaan. Erona on se, ettei koko palvelu perustu mainosten myymiseen eikä katoamista tarvitse sekoittaa salaukseen.
+[Signalia](https://support.signal.org/hc/en-us/articles/360007320391-Is-it-private-Can-I-trust-it). Signal sanoo suoraan, että jokainen viesti ja puhelu on aina päästä päähän salattu. Sillä voi lähettää kuvia ja siinäkin saa viestit katoamaan. [Palvelussa ei myöskään ole mainoksia tai seurantaa](https://signal.org/).
 
-Jos Signal ei käy, jatkaisin mieluummin siinä sovelluksessa, joka molemmilla jo on, kuin asentaisin Snapchatin yksityisyyden vuoksi. Kuvan voi ottaa puhelimen omalla kameralla.
+Jos Signal ei käy, jatkan mieluummin WhatsAppissa kuin siirrän keskustelun Snapchatiin. WhatsApp on Metan omistama, enkä pidä sitä tietosuojan ihanteena, mutta [henkilökohtaiset viestit ja puhelut ovat sentään päästä päähän salattuja](https://faq.whatsapp.com/820124435853543). Snapchatin lisääminen niiden rinnalle ei paranna tilannetta. Kuvan voi edelleen ottaa puhelimen omalla kameralla.
 
 ## Miksi minulla sitten on Snapchat?
 
-Koska yksi kaverini käyttää sitä lähes kaikkeen yhteydenpitoon, ja haluan pystyä juttelemaan hänen kanssaan. Näin tylsä syy se on.
+Koska olen vuonna 2004 syntynyt opiskelija. Kun tapaan uusia ihmisiä, on varsin todennäköistä, että joku kysyy ennemmin tai myöhemmin: ”onksul snäppi?” Muutkin kaverini ja tuttuni ovat sitä vuosien varrella kysyneet.
 
-Tilin olemassaolo ei tarkoita, että pitäisin palvelua hyvänä tai luottaisin katoaviin viesteihin. Snapchat on puhelimessani yhden ihmisen tavoittamista varten. En kohtelisi siellä mitään viestiä sellaisena, jonka pitäisi oikeasti pysyä salassa.
+Siksi pidän tilin olemassa. En käytä Snapchatia varsinaisena viestisovelluksenani enkä suostu siirtämään keskusteluja sinne. Tilin olemassaolo ei tarkoita, että pitäisin palvelua hyvänä tai luottaisin katoaviin viesteihin.
 
-Eli jos seuraavan kerran kysyt minulta ”onksul snäppi?”, vastaus on kyllä. Lähettäisin tämän linkin heti perään.
+Eli jos seuraavan kerran kysyt minulta ”onksul snäppi?”, vastaus on: ”Juu, valitettavasti on.”
+
+Lähettäisin tämän linkin heti perään.
