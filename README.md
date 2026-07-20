@@ -54,7 +54,7 @@ readingTime: "8 min luku"
 ---
 ```
 
-3. Blogilista muodostuu automaattisesti front matterin tiedoista. Nykyisen artikkelipohjan sisältö on vielä `layouts/blogi/single.html`-tiedostossa; seuraava migraatiovaihe on siirtää artikkelirungot Markdowniin.
+3. Kirjoita artikkelin sisältö front matterin jälkeen Markdownina. Blogilista ja artikkelisivu muodostuvat automaattisesti sisältötiedoston tiedoista.
 4. Aja `hugo server` ja tarkista sivu selaimessa.
 
 ## Chromium-pohjainen kuvakaappausvarmennus
