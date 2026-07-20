@@ -1,7 +1,7 @@
 ---
 title: "Älä käytä Snapchatia. Se ei ole niin yksityinen kuin luulet."
 date: 2026-06-10
-lastmod: 2026-07-19
+lastmod: 2026-07-20
 slug: "snapchat-tietoturva"
 description: "Miksi pidän Snapchat-tilin, vaikka en käytä sitä viestittelyyn, ja miksi katoava viesti ei tee palvelusta yksityistä."
 summary: "Minulla on Snapchat lähinnä siksi, että joku kuitenkin kysyy sitä. Yksityiseen viestittelyyn valitsisin muuta."
@@ -31,7 +31,9 @@ Katoaminen on käyttöliittymän ominaisuus. Se ei ole lupaus siitä, ettei kuva
 
 Snapchat on ollut tästä vaikeuksissa ennenkin. Yhdysvaltain kuluttajansuojaviranomainen [FTC puuttui jo vuonna 2014](https://www.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false) palvelun lupauksiin katoavista viesteistä. FTC:n mukaan kuvia ja videoita pystyi tallentamaan useilla tavoilla, eikä kuvakaappauksesta aina lähtenyt ilmoitusta. Samassa jutussa käsiteltiin myös paikkatiedon ja osoitekirjan keräämistä tavalla, joka ei vastannut silloisia lupauksia.
 
-Entä varsinainen päästä päähän -salaus? Snapchatin nykyisistä tietosuoja- ja tukiteksteistä en löytänyt yksiselitteistä lupausta, että kaikki kahdenkeskiset viestit, ryhmäkeskustelut ja puhelut olisivat päästä päähän salattuja. [Snap kertoo itse](https://help.snapchat.com/hc/en-us/articles/7012327251348-How-Snap-Inc-Works-with-Law-Enforcement), että Snapeihin ja keskusteluihin liittyviä tietoja voidaan saada esiin lainmukaisen viranomaispyynnön perusteella.
+Entä varsinainen päästä päähän -salaus? TLS ei ratkaise tätä. Se salaa yhteyden puhelimesta Snapin palvelimelle, mutta yhteys myös puretaan siellä. Jos viestin päällä ei ole erillistä päästä päähän -salausta, palveluntarjoaja pystyy teknisesti käsittelemään sen sisältöä. Pelkkä ”Snapchat käyttää TLS:ää” ei siis tarkoita, ettei Snap voisi lukea viestiä.
+
+Snapchatin nykyisistä tietosuoja- ja tukiteksteistä en löytänyt yksiselitteistä lupausta, että kaikki kahdenkeskiset viestit, ryhmäkeskustelut ja puhelut olisivat päästä päähän salattuja. [Snap sanoo](https://values.snap.com/privacy/privacy-by-product), ettei se tavallisesti tiedä, mitä käyttäjät lähettävät toisilleen, mutta mainitsee poikkeuksina esimerkiksi turvallisuustilanteet ja käyttäjän pyytämän puheviestin tekstityksen. Se on kuvaus yhtiön toimintatavasta, ei tekninen lupaus siitä, ettei yhtiö voisi päästä sisältöön. Snap kertoo myös, että [joitakin Snapeihin ja keskusteluihin liittyviä tietoja voidaan saada esiin](https://help.snapchat.com/hc/en-us/articles/7012327251348-How-Snap-Inc-Works-with-Law-Enforcement) lainmukaisen viranomaispyynnön perusteella.
 
 Tämä ei tarkoita, että jokainen Snapchat-viesti makaisi jossain palvelimella selväkielisenä. Se tarkoittaa, etten voi olettaa Snapchatin tarjoavan samaa suojaa kuin viestisovellus, joka lupaa päästä päähän -salauksen suoraan kaikelle viestinnälle.
 
@@ -68,6 +70,8 @@ Sama selittänee osan WhatsAppin, Facebookin ja Instagramin suosiosta. Niistä v
 Signal julkaisee myös [sovellustensa ja palvelimensa lähdekoodin](https://github.com/signalapp). Kuka tahansa osaava voi tutkia, mitä koodi tekee, etsiä siitä virheitä ja kyseenalaistaa toteutuksen. Android-versiosta on lisäksi [toistettava koonti](https://github.com/signalapp/Signal-Android/blob/main/reproducible-builds/README.md), jonka avulla puhelimeen asennettua sovellusta voi verrata julkaistusta lähdekoodista koottuun versioon.
 
 Avoin lähdekoodi ei ole taikatemppu eikä yksin todista, että palvelu on turvallinen. Se tekee väitteiden tarkistamisesta kuitenkin aivan eri tavalla mahdollista. Snapchatin ja WhatsAppin varsinaisia sovelluksia ei voi tarkastaa samalla tavalla, koska niiden koko lähdekoodi ei ole julkinen. Niiden kohdalla käyttäjän pitää luottaa enemmän yhtiön sanaan, julkaistuihin teknisiin kuvauksiin ja ulkopuolisiin tutkimuksiin.
+
+Tämä ei ole Signalin maksama propaganda-artikkeli. En saa sen suosittelemisesta mitään. Käytän sitä itse, koska pidän sen salausta, avoimuutta ja toimintamallia oikeasti parempina kuin vaihtoehdoissa.
 
 Jos Signal ei käy, jatkan mieluummin WhatsAppissa kuin siirrän keskustelun Snapchatiin. WhatsApp on Metan omistama, enkä pidä sitä tietosuojan ihanteena, mutta [henkilökohtaiset viestit ja puhelut ovat sentään päästä päähän salattuja](https://faq.whatsapp.com/820124435853543). Snapchatin lisääminen niiden rinnalle ei paranna tilannetta. Kuvan voi edelleen ottaa puhelimen omalla kameralla.
 
