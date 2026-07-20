@@ -1,5 +1,5 @@
-baseURL = "https://topiautio.fi/hugo/"
-publishDir = "public/hugo"
+baseURL = "https://topiautio.fi/"
+publishDir = "public"
 title = "Topi Autio"
 defaultContentLanguage = "fi"
 disableHugoGeneratorInject = true

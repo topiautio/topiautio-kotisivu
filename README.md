@@ -2,25 +2,22 @@
 
 Topi Aution portfolio- ja CV-sivusto (https://topiautio.fi/).
 
-Sivuston nykyinen staattinen versio palvellaan vielä juuripoluissa. Hugo-versio toimii rinnakkaisena migraatiodemona `/hugo/`-etuliitteen alla:
+Sivuston tuotantoversio rakennetaan Hugolla ja julkaistaan suoraan juuripolkuun:
 
-- `/` → nykyinen staattinen etusivu
-- `/hugo/` → Hugolla rakennettu etusivu
-- `/blogi/` → nykyinen staattinen blogi
-- `/hugo/blogi/` → Hugolla rakennettu blogi
-- `/cv/` → nykyinen staattinen CV
-- `/hugo/cv/` → Hugolla rakennettu CV
+- `/` → portfolio
+- `/blogi/` → blogi
+- `/cv/` → CV
 
 Suomenkielinen sivusto IT-harjoitteluun ja junior-rooleihin (painotus: kyberturvallisuus, järjestelmähallinta, tietoverkot) Jyväskylän alueella.
 
 ## Tech
 - Hugo (static site generator)
 - HTML5 + CSS3
-- Google Fonts (Lato + Material Symbols)
+- Google Fonts (DM Serif Display, DM Sans, DM Mono + Material Symbols)
 - GitHub Pages (CNAME: topiautio.fi)
 
 ## Hugo-rakenne
-- `config.toml` sisältää sivuston perusasetukset. Hugo rakentaa sivuston oletuksena `public/hugo/`-hakemistoon ja käyttää tuotannossa osoitetta `https://topiautio.fi/hugo/`.
+- `config.toml` sisältää sivuston perusasetukset. Hugo rakentaa sivuston `public/`-hakemistoon ja käyttää tuotannossa osoitetta `https://topiautio.fi/`.
 - `content/` sisältää Hugon sivut ja blogiartikkelien metatiedot.
 - `layouts/` sisältää sivujen renderöintipohjat. Nykyiset pohjat on migroitu pois erillisestä legacy-HTML-polkuhaun varassa toimivasta renderöinnistä, jotta Hugo-build on itsenäisempi.
 - `static/` sisältää Hugon julkaisuun kopioimat staattiset tiedostot kuten CSS:n, faviconin, robots.txt:n ja CNAME:n.
@@ -29,7 +26,7 @@ Suomenkielinen sivusto IT-harjoitteluun ja junior-rooleihin (painotus: kyberturv
 1. `git clone https://github.com/topiautio/topiautio-kotisivu.git`
 2. `cd topiautio-kotisivu`
 3. `hugo server`
-4. Avaa Hugon ilmoittama `/hugo/`-osoite selaimessa.
+4. Avaa Hugon ilmoittama osoite selaimessa.
 
 ## Build
 
@@ -37,7 +34,7 @@ Suomenkielinen sivusto IT-harjoitteluun ja junior-rooleihin (painotus: kyberturv
 scripts/build-site.sh
 ```
 
-Skripti rakentaa Hugo-version `public/hugo/`-kansioon ja kopioi nykyisen staattisen sivun `public/`-kansion juureen. Tämä vastaa GitHub Pagesiin julkaistavaa rakennetta. Älä muokkaa build-outputia käsin, vaan tee Hugo-muutokset `content/`, `layouts/`, `static/` tai `config.toml` -tiedostoihin.
+Skripti rakentaa tuotantosivuston `public/`-kansioon. Tämä vastaa GitHub Pagesiin julkaistavaa rakennetta. Älä muokkaa build-outputia käsin, vaan tee Hugo-muutokset `content/`, `layouts/`, `static/` tai `config.toml` -tiedostoihin.
 
 ## Uuden blogiartikkelin lisääminen
 1. Luo Markdown-tiedosto kansioon `content/blogi/julkaisut/`, esimerkiksi `content/blogi/julkaisut/uusi-artikkeli.md`.
@@ -63,7 +60,7 @@ Ubuntu voi asentaa `chromium-browser`-paketin snap-käynnistimenä, joka ei toim
 
 ```bash
 scripts/build-site.sh
-CHROME_BIN=/usr/bin/google-chrome scripts/capture-site-screenshots.sh public/hugo screenshots
+CHROME_BIN=/usr/bin/google-chrome scripts/capture-site-screenshots.sh public screenshots
 ```
 
 Skripti tallentaa kuvakaappaukset etusivusta, blogilistauksesta, CV:stä ja Snapchat-artikkelista `screenshots/`-kansioon.
