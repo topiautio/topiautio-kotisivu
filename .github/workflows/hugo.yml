@@ -6,14 +6,16 @@ on:
   push:
     branches: ["main"]
 
+  # Builds pull requests without deploying them
+  pull_request:
+    branches: ["main"]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Keep the build job read-only. Deployment permissions are granted only to the deploy job.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -30,6 +32,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       HUGO_VERSION: 0.164.0
     steps:
@@ -44,6 +48,7 @@ jobs:
         with:
           submodules: recursive
       - name: Setup Pages
+        if: github.event_name == 'push'
         id: pages
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
@@ -53,15 +58,24 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          scripts/build-site.sh \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            scripts/build-site.sh \
+              --baseURL "${{ steps.pages.outputs.base_url }}/"
+          else
+            scripts/build-site.sh
+          fi
       - name: Upload artifact
+        if: github.event_name == 'push'
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
   # Deployment job
   deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
