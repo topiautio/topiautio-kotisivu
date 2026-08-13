@@ -690,19 +690,6 @@ footer {
     text-transform: uppercase;
 }
 
-.material-symbols-outlined {
-    display: inline-block;
-    font-family: "Material Symbols Outlined";
-    font-size: 1.1em;
-    font-style: normal;
-    font-weight: normal;
-    letter-spacing: normal;
-    line-height: 1;
-    text-transform: none;
-    white-space: nowrap;
-    word-wrap: normal;
-}
-
 /* Shared blog and article foundations */
 .blog-shell {
     padding: clamp(4rem, 9vw, 7rem) 0 2rem;
