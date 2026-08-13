@@ -13,14 +13,14 @@ Suomenkielinen sivusto IT-harjoitteluun ja junior-rooleihin (painotus: kyberturv
 ## Tech
 - Hugo (static site generator)
 - HTML5 + CSS3
-- Google Fonts (DM Serif Display, DM Sans, DM Mono + Material Symbols)
+- Self-hosted DM Serif Display, DM Sans ja DM Mono -fontit
 - GitHub Pages (CNAME: topiautio.fi)
 
 ## Hugo-rakenne
 - `config.toml` sisältää sivuston perusasetukset. Hugo rakentaa sivuston `public/`-hakemistoon ja käyttää tuotannossa osoitetta `https://topiautio.fi/`.
 - `content/` sisältää Hugon sivut ja blogiartikkelien metatiedot.
 - `layouts/` sisältää sivujen renderöintipohjat. Nykyiset pohjat on migroitu pois erillisestä legacy-HTML-polkuhaun varassa toimivasta renderöinnistä, jotta Hugo-build on itsenäisempi.
-- `static/` sisältää Hugon julkaisuun kopioimat staattiset tiedostot kuten CSS:n, faviconin, robots.txt:n ja CNAME:n.
+- `static/` sisältää Hugon julkaisuun kopioimat staattiset tiedostot kuten CSS:n, paikalliset fontit, faviconin, robots.txt:n ja CNAME:n.
 
 ## Paikallinen kehitys
 1. `git clone https://github.com/topiautio/topiautio-kotisivu.git`

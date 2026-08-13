@@ -66,49 +66,14 @@
             }
         }
         </script>
-        <!-- Preload kriittiset fontit -->
-        <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap"
-            as="style"
-        />
-        <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap"
-            as="style"
-        />
-        <!-- Fontit ei estä renderöintiä -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap"
-            rel="stylesheet"
-            media="print"
-            onload="this.media='all'"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap"
-            rel="stylesheet"
-            media="print"
-            onload="this.media='all'"
-        />
-        <!-- HUOM! Google Fontsin API vaatii, että icon_names -listan sanat EHDOTTOMASTI aakkosjärjestyksessä. -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap"
-            rel="stylesheet"
-            media="print"
-            onload="this.media='all'"
-        />
-        <noscript>
-            <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
-            <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-            <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&amp;icon_names=arrow_back,article,attach_money,balance,calendar_month,contacts,database,description,diamond,edit_note,error,exercise,face,flag,gavel,hub,lightbulb,list,map,menu_book,report,schedule,search,smart_toy,verified,visibility_off,vpn_key,waving_hand&display=swap" rel="stylesheet" />
-        </noscript>
+        <link rel="stylesheet" href="{{ "fonts.css" | relURL }}" />
 
         <!-- Artikkelikohtaiset täydennystyylit (kutsutaan, .cite, .toc, .sources, .num) -->
         <style>
             .num {
                 display: inline-block;
                 color: var(--primary);
-                font-family: "JetBrains Mono", monospace;
+                font-family: var(--mono);
                 font-size: 0.85em;
                 font-weight: 500;
                 background: rgba(96, 165, 250, 0.12);
@@ -117,12 +82,6 @@
                 border-radius: 6px;
                 margin-right: 0.5rem;
                 vertical-align: middle;
-            }
-            h2 .material-symbols-outlined {
-                color: var(--primary);
-                font-size: 1.3em;
-                vertical-align: -3px;
-                margin-right: 0.4rem;
             }
             a.cite {
                 color: var(--text);
@@ -159,9 +118,6 @@
                 font-size: 0.9rem;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
-            }
-            .callout-title .material-symbols-outlined {
-                font-size: 1.2rem;
             }
             .callout p {
                 margin-bottom: 0.5rem;
@@ -249,9 +205,6 @@
                 letter-spacing: 0.5px;
                 color: var(--text-muted);
             }
-            .toc-title .material-symbols-outlined {
-                font-size: 1.1rem;
-            }
             .toc ol {
                 margin: 0;
                 padding-left: 1.4rem;
@@ -319,8 +272,6 @@
                 <article class="blog-post">
                     <div class="post-back">
                         <a href="{{ "blogi/" | relURL }}"
-                            ><span class="material-symbols-outlined"
-                                >arrow_back</span
                             >Takaisin blogiin</a
                         >
                     </div>
@@ -329,13 +280,9 @@
                         <h1>{{ .Title }}</h1>
                         <div class="post-meta">
                             <span class="post-date"
-                                ><span class="material-symbols-outlined"
-                                    >calendar_month</span
                                 >{{ .Date | time.Format "02.01.2006" }}</span
                             >
                             <span class="post-reading-time"
-                                ><span class="material-symbols-outlined"
-                                    >schedule</span
                                 >{{ .Params.readingTime }}</span
                             >
                         </div>
@@ -345,7 +292,7 @@
                         {{- if .TableOfContents }}
                         <div class="toc" aria-label="Sisällysluettelo">
                             <div class="toc-title">
-                                <span class="material-symbols-outlined">list</span>
+                                
                                 Sisällysluettelo
                             </div>
                             {{ .TableOfContents }}

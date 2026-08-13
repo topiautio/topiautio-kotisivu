@@ -25,10 +25,7 @@
     <title>Topi Autio | IT- ja kyberturvallisuusblogi</title>
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&amp;icon_names=calendar_month,schedule&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "fonts.css" | relURL }}">
     <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
     <link rel="stylesheet" href="{{ "blogi/blogi-tyylit.css" | relURL }}">
     <script src="{{ "navigation.js" | relURL }}" defer></script>
@@ -66,8 +63,8 @@
                     {{- range where .RegularPagesRecursive "Draft" false }}
                     <article class="post-card">
                         <div class="post-meta">
-                            <span class="post-date"><span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>{{ .Date | time.Format "02.01.2006" }}</span>
-                            <span class="post-reading-time"><span class="material-symbols-outlined" aria-hidden="true">schedule</span>{{ .Params.readingTime }}</span>
+                            <span class="post-date">{{ .Date | time.Format "02.01.2006" }}</span>
+                            <span class="post-reading-time">{{ .Params.readingTime }}</span>
                         </div>
                         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
                         <p>{{ .Summary }}</p>
