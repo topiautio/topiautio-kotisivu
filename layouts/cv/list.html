@@ -407,24 +407,25 @@
     <a href="{{ site.Home.RelPermalink }}">← Takaisin etusivulle</a>
   </nav>
 
+  {{- $cv := hugo.Data.cv -}}
+
   <!-- HEADER -->
   <div class="header">
     <div>
-      <h1 class="name">Topi Autio</h1>
-      <div class="title-tag">ICT Engineering Student &amp; Cybersecurity Enthusiast</div>
+      <h1 class="name">{{ $cv.header.name }}</h1>
+      <div class="title-tag">{{ $cv.header.title }}</div>
     </div>
     <div class="contacts">
-      <span>Jyväskylä</span>
-      <a href="mailto:topi@topiautio.fi">topi@topiautio.fi</a>
-      <a href="https://linkedin.com/in/topi-a-558796240">linkedin.com/in/topi-a</a>
-      <a href="https://github.com/topiautio">github.com/topiautio</a>
-      <a href="https://tryhackme.com/p/TopiAutio">tryhackme.com/p/TopiAutio</a>
+      <span>{{ $cv.header.location }}</span>
+      {{- range $cv.header.contacts }}
+      <a href="{{ .href }}">{{ .label }}</a>
+      {{- end }}
     </div>
   </div>
 
   <!-- SUMMARY -->
   <div class="summary">
-    ICT-insinööriopiskelija (JAMK), jolla <strong>vahva käytännön tausta</strong> Linux-järjestelmien ylläpidosta, kyberturvallisuudesta ja IT-tuesta. Kokemusta palvelinkonfiguroinnista varusmiespalveluksen erityistehtävässä sekä IT-lähituesta useissa harjoittelupaikoissa. Erityinen kiinnostus kyberturvallisuuden suuntaan — <strong>TryHackMe Top 3%</strong>, Capability Score <strong>58 (Junior Security Professional)</strong> sekä viisi learning path -kokonaisuutta suoritettuina. Etsin mahdollisuutta hyödyntää ja kasvattaa osaamistani käytännön IT-tehtävissä.
+    {{ $cv.summary.lead }} <strong>{{ $cv.summary.background }}</strong>{{ $cv.summary.background_tail }} <strong>{{ $cv.summary.tryhackme }}</strong>, <strong>{{ $cv.summary.capability }}</strong>{{ $cv.summary.closing }}
   </div>
 
   <div class="two-col">
@@ -433,87 +434,36 @@
       <!-- TYÖKOKEMUS -->
       <section class="section">
         <h2 class="section-title">Työkokemus</h2>
-
+        {{- range $cv.experience }}
         <div class="entry">
           <div class="entry-header">
-            <div class="entry-role">VBS4 Järjestelmän Ylläpitäjä</div>
-            <div class="entry-date">03/2024 – 09/2024</div>
+            <div class="entry-role">{{ .role }}</div>
+            <div class="entry-date">{{ .date }}</div>
           </div>
-          <div class="entry-org">Ilmasotakoulu, Puolustusvoimat · Tikkakoski</div>
-          <div class="achievement">Uudisti Ilmasotakoulun VBS-luokan verkkoarkkitehtuurin itsenäisesti</div>
+          <div class="entry-org">{{ .organisation }}</div>
+          {{- with .achievement }}<div class="achievement">{{ . }}</div>{{ end }}
           <ul class="entry-bullets">
-            <li>Konfiguroi Linux Ubuntu Server- ja Windows Server -ympäristöt sekä verkkopalvelut (DHCP, DNS, Active Directory, Samba, FOG)</li>
-            <li>Vastasi VBS4-luokan teknisestä ylläpidosta, koulutusskenaarioiden rakentamisesta ja dokumentaatiosta</li>
-            <li>Koulutti seuraavan saapumiserän ylläpitäjät itsenäiseen työskentelyyn; toimi SYSADMIN-vastuuhenkilönä</li>
-            <li>Organisoi koulutustapahtumia ja tarjosi teknistä tukea KASI-sotaharjoituksissa</li>
+            {{- range .bullets }}<li>{{ . }}</li>{{ end }}
           </ul>
         </div>
-
-        <div class="entry">
-          <div class="entry-header">
-            <div class="entry-role">Kartoittaja (Harjoittelija)</div>
-            <div class="entry-date">10/2023 – 12/2023</div>
-          </div>
-          <div class="entry-org">Keuruun kaupunki / Kunnallistekniikka</div>
-          <ul class="entry-bullets">
-            <li>Kenttäkartoitus ja kaupunki-infrastruktuurin dokumentointi paikkatietojärjestelmään (ArcGIS Pro)</li>
-            <li>Päivitti viheralueiden rajaukset digitaaliseen muotoon ja laati selkeät käyttöohjeet henkilöstölle</li>
-          </ul>
-        </div>
-
-        <div class="entry">
-          <div class="entry-header">
-            <div class="entry-role">Lähitukihenkilö (Harjoittelija)</div>
-            <div class="entry-date">08/2022 – 09/2022</div>
-          </div>
-          <div class="entry-org">Istekki Oy · Jyväskylä</div>
-          <ul class="entry-bullets">
-            <li>IT-lähituki asiakasympäristöissä: laite-elinkaaripäivitykset, ohjelmistoasennukset, vianmääritys</li>
-            <li>IT-laitekannan hallinta Efecte ITSM -järjestelmässä ja SER-jätteen tietoturvallinen käsittely</li>
-          </ul>
-        </div>
-
-        <div class="entry">
-          <div class="entry-header">
-            <div class="entry-role">IT-tukihenkilö (Harjoittelija)</div>
-            <div class="entry-date">01/2022 – 04/2022</div>
-          </div>
-          <div class="entry-org">Keuruun kaupunki / Hallintopalvelut</div>
-          <ul class="entry-bullets">
-            <li>Päätelaitteiden (iPad, Android, Windows) käyttöönotto ja hallinta: Microsoft Intune, MECM, VMware AirWatch, Active Directory</li>
-            <li>Tekninen tuki kaupungin ja koulujen henkilöstölle sekä oppilaille</li>
-          </ul>
-        </div>
-
+        {{- end }}
       </section>
 
       <!-- KOULUTUS -->
       <section class="section">
         <h2 class="section-title">Koulutus</h2>
-
+        {{- range $cv.education }}
         <div class="entry">
           <div class="entry-header">
-            <div class="entry-role">Insinööri (AMK), Tieto- ja viestintätekniikka</div>
-            <div class="entry-date">2025 – nykyhetki</div>
+            <div class="entry-role">{{ .role }}</div>
+            <div class="entry-date">{{ .date }}</div>
           </div>
-          <div class="entry-org">Jyväskylän ammattikorkeakoulu (JAMK)</div>
+          <div class="entry-org">{{ .organisation }}</div>
           <ul class="entry-bullets">
-            <li>Suuntautuminen: kyberturvallisuus ja verkkoinfrastruktuuri</li>
-            <li>Vahvimmat opintokokonaisuudet: Linux, Tietoverkot, Kyberturvallisuus, Tietokannat, Skriptaaminen — kaikki arvosanalla 5/5</li>
+            {{- range .bullets }}<li>{{ . }}</li>{{ end }}
           </ul>
         </div>
-
-        <div class="entry">
-          <div class="entry-header">
-            <div class="entry-role">Elektroniikka-asentaja, ICT-perustutkinto</div>
-            <div class="entry-date">2020 – 2023</div>
-          </div>
-          <div class="entry-org">Gradia Jyväskylä</div>
-          <ul class="entry-bullets">
-            <li>Painotettu keskiarvo 4,49 · Lisäksi 60 osp vapaavalintaisia tutkinnon osia: ohjelmiston toteuttaminen sekä sähkö- &amp; automaatioala</li>
-          </ul>
-        </div>
-
+        {{- end }}
       </section>
 
     </div>
@@ -524,11 +474,9 @@
       <!-- THM -->
       <div class="thm-badge">
         <div class="thm-title">TryHackMe</div>
-        <div class="thm-stat"><span>Sijoitus</span><strong>Top 3% (#47 303)</strong></div>
-        <div class="thm-stat"><span>Capability Score</span><strong>58 / 100 (Junior)</strong></div>
-        <div class="thm-stat"><span>Huoneita suoritettu</span><strong>171</strong></div>
-        <div class="thm-stat"><span>Pisin putki</span><strong>90 päivää</strong></div>
-        <div class="thm-stat"><span>Ansiomerkit</span><strong>27 kpl</strong></div>
+        {{- range $cv.tryhackme }}
+        <div class="thm-stat"><span>{{ .label }}</span><strong>{{ .value }}</strong></div>
+        {{- end }}
       </div>
 
       <!-- KYBERTURVALLISUUS TAIDOT -->
@@ -536,45 +484,24 @@
         <h2 class="section-title">Kyberturvallisuus</h2>
         <div class="skill-group">
           <div class="tags">
-            <span class="tag highlight">Kyberturvallisuus</span>
-            <span class="tag highlight">Jr Penetration Tester</span>
-            <span class="tag highlight">Web Fundamentals</span>
-            <span class="tag">OWASP Top 10</span>
-            <span class="tag">Linux PrivEsc</span>
-            <span class="tag">Kryptologia</span>
-            <span class="tag">Riskienhallinta</span>
+            {{- range $cv.skills.cybersecurity.highlighted }}<span class="tag highlight">{{ . }}</span>{{ end }}
+            {{- range $cv.skills.cybersecurity.regular }}<span class="tag">{{ . }}</span>{{ end }}
           </div>
         </div>
         <div class="skill-group" style="margin-top: 10px;">
           <div class="skill-group-title">Työkalut</div>
           <div class="tags">
-            <span class="tag">Metasploit</span>
-            <span class="tag">Nmap</span>
-            <span class="tag">Burp Suite</span>
-            <span class="tag">Wireshark</span>
-            <span class="tag">SQLMap</span>
+            {{- range $cv.skills.cybersecurity.tools }}<span class="tag">{{ . }}</span>{{ end }}
           </div>
         </div>
       </section>
 
       <!-- IT-INFRA -->
       <section class="section">
-        <h2 class="section-title">IT-infra & Verkot</h2>
+        <h2 class="section-title">IT-infra &amp; Verkot</h2>
         <div class="tags">
-          <span class="tag highlight">Linux</span>
-          <span class="tag highlight">Windows</span>
-          <span class="tag highlight">Docker</span>
-          <span class="tag highlight">Active Directory</span>
-          <span class="tag highlight">DNS</span>
-          <span class="tag highlight">DHCP</span>
-          <span class="tag highlight">Tietoverkot</span>
-          <span class="tag">Windows Server</span>
-          <span class="tag">OSI-malli</span>
-          <span class="tag">Lähiverkon suunnittelu</span>
-          <span class="tag">Samba</span>
-          <span class="tag">VirtualBox</span>
-          <span class="tag">FOG</span>
-          <span class="tag">Cisco Packet Tracer</span>
+          {{- range $cv.skills.infrastructure.highlighted }}<span class="tag highlight">{{ . }}</span>{{ end }}
+          {{- range $cv.skills.infrastructure.regular }}<span class="tag">{{ . }}</span>{{ end }}
         </div>
       </section>
 
@@ -582,61 +509,44 @@
       <section class="section">
         <h2 class="section-title">Tietokannat</h2>
         <div class="tags">
-          <span class="tag highlight">SQL</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">MongoDB</span>
-          <span class="tag">Tietokannan suunnittelu</span>
+          {{- range $cv.skills.databases.highlighted }}<span class="tag highlight">{{ . }}</span>{{ end }}
+          {{- range $cv.skills.databases.regular }}<span class="tag">{{ . }}</span>{{ end }}
         </div>
       </section>
 
       <!-- OHJELMOINTI -->
       <section class="section">
-        <h2 class="section-title">Ohjelmointi & Skriptaus</h2>
+        <h2 class="section-title">Ohjelmointi &amp; Skriptaus</h2>
         <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Bash</span>
-          <span class="tag">PowerShell</span>
-          <span class="tag highlight">JavaScript</span>
-          <span class="tag">HTML/CSS</span>
-          <span class="tag">Git</span>
-          <span class="tag">SQF (VBS4)</span>
+          {{- range $cv.skills.programming.regular }}<span class="tag">{{ . }}</span>{{ end }}
+          {{- range $cv.skills.programming.highlighted }}<span class="tag highlight">{{ . }}</span>{{ end }}
         </div>
       </section>
 
       <!-- OMAT PROJEKTIT -->
       <section class="section">
         <h2 class="section-title">Omat projektit</h2>
+        {{- range $cv.projects }}
         <div class="project-item">
-          <div class="project-name"><a href="https://github.com/topiautio" style="color: var(--accent-mid); text-decoration: none;">github.com/topiautio</a></div>
-          <div class="project-desc">Kyberturvallisuuteen, automatisointiin ja Linux-ympäristöihin liittyviä henkilökohtaisia projekteja ja skriptejä.</div>
+          <div class="project-name"><a href="{{ .href }}" style="color: var(--accent-mid); text-decoration: none;">{{ .name }}</a></div>
+          <div class="project-desc">{{ .description }}</div>
         </div>
-        <div class="project-item">
-          <div class="project-name"><a href="https://topiautio.fi" style="color: var(--accent-mid); text-decoration: none;">topiautio.fi</a></div>
-          <div class="project-desc">Henkilökohtainen portfolio — projektiesimerkit ja lisätietoja osaamisesta. Rakennettu web-kehityksen opinnoissa.</div>
-        </div>
+        {{- end }}
       </section>
 
       <!-- KIELET -->
       <section class="section">
         <h2 class="section-title">Kielet</h2>
-        <div class="lang-row"><span>Suomi</span><span class="lang-level">Äidinkieli</span></div>
-        <div class="lang-row"><span>Englanti</span><span class="lang-level">Erinomainen (C1)</span></div>
-        <div class="lang-row"><span>Ruotsi</span><span class="lang-level">Perustaidot</span></div>
-        <div class="lang-row"><span>Saksa</span><span class="lang-level">Perustaidot</span></div>
+        {{- range $cv.languages }}<div class="lang-row"><span>{{ .name }}</span><span class="lang-level">{{ .level }}</span></div>{{ end }}
       </section>
 
       <!-- SERTIFIKAATIT -->
       <section class="section">
         <h2 class="section-title">Sertifikaatit</h2>
         <ul class="cert-list">
-          <li>Jr Penetration Tester<span class="cert-date">02/2025</span></li>
-          <li>Web Fundamentals Path<span class="cert-date">02/2025</span></li>
-          <li>Complete Beginner Path<span class="cert-date">03/2025</span></li>
-          <li>Cyber Security 101<span class="cert-date">01/2025</span></li>
-          <li>SFS 6002 Sähkötyöturvallisuus</li>
-          <li>Tulityökortti</li>
-          <li>Työturvallisuuskortti</li>
-          <li>Ensiapu 8h</li>
+          {{- range $cv.certificates }}
+          <li>{{ .name }}{{ with .date }}<span class="cert-date">{{ . }}</span>{{ end }}</li>
+          {{- end }}
         </ul>
       </section>
 
