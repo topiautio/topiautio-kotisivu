@@ -1,0 +1,159 @@
+summary:
+  lead: "ICT-insinööriopiskelija (JAMK), jolla on"
+  background: "vahva käytännön tausta"
+  background_tail: " Linux-järjestelmien ylläpidosta, kyberturvallisuudesta ja IT-tuesta. Kokemusta palvelinkonfiguroinnista varusmiespalveluksen erityistehtävässä sekä IT-lähituesta useissa harjoittelupaikoissa. Erityinen kiinnostus kyberturvallisuuden suuntaan —"
+  tryhackme: "TryHackMe Top 3%"
+  capability: "Capability Score 58 (Junior Security Professional)"
+  closing: " sekä viisi learning path -kokonaisuutta suoritettuina. Etsin mahdollisuutta hyödyntää ja kasvattaa osaamistani käytännön IT-tehtävissä."
+
+header:
+  name: "Topi Autio"
+  title: "ICT Engineering Student & Cybersecurity Enthusiast"
+  location: "Jyväskylä"
+  contacts:
+    - label: "topi@topiautio.fi"
+      href: "mailto:topi@topiautio.fi"
+    - label: "linkedin.com/in/topi-a"
+      href: "https://linkedin.com/in/topi-a-558796240"
+    - label: "github.com/topiautio"
+      href: "https://github.com/topiautio"
+    - label: "tryhackme.com/p/TopiAutio"
+      href: "https://tryhackme.com/p/TopiAutio"
+
+experience:
+  - role: "VBS4 Järjestelmän Ylläpitäjä"
+    date: "03/2024 – 09/2024"
+    organisation: "Ilmasotakoulu, Puolustusvoimat · Tikkakoski"
+    achievement: "Uudisti Ilmasotakoulun VBS-luokan verkkoarkkitehtuurin itsenäisesti"
+    bullets:
+      - "Konfiguroi Linux Ubuntu Server- ja Windows Server -ympäristöt sekä verkkopalvelut (DHCP, DNS, Active Directory, Samba, FOG)"
+      - "Vastasi VBS4-luokan teknisestä ylläpidosta, koulutusskenaarioiden rakentamisesta ja dokumentaatiosta"
+      - "Koulutti seuraavan saapumiserän ylläpitäjät itsenäiseen työskentelyyn; toimi SYSADMIN-vastuuhenkilönä"
+      - "Organisoi koulutustapahtumia ja tarjosi teknistä tukea KASI-sotaharjoituksissa"
+  - role: "Kartoittaja (Harjoittelija)"
+    date: "10/2023 – 12/2023"
+    organisation: "Keuruun kaupunki / Kunnallistekniikka"
+    bullets:
+      - "Kenttäkartoitus ja kaupunki-infrastruktuurin dokumentointi paikkatietojärjestelmään (ArcGIS Pro)"
+      - "Päivitti viheralueiden rajaukset digitaaliseen muotoon ja laati selkeät käyttöohjeet henkilöstölle"
+  - role: "Lähitukihenkilö (Harjoittelija)"
+    date: "08/2022 – 09/2022"
+    organisation: "Istekki Oy · Jyväskylä"
+    bullets:
+      - "IT-lähituki asiakasympäristöissä: laite-elinkaaripäivitykset, ohjelmistoasennukset, vianmääritys"
+      - "IT-laitekannan hallinta Efecte ITSM -järjestelmässä ja SER-jätteen tietoturvallinen käsittely"
+  - role: "IT-tukihenkilö (Harjoittelija)"
+    date: "01/2022 – 04/2022"
+    organisation: "Keuruun kaupunki / Hallintopalvelut"
+    bullets:
+      - "Päätelaitteiden (iPad, Android, Windows) käyttöönotto ja hallinta: Microsoft Intune, MECM, VMware AirWatch, Active Directory"
+      - "Tekninen tuki kaupungin ja koulujen henkilöstölle sekä oppilaille"
+
+education:
+  - role: "Insinööri (AMK), Tieto- ja viestintätekniikka"
+    date: "2025 – nykyhetki"
+    organisation: "Jyväskylän ammattikorkeakoulu (JAMK)"
+    bullets:
+      - "Suuntautuminen: kyberturvallisuus ja verkkoinfrastruktuuri"
+      - "Vahvimmat opintokokonaisuudet: Linux, Tietoverkot, Kyberturvallisuus, Tietokannat, Skriptaaminen — kaikki arvosanalla 5/5"
+  - role: "Elektroniikka-asentaja, ICT-perustutkinto"
+    date: "2020 – 2023"
+    organisation: "Gradia Jyväskylä"
+    bullets:
+      - "Painotettu keskiarvo 4,49 · Lisäksi 60 osp vapaavalintaisia tutkinnon osia: ohjelmiston toteuttaminen sekä sähkö- & automaatioala"
+
+tryhackme:
+  - label: "Sijoitus"
+    value: "Top 3% (#47 303)"
+  - label: "Capability Score"
+    value: "58 / 100 (Junior)"
+  - label: "Huoneita suoritettu"
+    value: "171"
+  - label: "Pisin putki"
+    value: "90 päivää"
+  - label: "Ansiomerkit"
+    value: "27 kpl"
+
+skills:
+  cybersecurity:
+    highlighted:
+      - "Kyberturvallisuus"
+      - "Jr Penetration Tester"
+      - "Web Fundamentals"
+    regular:
+      - "OWASP Top 10"
+      - "Linux PrivEsc"
+      - "Kryptologia"
+      - "Riskienhallinta"
+    tools:
+      - "Metasploit"
+      - "Nmap"
+      - "Burp Suite"
+      - "Wireshark"
+      - "SQLMap"
+  infrastructure:
+    highlighted:
+      - "Linux"
+      - "Windows"
+      - "Docker"
+      - "Active Directory"
+      - "DNS"
+      - "DHCP"
+      - "Tietoverkot"
+    regular:
+      - "Windows Server"
+      - "OSI-malli"
+      - "Lähiverkon suunnittelu"
+      - "Samba"
+      - "VirtualBox"
+      - "FOG"
+      - "Cisco Packet Tracer"
+  databases:
+    highlighted:
+      - "SQL"
+    regular:
+      - "MySQL"
+      - "MongoDB"
+      - "Tietokannan suunnittelu"
+  programming:
+    highlighted:
+      - "JavaScript"
+    regular:
+      - "Python"
+      - "Bash"
+      - "PowerShell"
+      - "HTML/CSS"
+      - "Git"
+      - "SQF (VBS4)"
+
+projects:
+  - name: "github.com/topiautio"
+    href: "https://github.com/topiautio"
+    description: "Kyberturvallisuuteen, automatisointiin ja Linux-ympäristöihin liittyviä henkilökohtaisia projekteja ja skriptejä."
+  - name: "topiautio.fi"
+    href: "https://topiautio.fi"
+    description: "Henkilökohtainen portfolio — projektiesimerkit ja lisätietoja osaamisesta. Rakennettu web-kehityksen opinnoissa."
+
+languages:
+  - name: "Suomi"
+    level: "Äidinkieli"
+  - name: "Englanti"
+    level: "Erinomainen (C1)"
+  - name: "Ruotsi"
+    level: "Perustaidot"
+  - name: "Saksa"
+    level: "Perustaidot"
+
+certificates:
+  - name: "Jr Penetration Tester"
+    date: "02/2025"
+  - name: "Web Fundamentals Path"
+    date: "02/2025"
+  - name: "Complete Beginner Path"
+    date: "03/2025"
+  - name: "Cyber Security 101"
+    date: "01/2025"
+  - name: "SFS 6002 Sähkötyöturvallisuus"
+  - name: "Tulityökortti"
+  - name: "Työturvallisuuskortti"
+  - name: "Ensiapu 8h"
