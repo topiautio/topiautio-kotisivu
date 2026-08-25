@@ -1,0 +1,36 @@
+{{- $page := .page -}}
+{{- $description := .description -}}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.Params.author | jsonify | safeJS }},
+    "url": {{ $page.Permalink | jsonify | safeJS }},
+    "email": {{ site.Params.email | jsonify | safeJS }},
+    "jobTitle": "ICT-insinööriopiskelija",
+    "description": {{ $description | jsonify | safeJS }},
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jyväskylä",
+        "addressCountry": "FI"
+    },
+    "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Jyväskylän ammattikorkeakoulu"
+    },
+    "knowsAbout": [
+        "Linux",
+        "Windows Server",
+        "Active Directory",
+        "Tietoverkot",
+        "IT-tuki",
+        "Järjestelmähallinta",
+        "Kyberturvallisuus"
+    ],
+    "sameAs": [
+        {{ site.Params.linkedin | jsonify | safeJS }},
+        {{ site.Params.github | jsonify | safeJS }},
+        {{ site.Params.tryhackme | jsonify | safeJS }}
+    ]
+}
+</script>

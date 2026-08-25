@@ -28,40 +28,10 @@
     <link rel="stylesheet" href="{{ "fonts.css" | relURL }}">
     <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
     <script src="{{ "navigation.js" | relURL }}" defer></script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Topi Autio",
-        "url": {{ .Permalink | jsonify | safeJS }},
-        "email": "topi@topiautio.fi",
-        "jobTitle": "ICT-insinööriopiskelija",
-        "description": "Jyväskyläläinen ICT-insinööriopiskelija, jolla on kokemusta IT-tuesta, järjestelmähallinnasta, tietoverkoista ja kyberturvallisuudesta.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Jyväskylä",
-            "addressCountry": "FI"
-        },
-        "affiliation": {
-            "@type": "CollegeOrUniversity",
-            "name": "Jyväskylän ammattikorkeakoulu"
-        },
-        "knowsAbout": [
-            "Linux",
-            "Windows Server",
-            "Active Directory",
-            "Tietoverkot",
-            "IT-tuki",
-            "Järjestelmähallinta",
-            "Kyberturvallisuus"
-        ],
-        "sameAs": [
-            "https://www.linkedin.com/in/topi-a-558796240/",
-            "https://github.com/topiautio",
-            "https://tryhackme.com/p/TopiAutio"
-        ]
-    }
-    </script>
+    {{ partial "person-schema.html" (dict
+        "page" .
+        "description" "Jyväskyläläinen ICT-insinööriopiskelija, jolla on kokemusta IT-tuesta, järjestelmähallinnasta, tietoverkoista ja kyberturvallisuudesta."
+    ) }}
 </head>
 
 <body>
