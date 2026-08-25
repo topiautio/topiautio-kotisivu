@@ -69,9 +69,17 @@ capture() {
     "file://${SITE_DIR%/}/${path}"
 }
 
-capture "index.html" "home"
-capture "blogi/index.html" "blogi"
-capture "cv/index.html" "cv"
-capture "blogi/julkaisut/snapchat-tietoturva/index.html" "snapchat-tietoturva"
+while IFS= read -r -d '' page; do
+  relative_path="${page#"${SITE_DIR}/"}"
+
+  if [[ "$relative_path" == "index.html" ]]; then
+    name="home"
+  else
+    route="${relative_path%/index.html}"
+    name="${route//\//--}"
+  fi
+
+  capture "$relative_path" "$name"
+done < <(find "$SITE_DIR" -type f -name index.html -print0 | sort -z)
 
 echo "Screenshots written to ${OUT_DIR}/ using $($BROWSER --version)"
