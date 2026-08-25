@@ -23,20 +23,30 @@ disableKinds = ["taxonomy", "term"]
 
 [[menus.main]]
   name = "Esittely"
+  identifier = "intro"
   url = "/#esittely"
   weight = 10
 
 [[menus.main]]
   name = "Projektit"
+  identifier = "projects"
   url = "/#portfolio"
   weight = 20
 
 [[menus.main]]
   name = "CV"
+  identifier = "cv"
   url = "/cv/"
   weight = 30
 
 [[menus.main]]
   name = "Blogi"
+  identifier = "blog"
   url = "/blogi/"
   weight = 40
+
+[[menus.main]]
+  name = "Yhteystiedot"
+  identifier = "contact"
+  url = "/#yhteystiedot"
+  weight = 50
