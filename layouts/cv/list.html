@@ -23,27 +23,10 @@
 <meta name="twitter:description" content="Topi Aution CV: ICT-insinööriopiskelija (JAMK), IT-tuki, järjestelmäylläpito, kyberturvallisuus ja Linux-osaaminen.">
 <meta name="twitter:url" content="{{ .Permalink }}">
 <meta name="twitter:image" content="{{ "favicon.svg" | absURL }}">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Topi Autio",
-  "url": "https://topiautio.fi",
-  "email": "topi@topiautio.fi",
-  "jobTitle": "ICT-insinööriopiskelija",
-  "alumniOf": "Jyväskylän ammattikorkeakoulu",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Jyväskylä",
-    "addressCountry": "FI"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/topi-a-558796240/",
-    "https://github.com/topiautio",
-    "https://tryhackme.com/p/TopiAutio"
-  ]
-}
-</script>
+{{ partial "person-schema.html" (dict
+  "page" .
+  "description" "Topi Aution CV: ICT-insinööriopiskelija, jolla on kokemusta IT-tuesta, järjestelmähallinnasta, tietoverkoista ja kyberturvallisuudesta."
+) }}
 <link rel="stylesheet" href="{{ "fonts.css" | relURL }}">
 <style>
   :root {
