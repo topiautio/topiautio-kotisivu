@@ -1,13 +1,13 @@
+{{- $active := .active -}}
+{{- $menu := site.Menus.main -}}
 <nav class="site-nav" aria-label="Päänavigaatio">
     <a class="site-mark" href="{{ site.Home.RelPermalink }}" aria-label="Topi Autio, etusivu">TA</a>
 
     <div class="desktop-nav">
         <ul>
-            <li><a href="{{ site.Home.RelPermalink }}#esittely">Esittely</a></li>
-            <li><a href="{{ site.Home.RelPermalink }}#portfolio">Projektit</a></li>
-            <li><a href="{{ "cv/" | relURL }}">CV</a></li>
-            <li><a href="{{ "blogi/" | relURL }}"{{ if eq .active "blog" }} class="active" aria-current="page"{{ end }}>Blogi</a></li>
-            <li><a href="{{ site.Home.RelPermalink }}#yhteystiedot">Yhteystiedot</a></li>
+            {{- range $menu }}
+            <li><a href="{{ .URL | relURL }}"{{ if eq $active .Identifier }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a></li>
+            {{- end }}
         </ul>
     </div>
 
@@ -18,11 +18,9 @@
         </summary>
         <div class="mobile-nav-panel">
             <ul>
-                <li><a href="{{ site.Home.RelPermalink }}#esittely">Esittely</a></li>
-                <li><a href="{{ site.Home.RelPermalink }}#portfolio">Projektit</a></li>
-                <li><a href="{{ "cv/" | relURL }}">CV</a></li>
-                <li><a href="{{ "blogi/" | relURL }}"{{ if eq .active "blog" }} class="active" aria-current="page"{{ end }}>Blogi</a></li>
-                <li><a href="{{ site.Home.RelPermalink }}#yhteystiedot">Yhteystiedot</a></li>
+                {{- range $menu }}
+                <li><a href="{{ .URL | relURL }}"{{ if eq $active .Identifier }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a></li>
+                {{- end }}
             </ul>
         </div>
     </details>
