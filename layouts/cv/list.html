@@ -75,10 +75,14 @@
   }
 
   .top-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-bottom: 18px;
   }
 
-  .top-nav a {
+  .top-nav a,
+  .top-nav button {
     display: inline-block;
     text-decoration: none;
     font-family: 'DM Mono', monospace;
@@ -91,9 +95,21 @@
     padding: 7px 10px;
   }
 
-  .top-nav a:hover {
+  .top-nav button {
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .top-nav a:hover,
+  .top-nav button:hover {
     border-color: var(--accent-mid);
     color: var(--accent);
+  }
+
+  .top-nav a:focus-visible,
+  .top-nav button:focus-visible {
+    outline: 3px solid var(--accent-mid);
+    outline-offset: 2px;
   }
 
   /* HEADER */
@@ -405,6 +421,7 @@
 <div class="page">
   <nav class="top-nav" aria-label="Sivunavigaatio">
     <a href="{{ site.Home.RelPermalink }}">← Takaisin etusivulle</a>
+    <button type="button" onclick="window.print()">Tulosta / tallenna PDF</button>
   </nav>
 
   {{- $cv := hugo.Data.cv -}}
