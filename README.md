@@ -63,4 +63,6 @@ scripts/build-site.sh
 CHROME_BIN=/usr/bin/google-chrome scripts/capture-site-screenshots.sh public screenshots
 ```
 
-Skripti tallentaa kuvakaappaukset etusivusta, blogilistauksesta, CV:stä ja Snapchat-artikkelista `screenshots/`-kansioon.
+Skripti etsii rakennetusta sivustosta kaikki julkaistut sivut ja tallentaa niiden kuvakaappaukset `screenshots/`-kansioon. Luonnoksia ei kuvata, koska Hugo ei lisää niitä tavalliseen tuotantobuildiin.
+
+Pull requestien build tallentaa samat kuvat GitHub Actionsin `site-screenshots`-artefaktiksi 14 päiväksi. Artefaktin voi ladata PR:n Actions-ajosta visuaalista tarkistusta varten.
