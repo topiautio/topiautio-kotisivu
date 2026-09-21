@@ -68,6 +68,16 @@
                             <dt>Tausta</dt>
                             <dd>IT-tuki &amp; sysadmin</dd>
                         </div>
+                        {{- with (index site.Data.cv.education 0).progress }}
+                        <div>
+                            <dt>Opinnot</dt>
+                            <dd>{{ .completed }}/{{ .total }} op ({{ .as_of }})</dd>
+                        </div>
+                        {{- end }}
+                        <div>
+                            <dt>Työajat</dt>
+                            <dd>Sovitaan muuttuvan lukujärjestyksen mukaan</dd>
+                        </div>
                     </dl>
                     <a href="mailto:topi@topiautio.fi">topi@topiautio.fi <span aria-hidden="true">↗</span></a>
                 </aside>
