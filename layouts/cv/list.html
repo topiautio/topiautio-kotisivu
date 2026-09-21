@@ -460,6 +460,7 @@
           </div>
           <div class="entry-org">{{ .organisation }}</div>
           <ul class="entry-bullets">
+            {{- with .progress }}<li>Opintoja suoritettu {{ .completed }}/{{ .total }} op ({{ .as_of }})</li>{{ end }}
             {{- range .bullets }}<li>{{ . }}</li>{{ end }}
           </ul>
         </div>
