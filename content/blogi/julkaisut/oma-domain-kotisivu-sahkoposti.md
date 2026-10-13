@@ -1,7 +1,7 @@
 ---
 title: "Oma domain, kotisivu ja sähköposti: näin pystytin topiautio.fi:n"
 date: 2026-10-13
-draft: true
+draft: false
 slug: "oma-domain-kotisivu-sahkoposti"
 description: "Miten hankin .fi-verkkotunnuksen, ohjasin sen Cloudflaren kautta GitHub Pagesiin ja Proton Mailiin, ja mitä kokonaisuus maksaa."
 summary: "Oma verkkotunnus, kotisivu ja sähköposti ilman palvelimen ylläpitoa. Tässä mitä tein, mitä se maksaa ja mitä vaihtoehtoja on."
@@ -32,7 +32,7 @@ Halusin .fi-päätteen. Traficom ylläpitää listaa [.fi-verkkotunnusvälittäj
 
 Minulle tärkein ehto oli, että nimipalvelimet saa vaihtaa itse. Webbiketussa se onnistuu, joten verkkotunnuksen DNS-asetuksia ei tarvitse hallita välittäjän omassa paneelissa.
 
-<!-- KUVA: Webbiketun nimipalvelinasetukset -->
+![Webbiketun nimipalvelinasetukset, joissa on käytössä Cloudflaren nimipalvelimet](/blogi/julkaisut/oma-domain-kotisivu-sahkoposti/webbikettu-nimipalvelimet.webp)
 
 ## 2. Nimipalvelu Cloudflareen
 
@@ -42,11 +42,15 @@ Käytännössä:
 
 1. Lisää verkkotunnus Cloudflareen. Cloudflare kertoo kaksi nimipalvelinta.
 2. Vaihda ne verkkotunnusvälittäjän paneelissa vanhojen tilalle.
-3. Odota, että muutos leviää. Minulla siihen meni <!-- TÄYDENNÄ: kauanko? --> .
+3. Odota, että muutos leviää. Webbikettu varoittaa, että siihen voi mennä jopa vuorokausi.
 
-Tämän jälkeen kaikki muut asetukset tehdään Cloudflaren DNS-näkymässä.
+![Cloudflaren antamat nimipalvelimet topiautio.fi-verkkotunnukselle](/blogi/julkaisut/oma-domain-kotisivu-sahkoposti/cloudflare-nimipalvelimet.webp)
 
-<!-- KUVA: Cloudflaren DNS-tietueet -->
+Tämän jälkeen kaikki muut asetukset tehdään Cloudflaren DNS-näkymässä. Minulla siellä on nyt 14 tietuetta: viisi sivustolle, kahdeksan sähköpostille ja yksi Googlen vahvistusta varten.
+
+![Cloudflaren DNS-tietueet: A-tietueet GitHub Pagesille sekä Proton Mailin MX-, SPF-, DKIM- ja DMARC-tietueet](/blogi/julkaisut/oma-domain-kotisivu-sahkoposti/cloudflare-dns-tietueet.webp)
+
+Kaikki tietueet ovat tilassa **DNS only**. Cloudflare toimii minulla siis pelkkänä nimipalveluna, eikä liikenne kulje sen välityspalvelimen kautta. GitHub Pages hoitaa HTTPS-varmenteen itse.
 
 ## 3. Kotisivu GitHub Pagesiin
 
@@ -61,7 +65,7 @@ Yksi vinkki tietoturvan puolelta: [vahvista verkkotunnus GitHub-tililläsi](http
 
 ## 4. Sähköposti Proton Mailiin
 
-Sähköpostini on [Proton Mailissa](https://proton.me/mail). Oma verkkotunnus vaatii maksullisen tilauksen. Minulla on Ultimate-paketti, joka maksaa 7,99 € kuussa. Pelkkään sähköpostiin oman verkkotunnuksen kanssa riittää myös halvempi paketti, joten vertaa [Protonin hintoja](https://proton.me/mail/pricing) itse.
+Sähköpostini on [Proton Mailissa](https://proton.me/mail). Oma verkkotunnus vaatii maksullisen tilauksen. Minulla on Ultimate-paketti, joka maksaa 7,99 € kuussa ja johon saa liitettyä kolme omaa verkkotunnusta. Pelkkään sähköpostiin oman verkkotunnuksen kanssa riittää myös halvempi paketti, joten vertaa [Protonin hintoja](https://proton.me/mail/pricing) itse.
 
 Kun verkkotunnuksen lisää Protoniin, Proton antaa listan DNS-tietueita, jotka lisätään Cloudflareen:
 
@@ -71,11 +75,15 @@ Kun verkkotunnuksen lisää Protoniin, Proton antaa listan DNS-tietueita, jotka 
 - **DKIM (CNAME),** jolla lähtevät viestit allekirjoitetaan
 - **DMARC (TXT),** joka kertoo vastaanottajalle, mitä tehdä viesteille, jotka eivät läpäise SPF- ja DKIM-tarkistuksia
 
-Kopioi arvot suoraan Protonin hallintapaneelista. Cloudflaressa sähköpostin tietueiden pitää olla tilassa **DNS only** (harmaa pilvi), eli niitä ei saa ohjata Cloudflaren välityspalvelimen kautta.
+Kopioi arvot suoraan Protonin hallintapaneelista. Cloudflaressa sähköpostin tietueiden pitää olla tilassa **DNS only** (harmaa pilvi), eli niitä ei saa ohjata Cloudflaren välityspalvelimen kautta. Omassa DMARC-tietueessani on käytäntö `p=quarantine`, eli tarkistukset läpäisemättömät viestit ohjataan vastaanottajalla roskapostiin.
 
-<!-- KUVA: Protonin verkkotunnusasetukset, kaikki tarkistukset vihreällä -->
+Kun tietueet ovat paikallaan, Proton näyttää jokaisen tarkistuksen vihreänä:
 
-<!-- TÄYDENNÄ: menikö jokin pieleen tai kestikö jokin yllättävän kauan? -->
+![Proton Mailin verkkotunnusasetukset: topiautio.fi vahvistettu, MX, SPF, DKIM, DMARC ja catch-all kunnossa](/blogi/julkaisut/oma-domain-kotisivu-sahkoposti/proton-verkkotunnukset.webp)
+
+Laitoin päälle myös catch-all-osoitteen. Silloin myös väärin kirjoitettuun osoitteeseen, kuten topu@topiautio.fi, lähetetty viesti tulee perille. Lopuksi asetin oman osoitteen oletukseksi, jolloin uudet viestit lähtevät siitä:
+
+![Proton Mailin lähettäjäasetukset, joissa oletusosoite on topi@topiautio.fi](/blogi/julkaisut/oma-domain-kotisivu-sahkoposti/proton-osoite.webp)
 
 ## 5. Sivu hakukoneisiin
 
