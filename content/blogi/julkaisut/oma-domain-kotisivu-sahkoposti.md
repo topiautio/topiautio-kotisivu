@@ -5,7 +5,7 @@ draft: false
 slug: "oma-domain-kotisivu-sahkoposti"
 description: "Miten hankin .fi-verkkotunnuksen, ohjasin sen Cloudflaren kautta GitHub Pagesiin ja Proton Mailiin, ja mitä kokonaisuus maksaa."
 summary: "Oma verkkotunnus, kotisivu ja sähköposti ilman palvelimen ylläpitoa. Tässä mitä tein, mitä se maksaa ja mitä vaihtoehtoja on."
-readingTime: "6 min luku"
+readingTime: "8 min luku"
 keywords:
   - verkkotunnus
   - .fi-domain
@@ -13,6 +13,8 @@ keywords:
   - GitHub Pages
   - Proton Mail
   - DNS
+  - DNSSEC
+  - IPv6
 ---
 
 Halusin itselleni osoitteen, jonka voi laittaa CV:hen ja joka on minun, vaikka vaihtaisin joskus sähköpostipalvelua tai sivuston alustaa. Lopputulos on topiautio.fi: kotisivu osoitteessa [topiautio.fi](https://topiautio.fi/) ja sähköposti muotoa topi@topiautio.fi.
@@ -46,7 +48,7 @@ Käytännössä:
 
 ![Cloudflaren antamat nimipalvelimet topiautio.fi-verkkotunnukselle](/blogi/julkaisut/oma-domain-kotisivu-sahkoposti/cloudflare-nimipalvelimet.webp)
 
-Tämän jälkeen kaikki muut asetukset tehdään Cloudflaren DNS-näkymässä. Minulla siellä on nyt 14 tietuetta: viisi sivustolle, kahdeksan sähköpostille ja yksi Googlen vahvistusta varten.
+Tämän jälkeen kaikki muut asetukset tehdään Cloudflaren DNS-näkymässä. Kuvan ottamisen aikaan tietueita oli 14: viisi sivustolle, kahdeksan sähköpostille ja yksi Googlen vahvistusta varten. Myöhemmin lisäsin vielä IPv6-tietueet, niistä lisää alempana.
 
 ![Cloudflaren DNS-tietueet: A-tietueet GitHub Pagesille sekä Proton Mailin MX-, SPF-, DKIM- ja DMARC-tietueet](/blogi/julkaisut/oma-domain-kotisivu-sahkoposti/cloudflare-dns-tietueet.webp)
 
@@ -93,6 +95,31 @@ Sivu ei ilmesty hakutuloksiin heti, vaikka se olisi netissä. Sitä voi nopeutta
 - **[Bing Webmaster Tools](https://www.bing.com/webmasters):** sama juttu Bingille. Asetukset voi tuoda suoraan Search Consolesta. Bingin hakemistoa käyttävät myös esimerkiksi DuckDuckGo ja Ecosia, joten tällä yhdellä saa katettua useamman hakukoneen.
 
 Brave Searchilla on oma hakemistonsa, mutta sille ei ole vastaavaa työkalua. Sivu löytyy sinne ajan kanssa.
+
+## 6. IPv6 ja DNSSEC
+
+Perusasetusten jälkeen kaksi asiaa jäi vielä puuttumaan.
+
+**IPv6.** Sivulla oli vain IPv4-osoitteet (A-tietueet). GitHub Pages toimii myös IPv6:lla, joten lisäsin Cloudflareen neljä AAAA-tietuetta GitHubin osoitteisiin `2606:50c0:8000::153`–`2606:50c0:8003::153`. A-tietueet jäivät paikalleen, joten sivu toimii kummallakin protokollalla.
+
+**DNSSEC.** Ilman DNSSECiä nimipalvelun vastauksia ei voi todentaa, ja hyökkääjä voi teoriassa syöttää väärennetyn vastauksen ja ohjata kävijän väärään osoitteeseen. DNSSEC allekirjoittaa DNS-vastaukset, ja resolveri voi tarkistaa allekirjoitukset .fi-juuresta asti.
+
+Käyttöönotossa on kaksi vaihetta:
+
+1. **Cloudflare** allekirjoittaa vyöhykkeen. Se tapahtuu yhdellä napilla: DNS → Settings → Enable DNSSEC. Cloudflare näyttää DS-tietueen tiedot.
+2. **Verkkotunnusvälittäjä** vie DS-tietueen .fi-rekisteriin. Näin .fi-vyöhyke kertoo, mihin avaimeen topiautio.fi:n allekirjoituksiin pitää luottaa.
+
+Webbiketun paneelissa ei ollut DS-tietueelle omaa kenttää, joten lähetin tukipyynnön Cloudflaren antamilla tiedoilla. Lähetin sen illalla, vastaus tuli seuraavana aamuna, ja DS-tietue ilmestyi rekisteriin muutaman tunnin päästä.
+
+Toimivuuden voi tarkistaa esimerkiksi [DNSViz](https://dnsviz.net/d/topiautio.fi/dnssec/)-palvelulla tai komennolla:
+
+```bash
+dig +dnssec topiautio.fi @1.1.1.1
+```
+
+Kun vastauksen otsakkeessa näkyy `ad`-lippu (authenticated data), resolveri on todentanut vastauksen.
+
+Yksi asia kannattaa muistaa: jos nimipalvelimet joskus vaihtuvat pois Cloudflaresta, DS-tietue pitää poistaa rekisteristä ennen vaihtoa. Muuten validoivat resolverit hylkäävät domainin vastaukset, eikä sivu tai sähköposti toimi.
 
 ## Ylläpito
 
