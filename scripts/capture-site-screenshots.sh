@@ -54,6 +54,21 @@ fi
 
 mkdir -p "$OUT_DIR"
 
+# Serve the site over HTTP: root-relative asset URLs such as /styles.css do not
+# resolve against file:// URLs, which left the screenshots unstyled.
+PORT="${SCREENSHOT_PORT:-8765}"
+BASE_URL="http://127.0.0.1:${PORT}"
+python3 -m http.server "$PORT" --bind 127.0.0.1 --directory "$SITE_DIR" >/dev/null 2>&1 &
+SERVER_PID=$!
+trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+
+for _ in $(seq 1 50); do
+  if python3 -c "import urllib.request, sys; urllib.request.urlopen(sys.argv[1], timeout=1)" "${BASE_URL}/" >/dev/null 2>&1; then
+    break
+  fi
+  sleep 0.1
+done
+
 capture() {
   local path="$1"
   local name="$2"
@@ -66,7 +81,7 @@ capture() {
     --virtual-time-budget=5000 \
     --window-size="${WIDTH},${HEIGHT}" \
     --screenshot="${OUT_DIR}/${name}.png" \
-    "file://${SITE_DIR%/}/${path}"
+    "${BASE_URL}/${path}"
 }
 
 while IFS= read -r -d '' page; do
@@ -74,12 +89,14 @@ while IFS= read -r -d '' page; do
 
   if [[ "$relative_path" == "index.html" ]]; then
     name="home"
+    url_path=""
   else
     route="${relative_path%/index.html}"
     name="${route//\//--}"
+    url_path="${route}/"
   fi
 
-  capture "$relative_path" "$name"
+  capture "$url_path" "$name"
 done < <(find "$SITE_DIR" -type f -name index.html -print0 | sort -z)
 
 echo "Screenshots written to ${OUT_DIR}/ using $($BROWSER --version)"
