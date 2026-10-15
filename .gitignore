@@ -5,3 +5,6 @@ resources/_gen/
 
 # Local visual regression output
 screenshots/
+
+# Node-työkalut (npm ci)
+node_modules/

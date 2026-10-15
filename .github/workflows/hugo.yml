@@ -62,9 +62,21 @@ jobs:
           else
             scripts/build-site.sh
           fi
+      - name: Install check tools
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "1"
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Check internal links and CSP compatibility
+        run: python3 scripts/check-site.py public
+      - name: Check accessibility (WCAG 2 AA)
+        run: |
+          export CHROME_BIN="$(command -v google-chrome)"
+          scripts/check-accessibility.sh public
       - name: Capture site screenshots
         if: github.event_name == 'pull_request'
-        run: scripts/capture-site-screenshots.sh public screenshots
+        run: |
+          export CHROME_BIN="$(command -v google-chrome)"
+          node scripts/capture-site-screenshots.mjs public screenshots
       - name: Upload site screenshots
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -78,6 +90,8 @@ jobs:
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: ./public
+          # .well-known/security.txt alkaa pisteellä, ja se jätetään muuten pois.
+          include-hidden-files: true
 
   # Deployment job
   deploy:

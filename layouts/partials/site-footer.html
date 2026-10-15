@@ -1,0 +1,13 @@
+{{- /* Sivuston alatunniste. Otsikko annetaan parametrina, yhteystiedot tulevat config.toml:sta. */ -}}
+<footer id="yhteystiedot">
+    <div>
+        <p class="section-index">OTA YHTEYTTÄ</p>
+        <h2>{{ .heading }}</h2>
+    </div>
+    <div class="footer-links">
+        <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+        <a href="{{ site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a href="{{ site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="footer-note">© {{ now.Year }} {{ site.Params.author }} · Jyväskylä</p>
+</footer>
