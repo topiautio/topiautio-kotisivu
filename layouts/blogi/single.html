@@ -1,49 +1,11 @@
-{{- /* Hugo source template migrated from legacy static HTML. Keep rendered markup stable while removing external file-path coupling. */ -}}
-<!DOCTYPE html>
-<html lang="fi">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="{{ .Description }}"
-        />
-        <meta
-            name="keywords"
-            content="{{ with .Params.keywords }}{{ delimit . ", " }}{{ else }}tietoturva, yksityisyys, kyberturvallisuus{{ end }}"
-        />
-        <meta name="author" content="Topi Autio" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="theme-color" content="#08120f" />
-        <meta property="og:locale" content="fi_FI" />
-        <meta property="og:site_name" content="Topi Autio" />
-        <meta
-            property="og:title"
-            content="{{ .Title }} | {{ site.Title }}"
-        />
-        <meta
-            property="og:description"
-            content="{{ .Description }}"
-        />
-        <meta property="og:url" content="{{ .Permalink }}" />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="{{ "favicon.svg" | absURL }}" />
-        <meta property="og:image:alt" content="{{ .Title }}" />
-        <meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}" />
-        <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02" }}" />
-        <meta property="article:author" content="Topi Autio" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="{{ .Title }}" />
-        <meta name="twitter:description" content="{{ .Description }}" />
-        <meta name="twitter:url" content="{{ .Permalink }}" />
-        <meta name="twitter:image" content="{{ "favicon.svg" | absURL }}" />
-        <meta name="twitter:image:alt" content="{{ .Title }}" />
-        <title>{{ .Title }} | {{ site.Title }}</title>
-        <link rel="canonical" href="{{ .Permalink }}" />
-        <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml" />
-        <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
-        <link rel="stylesheet" href="{{ "blogi/blogi-tyylit.css" | relURL }}" />
-        <link rel="stylesheet" href="{{ "blogi/julkaisut/julkaisu-tyylit.css" | relURL }}" />
+{{ define "head" }}
+        <meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}">
+        <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02" }}">
+        <meta property="article:author" content="{{ site.Params.author }}">
+        <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
+        <link rel="stylesheet" href="{{ "blogi/blogi-tyylit.css" | relURL }}">
+        <link rel="stylesheet" href="{{ "blogi/julkaisut/julkaisu-tyylit.css" | relURL }}">
+        <link rel="stylesheet" href="{{ "blogi/julkaisut/syntax.css" | relURL }}">
         <script src="{{ "navigation.js" | relURL }}" defer></script>
         <script type="application/ld+json">
         {
@@ -66,204 +28,10 @@
             }
         }
         </script>
-        <link rel="stylesheet" href="{{ "fonts.css" | relURL }}" />
+{{ end }}
 
-        <!-- Artikkelikohtaiset täydennystyylit (kutsutaan, .cite, .toc, .sources, .num) -->
-        <style>
-            .num {
-                display: inline-block;
-                color: var(--primary);
-                font-family: var(--mono);
-                font-size: 0.85em;
-                font-weight: 500;
-                background: rgba(96, 165, 250, 0.12);
-                border: 1px solid rgba(96, 165, 250, 0.35);
-                padding: 1px 8px;
-                border-radius: 6px;
-                margin-right: 0.5rem;
-                vertical-align: middle;
-            }
-            a.cite {
-                color: var(--text);
-                text-decoration: none;
-                border-bottom: 1px dotted var(--primary);
-                transition: all 0.2s ease;
-                padding: 0 1px;
-                max-width: 100%;
-                display: inline;
-            }
-            a.cite:hover {
-                color: var(--primary);
-                border-bottom-style: solid;
-            }
-            a.cite::after {
-                content: " ↗";
-                font-size: 0.75em;
-                color: var(--primary);
-                margin-left: 1px;
-            }
-            .callout {
-                padding: 1rem 1.25rem;
-                background: var(--surface-strong);
-                border: 1px solid var(--border);
-                border-radius: 0.6rem;
-                margin: 1.5rem 0;
-            }
-            .callout-title {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                font-weight: 600;
-                margin-bottom: 0.6rem;
-                font-size: 0.9rem;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-            .callout p {
-                margin-bottom: 0.5rem;
-            }
-            .callout p:last-child {
-                margin-bottom: 0;
-            }
-            .callout.warn {
-                border-left: 3px solid #ff6b6b;
-            }
-            .callout.warn .callout-title {
-                color: #ff6b6b;
-            }
-            .callout.info {
-                border-left: 3px solid var(--primary);
-            }
-            .callout.info .callout-title {
-                color: var(--primary);
-            }
-            .callout.fact {
-                border-left: 3px solid #ffd166;
-            }
-            .callout.fact .callout-title {
-                color: #ffd166;
-            }
-            .caveat {
-                border: 1px dashed var(--border);
-                border-radius: 0.6rem;
-                padding: 0.9rem 1.1rem;
-                margin: 1.5rem 0;
-                color: var(--text-muted);
-                font-size: 0.95rem;
-            }
-            .caveat strong {
-                color: var(--primary);
-            }
-            .toc {
-                position: static !important;
-                background: var(--surface-strong);
-                border: 1px solid var(--border);
-                border-radius: 0.6rem;
-                padding: 1.1rem 1.4rem;
-                margin: 1.5rem 0 2rem;
-                backdrop-filter: none !important;
-                box-shadow: none !important;
-            }
-            .post-content ul,
-            .post-content ol {
-                padding-left: 1.5rem;
-                display: block;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                gap: 0;
-            }
-            .post-content ul {
-                list-style-type: disc;
-            }
-            .post-content ol {
-                list-style-type: decimal;
-            }
-            .post-content ul li,
-            .post-content ol li {
-                display: list-item;
-                padding: 0;
-                margin-bottom: 0.5rem;
-            }
-            .post-content ul li a,
-            .post-content ol li a {
-                display: inline;
-                padding: 0;
-                text-align: left;
-            }
-            .post-content {
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-            }
-            .toc-title {
-                font-weight: 600;
-                margin-bottom: 0.8rem;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                font-size: 0.85rem;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                color: var(--text-muted);
-            }
-            .toc ol {
-                margin: 0;
-                padding-left: 1.4rem;
-            }
-            .toc a {
-                color: var(--text);
-                text-decoration: none;
-                transition: color 0.15s;
-            }
-            .toc a:hover {
-                color: var(--primary);
-            }
-            .sources {
-                background: var(--surface-strong);
-                border: 1px solid var(--border);
-                border-radius: 0.6rem;
-                padding: 1.4rem 1.6rem;
-                margin-top: 2.5rem;
-                font-size: 0.95rem;
-                color: var(--text-muted);
-            }
-            .sources h3 {
-                margin-top: 0;
-                color: var(--heading);
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                font-size: 1.05rem;
-            }
-            .sources a {
-                color: var(--primary);
-                text-decoration: none;
-                border-bottom: 1px dotted var(--primary);
-            }
-            .sources a:hover {
-                border-bottom-style: solid;
-            }
-            hr {
-                border: none;
-                border-top: 1px solid var(--border);
-                margin: 2.5rem 0;
-            }
-            /* CLS: estä navin leveyden muutos ikonien latautuessa */
-            nav ul li {
-                min-width: 3.5rem;
-                white-space: nowrap;
-            }
-            /* CLS: estä footerin/pagerin siirtymä */
-            .post-nav, .blog-return {
-                contain: layout;
-            }
-            /* CLS: estä kuvien aiheuttama layout shift */
-            .post-content img {
-                content-visibility: auto;
-            }
-        </style>
-    </head>
-
-    <body>
+{{ define "body" }}
+<body>
         <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
         <div id="page">
             {{ partial "site-nav.html" (dict "active" "blog") }}
@@ -284,7 +52,7 @@
 
                     <div class="post-content">
                         {{- if .TableOfContents }}
-                        <div class="toc" aria-label="Sisällysluettelo">
+                        <div class="toc" role="navigation" aria-label="Sisällysluettelo">
                             <div class="toc-title">
                                 
                                 Sisällysluettelo
@@ -326,18 +94,7 @@
                 </div>
             </main>
 
-            <footer id="yhteystiedot">
-                <div>
-                    <p class="section-index">OTA YHTEYTTÄ</p>
-                    <h2>Jäikö jokin kiinnostamaan?</h2>
-                </div>
-                <div class="footer-links">
-                    <a href="mailto:topi@topiautio.fi">topi@topiautio.fi</a>
-                    <a href="https://www.linkedin.com/in/topi-a-558796240/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-                    <a href="https://github.com/topiautio" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-                </div>
-                <p class="footer-note">© {{ now.Year }} Topi Autio · Jyväskylä</p>
-            </footer>
+            {{ partial "site-footer.html" (dict "heading" "Jäikö jokin kiinnostamaan?") }}
         </div>
     </body>
-</html>
+{{ end }}

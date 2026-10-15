@@ -17,6 +17,19 @@ disableKinds = ["taxonomy", "term"]
   linkedin = "https://www.linkedin.com/in/topi-a-558796240/"
   github = "https://github.com/topiautio"
   tryhackme = "https://tryhackme.com/p/TopiAutio"
+  shareImage = "og-image.png"
+  shareImageAlt = "Topi Autio – ICT, infra ja kyberturvallisuus"
+  # Sivut eivät käytä ulkoisia resursseja eivätkä inline-skriptejä tai -tyylejä.
+  # scripts/check-site.sh varmistaa buildin jälkeen, että näin on myös jatkossa.
+  contentSecurityPolicy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+
+[outputs]
+  home = ["html"]
+  section = ["html", "rss"]
+
+[markup.highlight]
+  # Koodilohkojen värit tulevat CSS-luokista (static/blogi/julkaisut/syntax.css), jotta CSP ei tarvitse inline-tyylejä.
+  noClasses = false
 
 [permalinks]
   blogi = "/blogi/julkaisut/:slug/"

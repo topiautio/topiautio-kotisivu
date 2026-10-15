@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+  Jakokuvan (static/og-image.png, 1200×630) lähde. Kuvan voi luoda uudelleen
+  chrome-headless-shellillä (tavallinen Chrome --headless=new jättää alareunaan
+  valkoisen raidan, koska ikkunan koko sisältää selaimen käyttöliittymän):
+  chrome-headless-shell --hide-scrollbars --window-size=1200,630 \
+    --screenshot=static/og-image.png "file://$PWD/scripts/og-image.html"
+-->
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/fonts.css">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    box-sizing: border-box;
+    padding: 72px 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(116, 198, 157, 0.18), transparent 45%),
+      linear-gradient(160deg, #07100d 0%, #040906 100%);
+    color: #edf5ef;
+    font-family: "DM Sans", system-ui, sans-serif;
+    border: 1px solid rgba(167, 243, 192, 0.16);
+  }
+  .top { display: flex; align-items: center; justify-content: space-between; }
+  .mark {
+    display: grid; place-items: center;
+    width: 88px; height: 88px;
+    background: #74c69d; color: #040906;
+    border-radius: 10px;
+    font-family: "DM Mono", monospace; font-weight: 500; font-size: 30px; letter-spacing: 0.08em;
+  }
+  .domain { font-family: "DM Mono", monospace; font-size: 26px; color: #aabbb0; letter-spacing: 0.04em; }
+  .eyebrow { font-family: "DM Mono", monospace; font-size: 24px; letter-spacing: 0.18em; color: #74c69d; margin: 0 0 18px; }
+  h1 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: 132px; line-height: 1; margin: 0; color: #f8fbf8; }
+  .lead { font-size: 32px; color: #aabbb0; margin: 26px 0 0; max-width: 900px; line-height: 1.35; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="mark">TA</div>
+    <div class="domain">topiautio.fi</div>
+  </div>
+  <div>
+    <p class="eyebrow">ICT · INFRA · KYBERTURVALLISUUS</p>
+    <h1>Topi Autio</h1>
+    <p class="lead">ICT-insinööriopiskelija, Jyväskylä. IT-tuki, palvelimet, tietoverkot ja tietoturva.</p>
+  </div>
+</body>
+</html>
