@@ -13,8 +13,10 @@ header:
   contacts:
     - label: "topi@topiautio.fi"
       href: "mailto:topi@topiautio.fi"
-    - label: "linkedin.com/in/topi-a"
-      href: "https://linkedin.com/in/topi-a-558796240"
+    - label: "topiautio.fi"
+      href: "https://topiautio.fi/"
+    - label: "linkedin.com/in/topi-a-558796240"
+      href: "https://www.linkedin.com/in/topi-a-558796240/"
     - label: "github.com/topiautio"
       href: "https://github.com/topiautio"
     - label: "tryhackme.com/p/TopiAutio"

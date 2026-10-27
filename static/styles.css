@@ -522,6 +522,11 @@ footer h2 {
         var(--surface);
 }
 
+.project-wide {
+    grid-column: 1 / -1;
+    min-height: 340px;
+}
+
 .project-meta {
     display: flex;
     justify-content: space-between;
@@ -567,6 +572,17 @@ footer h2 {
 
 .card-link {
     margin-top: 1.35rem;
+}
+
+.card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.75rem;
+    margin-top: 1.35rem;
+}
+
+.card-links .card-link {
+    margin-top: 0;
 }
 
 .experience-section > .button {
@@ -816,9 +832,10 @@ p a {
         margin-top: 1rem;
     }
 
+    /* 12vw: alatunnisteen pisin sana (käytännönläheistä) mahtuu 320–430 px näytöille. */
     .section h2,
     footer h2 {
-        font-size: clamp(2.35rem, 13vw, 3.4rem);
+        font-size: clamp(2.35rem, 12vw, 3.4rem);
     }
 
     .projects-grid {

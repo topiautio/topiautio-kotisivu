@@ -129,6 +129,22 @@
                         </ul>
                         <a class="card-link" href="{{ site.Params.tryhackme }}" target="_blank" rel="noopener noreferrer">TryHackMe-profiili <span aria-hidden="true">↗</span></a>
                     </article>
+
+                    <article class="project-card project-wide">
+                        <div class="project-meta">
+                            <span>WEB / TIETOTURVA</span>
+                            <span>TOPIAUTIO.FI</span>
+                        </div>
+                        <h3>Tämä sivusto ja oma domain</h3>
+                        <p>Rakensin sivuston Hugolla ja julkaisen sen GitHub Pagesissa omalla .fi-verkkotunnuksella. Nimipalvelu on Cloudflarella DNSSEC- ja IPv6-tuella, ja sähköposti kulkee Proton Mailin kautta SPF-, DKIM- ja DMARC-tietueilla. Sivu ei lataa ulkoisia resursseja, joten tiukka Content-Security-Policy riittää. Jokainen muutos kulkee CI:n läpi: linkit, CSP ja saavutettavuus (WCAG 2 AA) tarkistetaan ennen julkaisua.</p>
+                        <ul class="tag-list">
+                            <li>Hugo</li><li>GitHub Actions</li><li>DNSSEC</li><li>CSP</li><li>security.txt</li><li>WCAG</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="card-link" href="{{ relref . "/blogi/julkaisut/oma-domain-kotisivu-sahkoposti" }}">Lue miten se tehtiin <span aria-hidden="true">→</span></a>
+                            <a class="card-link" href="{{ site.Params.github }}/topiautio-kotisivu" target="_blank" rel="noopener noreferrer">Lähdekoodi GitHubissa <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
