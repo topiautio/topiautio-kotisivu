@@ -245,7 +245,7 @@
     border: 1px solid var(--border-strong);
     border-radius: 0.28rem;
     font-family: var(--mono);
-    font-size: 0.73rem;
+    font-size: 0.78rem;
     letter-spacing: 0.06em;
     text-decoration: none;
     text-transform: uppercase;
@@ -317,8 +317,8 @@
     font-family: var(--mono);
     font-size: 0.85em;
     font-weight: 500;
-    background: rgba(96, 165, 250, 0.12);
-    border: 1px solid rgba(96, 165, 250, 0.35);
+    background: rgba(116, 198, 157, 0.1);
+    border: 1px solid var(--border-strong);
     padding: 1px 8px;
     border-radius: 6px;
     margin-right: 0.5rem;
@@ -446,9 +446,15 @@ a.cite::after {
     letter-spacing: 0.5px;
     color: var(--text-muted);
 }
-.toc ol {
+/* Hugo tuottaa sisällysluettelon <ul>-listana ja otsikoissa on jo omat numerot, joten luettelomerkit piilotetaan. */
+.toc ul {
     margin: 0;
-    padding-left: 1.4rem;
+    padding-left: 0;
+    list-style: none;
+}
+.toc li ul {
+    margin-top: 0.5rem;
+    padding-left: 1.25rem;
 }
 .toc a {
     color: var(--text);
