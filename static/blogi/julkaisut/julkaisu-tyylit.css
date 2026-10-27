@@ -287,10 +287,19 @@
     .post-content code {
         font-size: 0.85rem;
     }
+
+    .post-content table {
+        font-size: 0.9rem;
+    }
+
+    .post-content table th,
+    .post-content table td {
+        padding: 0.5rem;
+    }
 }
 
-/* Taulukon pisimmät sanat ja 0,75rem:n soluvälit eivät mahdu alle 400 px:n näytölle. */
-@media (max-width: 400px) {
+/* Alle 346 px:n näytöllä taulukko ei mahdu edes 0,9rem:n fontilla, vaan työntyy kortin reunukseen. */
+@media (max-width: 359px) {
     .post-content table {
         font-size: 0.8125rem;
     }

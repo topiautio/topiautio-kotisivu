@@ -1,0 +1,190 @@
+# Englanninkielinen CV (/cv/en/). Suomenkielinen versio on tiedostossa data/cv.yaml:
+# päivitä luvut (opintopisteet, TryHackMe) ja uudet merkinnät molempiin.
+
+labels:
+  pageNav: "Page navigation"
+  back: "← Homepage (in Finnish)"
+  print: "Print / save as PDF"
+  alternate:
+    label: "Suomeksi"
+    url: "cv/"
+    lang: "fi"
+  experience: "Work experience"
+  education: "Education"
+  progress: "Credits completed:"
+  credits: "ECTS"
+  cybersecurity: "Cybersecurity"
+  tools: "Tools"
+  infrastructure: "IT infrastructure & networking"
+  databases: "Databases"
+  programming: "Programming & scripting"
+  projects: "Personal projects"
+  languages: "Languages"
+  certificates: "Certificates"
+  schemaDescription: "Topi Autio's CV: ICT engineering student with experience in IT support, system administration, networking and cybersecurity."
+
+summary:
+  lead: "ICT engineering student (JAMK) with"
+  background: "solid hands-on experience"
+  background_tail: " in Linux system administration, cybersecurity and IT support. Configured servers in a specialist role during military service and provided on-site IT support in several internships. Particularly interested in cybersecurity —"
+  tryhackme: "TryHackMe Top 3%"
+  capability: "Capability Score 58 (Junior Security Professional)"
+  closing: " and five learning paths completed. Looking for an IT summer job or internship for summer 2027 where I can put my skills to use and keep developing them in hands-on work."
+
+header:
+  name: "Topi Autio"
+  title: "ICT Engineering Student & Cybersecurity Enthusiast"
+  location: "Jyväskylä, Finland"
+  contacts:
+    - label: "topi@topiautio.fi"
+      href: "mailto:topi@topiautio.fi"
+    - label: "topiautio.fi"
+      href: "https://topiautio.fi/"
+    - label: "linkedin.com/in/topi-a-558796240"
+      href: "https://www.linkedin.com/in/topi-a-558796240/"
+    - label: "github.com/topiautio"
+      href: "https://github.com/topiautio"
+    - label: "tryhackme.com/p/TopiAutio"
+      href: "https://tryhackme.com/p/TopiAutio"
+
+experience:
+  - role: "VBS4 System Administrator"
+    date: "03/2024 – 09/2024"
+    organisation: "Air Force Academy, Finnish Defence Forces · Tikkakoski"
+    achievement: "Independently redesigned the network architecture of the Air Force Academy's VBS classroom"
+    bullets:
+      - "Configured Ubuntu Server and Windows Server environments and network services (DHCP, DNS, Active Directory, Samba, FOG)"
+      - "Responsible for the technical maintenance of the VBS4 classroom, building training scenarios and documentation"
+      - "Trained the administrators of the next conscript intake to work independently; served as the designated SYSADMIN"
+      - "Organised training events and provided technical support in the KASI military exercises"
+  - role: "Surveyor (Intern)"
+    date: "10/2023 – 12/2023"
+    organisation: "City of Keuruu / Municipal Engineering"
+    bullets:
+      - "Field surveying and documentation of municipal infrastructure in a GIS (ArcGIS Pro)"
+      - "Digitised green area boundaries and wrote clear user guides for staff"
+  - role: "On-site IT Support (Intern)"
+    date: "08/2022 – 09/2022"
+    organisation: "Istekki Oy · Jyväskylä"
+    bullets:
+      - "On-site IT support in customer environments: device lifecycle replacements, software installations, troubleshooting"
+      - "Managed the IT asset inventory in Efecte ITSM and handled secure disposal of electronic waste"
+  - role: "IT Support (Intern)"
+    date: "01/2022 – 04/2022"
+    organisation: "City of Keuruu / Administrative Services"
+    bullets:
+      - "Deployment and management of end-user devices (iPad, Android, Windows): Microsoft Intune, MECM, VMware AirWatch, Active Directory"
+      - "Technical support for city and school staff and pupils"
+
+education:
+  - role: "Bachelor of Engineering, Information and Communication Technology"
+    date: "2025 – present"
+    organisation: "JAMK University of Applied Sciences"
+    progress:
+      completed: 64
+      total: 240
+      as_of: "09/2026"
+    bullets:
+      - "Specialisation: cybersecurity and network infrastructure"
+      - "Strongest courses: Linux, Computer Networks, Cybersecurity, Databases and Scripting, all graded 5/5"
+  - role: "Electronics Technician, Vocational Qualification in ICT"
+    date: "2020 – 2023"
+    organisation: "Gradia Jyväskylä"
+    bullets:
+      - "Weighted grade average 4.49 / 5 · Plus 60 competence points of elective units: software development and electrical & automation engineering"
+
+tryhackme:
+  - label: "Rank"
+    value: "Top 3% (#47,303)"
+  - label: "Capability Score"
+    value: "58 / 100 (Junior)"
+  - label: "Rooms completed"
+    value: "171"
+  - label: "Longest streak"
+    value: "90 days"
+  - label: "Badges"
+    value: "27"
+
+skills:
+  cybersecurity:
+    highlighted:
+      - "Cybersecurity"
+      - "Jr Penetration Tester"
+      - "Web Fundamentals"
+    regular:
+      - "OWASP Top 10"
+      - "Linux PrivEsc"
+      - "Cryptography"
+      - "Risk management"
+    tools:
+      - "Metasploit"
+      - "Nmap"
+      - "Burp Suite"
+      - "Wireshark"
+      - "SQLMap"
+  infrastructure:
+    highlighted:
+      - "Linux"
+      - "Windows"
+      - "Docker"
+      - "Active Directory"
+      - "DNS"
+      - "DHCP"
+      - "Networking"
+    regular:
+      - "Windows Server"
+      - "OSI model"
+      - "LAN design"
+      - "Samba"
+      - "VirtualBox"
+      - "FOG"
+      - "Cisco Packet Tracer"
+  databases:
+    highlighted:
+      - "SQL"
+    regular:
+      - "MySQL"
+      - "MongoDB"
+      - "Database design"
+  programming:
+    highlighted:
+      - "JavaScript"
+    regular:
+      - "Python"
+      - "Bash"
+      - "PowerShell"
+      - "HTML/CSS"
+      - "Git"
+      - "SQF (VBS4)"
+
+projects:
+  - name: "github.com/topiautio"
+    href: "https://github.com/topiautio"
+    description: "Personal projects and scripts related to cybersecurity, automation and Linux environments."
+  - name: "topiautio.fi"
+    href: "https://topiautio.fi"
+    description: "Personal portfolio (in Finnish) with project examples and more about my skills. Built during my web development studies."
+
+languages:
+  - name: "Finnish"
+    level: "Native"
+  - name: "English"
+    level: "Excellent (C1)"
+  - name: "Swedish"
+    level: "Basic"
+  - name: "German"
+    level: "Basic"
+
+certificates:
+  - name: "Jr Penetration Tester"
+    date: "02/2025"
+  - name: "Web Fundamentals Path"
+    date: "02/2025"
+  - name: "Complete Beginner Path"
+    date: "03/2025"
+  - name: "Cyber Security 101"
+    date: "01/2025"
+  - name: "SFS 6002 Electrical Safety"
+  - name: "Hot Work Card"
+  - name: "Occupational Safety Card"
+  - name: "First Aid (8 h)"

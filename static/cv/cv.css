@@ -361,23 +361,13 @@ body {
   line-height: 1.5;
 }
 
-/* MOBILE */
-/* Vain näytölle: A4-tulosteen leveys osuisi muuten tähän rajaan. */
-@media screen and (max-width: 700px) {
-  .page { padding: 32px 20px; }
-
-  .header {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    align-items: start;
-  }
-
+/* MOBILE: sivupalkki siirtyy pääsisällön alle. Vain näytöllä, jotta tulosteen kaksi saraketta säilyvät. */
+@media screen and (max-width: 720px) {
+  .page { padding: 24px 16px 40px; }
+  .header { grid-template-columns: 1fr; gap: 16px; }
   .contacts { text-align: left; }
-
-  .two-col {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
+  .summary { padding: 18px; }
+  .two-col { grid-template-columns: minmax(0, 1fr); gap: 0; }
 }
 
 /* PRINT */

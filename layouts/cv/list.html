@@ -1,21 +1,30 @@
+{{- /* Sama pohja palvelee suomen- ja englanninkielistä CV:tä. Sivun cvData kertoo, mistä data-tiedostosta sisältö ja otsikot luetaan. */ -}}
 {{ define "head" }}
+{{- $cv := index hugo.Data (.Params.cvData | default "cv") -}}
 <link rel="stylesheet" href="{{ "cv/cv.css" | relURL }}">
 <script src="{{ "cv/cv.js" | relURL }}" defer></script>
+{{- with $cv.labels.alternate }}
+<link rel="alternate" hreflang="{{ $.Params.pageLang | default "fi" }}" href="{{ $.Permalink }}">
+<link rel="alternate" hreflang="{{ .lang }}" href="{{ .url | absURL }}">
+{{- end }}
 {{ partial "person-schema.html" (dict
   "page" .
-  "description" "Topi Aution CV: ICT-insinööriopiskelija, jolla on kokemusta IT-tuesta, järjestelmähallinnasta, tietoverkoista ja kyberturvallisuudesta."
+  "description" $cv.labels.schemaDescription
 ) }}
 {{ end }}
 
 {{ define "body" }}
+{{- $cv := index hugo.Data (.Params.cvData | default "cv") -}}
+{{- $l := $cv.labels -}}
 <body>
 <div class="page">
-  <nav class="top-nav" aria-label="Sivunavigaatio">
-    <a href="{{ site.Home.RelPermalink }}">← Takaisin etusivulle</a>
-    <button type="button" data-print>Tulosta / tallenna PDF</button>
+  <nav class="top-nav" aria-label="{{ $l.pageNav }}">
+    <a href="{{ site.Home.RelPermalink }}">{{ $l.back }}</a>
+    {{- with $l.alternate }}
+    <a href="{{ .url | relURL }}" hreflang="{{ .lang }}" lang="{{ .lang }}">{{ .label }}</a>
+    {{- end }}
+    <button type="button" data-print>{{ $l.print }}</button>
   </nav>
-
-  {{- $cv := hugo.Data.cv -}}
 
   <!-- HEADER -->
   <div class="header">
@@ -41,7 +50,7 @@
 
       <!-- TYÖKOKEMUS -->
       <section class="section">
-        <h2 class="section-title">Työkokemus</h2>
+        <h2 class="section-title">{{ $l.experience }}</h2>
         {{- range $cv.experience }}
         <div class="entry">
           <div class="entry-header">
@@ -59,7 +68,7 @@
 
       <!-- KOULUTUS -->
       <section class="section">
-        <h2 class="section-title">Koulutus</h2>
+        <h2 class="section-title">{{ $l.education }}</h2>
         {{- range $cv.education }}
         <div class="entry">
           <div class="entry-header">
@@ -68,7 +77,7 @@
           </div>
           <div class="entry-org">{{ .organisation }}</div>
           <ul class="entry-bullets">
-            {{- with .progress }}<li>Opintoja suoritettu {{ .completed }}/{{ .total }} op ({{ .as_of }})</li>{{ end }}
+            {{- with .progress }}<li>{{ $l.progress }} {{ .completed }}/{{ .total }} {{ $l.credits }} ({{ .as_of }})</li>{{ end }}
             {{- range .bullets }}<li>{{ . }}</li>{{ end }}
           </ul>
         </div>
@@ -90,7 +99,7 @@
 
       <!-- KYBERTURVALLISUUS TAIDOT -->
       <section class="section">
-        <h2 class="section-title">Kyberturvallisuus</h2>
+        <h2 class="section-title">{{ $l.cybersecurity }}</h2>
         <div class="skill-group">
           <div class="tags">
             {{- range $cv.skills.cybersecurity.highlighted }}<span class="tag highlight">{{ . }}</span>{{ end }}
@@ -98,7 +107,7 @@
           </div>
         </div>
         <div class="skill-group skill-group-spaced">
-          <div class="skill-group-title">Työkalut</div>
+          <div class="skill-group-title">{{ $l.tools }}</div>
           <div class="tags">
             {{- range $cv.skills.cybersecurity.tools }}<span class="tag">{{ . }}</span>{{ end }}
           </div>
@@ -107,7 +116,7 @@
 
       <!-- IT-INFRA -->
       <section class="section">
-        <h2 class="section-title">IT-infra &amp; Verkot</h2>
+        <h2 class="section-title">{{ $l.infrastructure }}</h2>
         <div class="tags">
           {{- range $cv.skills.infrastructure.highlighted }}<span class="tag highlight">{{ . }}</span>{{ end }}
           {{- range $cv.skills.infrastructure.regular }}<span class="tag">{{ . }}</span>{{ end }}
@@ -116,7 +125,7 @@
 
       <!-- TIETOKANNAT -->
       <section class="section">
-        <h2 class="section-title">Tietokannat</h2>
+        <h2 class="section-title">{{ $l.databases }}</h2>
         <div class="tags">
           {{- range $cv.skills.databases.highlighted }}<span class="tag highlight">{{ . }}</span>{{ end }}
           {{- range $cv.skills.databases.regular }}<span class="tag">{{ . }}</span>{{ end }}
@@ -125,7 +134,7 @@
 
       <!-- OHJELMOINTI -->
       <section class="section">
-        <h2 class="section-title">Ohjelmointi &amp; Skriptaus</h2>
+        <h2 class="section-title">{{ $l.programming }}</h2>
         <div class="tags">
           {{- range $cv.skills.programming.regular }}<span class="tag">{{ . }}</span>{{ end }}
           {{- range $cv.skills.programming.highlighted }}<span class="tag highlight">{{ . }}</span>{{ end }}
@@ -134,7 +143,7 @@
 
       <!-- OMAT PROJEKTIT -->
       <section class="section">
-        <h2 class="section-title">Omat projektit</h2>
+        <h2 class="section-title">{{ $l.projects }}</h2>
         {{- range $cv.projects }}
         <div class="project-item">
           <div class="project-name"><a href="{{ .href }}">{{ .name }}</a></div>
@@ -145,13 +154,13 @@
 
       <!-- KIELET -->
       <section class="section">
-        <h2 class="section-title">Kielet</h2>
+        <h2 class="section-title">{{ $l.languages }}</h2>
         {{- range $cv.languages }}<div class="lang-row"><span>{{ .name }}</span><span class="lang-level">{{ .level }}</span></div>{{ end }}
       </section>
 
       <!-- SERTIFIKAATIT -->
       <section class="section">
-        <h2 class="section-title">Sertifikaatit</h2>
+        <h2 class="section-title">{{ $l.certificates }}</h2>
         <ul class="cert-list">
           {{- range $cv.certificates }}
           <li>{{ .name }}{{ with .date }}<span class="cert-date">{{ . }}</span>{{ end }}</li>

@@ -1,7 +1,8 @@
 {{- /*
     Yhteiset head-tagit kaikille sivuille. Sivukohtaiset arvot tulevat
     front matterista: seoTitle, description, shareTitle, shareDescription,
-    keywords, ogType ja themeColor.
+    keywords, ogType, ogLocale ja themeColor. Muun kuin suomenkielisen sivun
+    kieli (<html lang>) annetaan pageLang-arvolla.
 */ -}}
 {{- $title := .Params.seoTitle | default (printf "%s | %s" .Title site.Title) -}}
 {{- $description := .Description | default site.Params.description -}}
@@ -24,7 +25,7 @@
 {{- with site.GetPage "/blogi" }}{{ with .OutputFormats.Get "rss" }}
 <link rel="alternate" type="application/rss+xml" title="{{ site.Title }} – blogi" href="{{ .Permalink }}">
 {{- end }}{{ end }}
-<meta property="og:locale" content="fi_FI">
+<meta property="og:locale" content="{{ .Params.ogLocale | default "fi_FI" }}">
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:type" content="{{ $ogType }}">
 <meta property="og:title" content="{{ $shareTitle }}">
