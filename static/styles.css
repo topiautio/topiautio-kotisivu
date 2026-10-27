@@ -816,9 +816,13 @@ p a {
         margin-top: 1rem;
     }
 
-    .section h2,
-    footer h2 {
+    .section h2 {
         font-size: clamp(2.35rem, 13vw, 3.4rem);
+    }
+
+    /* Pisin sana "käytännönläheistä" on noin 7,7 em, joten 13vw ei mahdu sivun reunusten väliin. */
+    footer h2 {
+        font-size: clamp(2.35rem, 12vw, 3.4rem);
     }
 
     .projects-grid {

@@ -361,6 +361,25 @@ body {
   line-height: 1.5;
 }
 
+/* MOBILE */
+/* Vain näytölle: A4-tulosteen leveys osuisi muuten tähän rajaan. */
+@media screen and (max-width: 700px) {
+  .page { padding: 32px 20px; }
+
+  .header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .contacts { text-align: left; }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 /* PRINT */
 @media print {
   body { background: white; }

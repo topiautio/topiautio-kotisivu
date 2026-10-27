@@ -289,6 +289,18 @@
     }
 }
 
+/* Taulukon pisimmät sanat ja 0,75rem:n soluvälit eivät mahdu alle 400 px:n näytölle. */
+@media (max-width: 400px) {
+    .post-content table {
+        font-size: 0.8125rem;
+    }
+
+    .post-content table th,
+    .post-content table td {
+        padding: 0.5rem 0.4rem;
+    }
+}
+
 /* Artikkelikohtaiset täydennystyylit (siirretty sivupohjasta: kutsutaan, .cite, .toc, .sources, .num) */
 .num {
     display: inline-block;
