@@ -585,7 +585,11 @@ footer h2 {
     margin-top: 0;
 }
 
-.experience-section > .button {
+.section-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 2rem;
     margin-top: 2rem;
 }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="{{ .Params.pageLang | default "fi" }}">
 <head>
     {{- partial "head.html" . }}
     {{- block "head" . }}{{ end }}
