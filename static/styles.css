@@ -129,7 +129,7 @@ a:focus-visible {
     color: var(--text-muted);
     border-radius: 0.3rem;
     font-family: var(--mono);
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     letter-spacing: 0.06em;
     text-decoration: none;
     text-transform: uppercase;
@@ -160,7 +160,7 @@ a:focus-visible {
     border: 1px solid var(--border-strong);
     border-radius: 0.3rem;
     font-family: var(--mono);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     letter-spacing: 0.06em;
     list-style: none;
     text-transform: uppercase;
@@ -231,7 +231,7 @@ a:focus-visible {
 .mobile-nav-panel li a {
     width: 100%;
     padding: 0.8rem 0.85rem;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     text-align: left;
 }
 
@@ -257,7 +257,7 @@ main {
 .timeline-date {
     color: var(--primary);
     font-family: var(--mono);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -305,7 +305,7 @@ main {
     border: 1px solid var(--border-strong);
     border-radius: 0.28rem;
     font-family: var(--mono);
-    font-size: 0.73rem;
+    font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.06em;
     text-decoration: none;
@@ -353,7 +353,7 @@ main {
     margin-bottom: 1.25rem;
     color: var(--primary-soft);
     font-family: var(--mono);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
@@ -381,7 +381,7 @@ main {
 .availability-card dt {
     color: var(--text-muted);
     font-family: var(--mono);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
 }
@@ -396,12 +396,12 @@ main {
     margin-top: 1.25rem;
     color: var(--primary-soft);
     font-family: var(--mono);
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     text-decoration: none;
 }
 
 .section {
-    padding: clamp(4.5rem, 10vw, 8rem) 0;
+    padding: clamp(4rem, 8vw, 6rem) 0;
     border-bottom: 1px solid var(--border);
     scroll-margin-top: 6rem;
 }
@@ -424,7 +424,7 @@ footer h2 {
     margin-top: 0.45rem;
     color: var(--heading);
     font-family: var(--serif);
-    font-size: clamp(2.5rem, 5.5vw, 4.7rem);
+    font-size: clamp(2.5rem, 4.5vw, 3.5rem);
     font-weight: 400;
     letter-spacing: -0.035em;
     line-height: 1.05;
@@ -434,7 +434,7 @@ footer h2 {
 .card-link {
     color: var(--primary-soft);
     font-family: var(--mono);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
     text-decoration: none;
     text-transform: uppercase;
@@ -469,7 +469,7 @@ footer h2 {
 .skill-number {
     color: var(--primary);
     font-family: var(--mono);
-    font-size: 0.72rem;
+    font-size: 0.78rem;
 }
 
 .skill-grid h3,
@@ -539,7 +539,7 @@ footer h2 {
     margin-top: auto;
     padding-top: 4rem;
     font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
     font-weight: 400;
     letter-spacing: -0.025em;
     line-height: 1.06;
@@ -567,7 +567,7 @@ footer h2 {
     border: 1px solid var(--border);
     border-radius: 0.2rem;
     font-family: var(--mono);
-    font-size: 0.67rem;
+    font-size: 0.75rem;
 }
 
 .card-link {
@@ -628,7 +628,7 @@ footer h2 {
 .latest-post h3 {
     margin-top: 0.5rem;
     font-family: var(--serif);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.75rem, 3.2vw, 2.6rem);
     font-weight: 400;
     line-height: 1.12;
 }
@@ -676,7 +676,7 @@ footer {
     grid-template-columns: 1.2fr 0.8fr;
     gap: 2rem;
     align-items: end;
-    padding: clamp(4rem, 10vw, 7rem) 0 2rem;
+    padding: clamp(4rem, 8vw, 6rem) 0 2rem;
     scroll-margin-top: 6rem;
 }
 
@@ -690,7 +690,7 @@ footer {
 .footer-links a {
     color: var(--primary-soft);
     font-family: var(--mono);
-    font-size: 0.76rem;
+    font-size: 0.82rem;
     text-decoration: none;
 }
 
@@ -705,7 +705,7 @@ footer {
     color: var(--text-muted);
     border-top: 1px solid var(--border);
     font-family: var(--mono);
-    font-size: 0.66rem;
+    font-size: 0.75rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
@@ -839,7 +839,7 @@ p a {
     /* 12vw: alatunnisteen pisin sana (käytännönläheistä) mahtuu 320–430 px näytöille. */
     .section h2,
     footer h2 {
-        font-size: clamp(2.35rem, 12vw, 3.4rem);
+        font-size: clamp(2.35rem, 12vw, 3rem);
     }
 
     .projects-grid {
