@@ -7,6 +7,7 @@ Sivuston tuotantoversio rakennetaan Hugolla ja julkaistaan suoraan juuripolkuun:
 - `/` → portfolio
 - `/blogi/` → blogi
 - `/cv/` → CV
+- `/cv/en/` → CV englanniksi
 
 Suomenkielinen sivusto IT-harjoitteluun ja junior-rooleihin (painotus: kyberturvallisuus, järjestelmähallinta, tietoverkot) Jyväskylän alueella.
 
@@ -19,6 +20,7 @@ Suomenkielinen sivusto IT-harjoitteluun ja junior-rooleihin (painotus: kyberturv
 ## Hugo-rakenne
 - `config.toml` sisältää sivuston perusasetukset. Hugo rakentaa sivuston `public/`-hakemistoon ja käyttää tuotannossa osoitetta `https://topiautio.fi/`.
 - `content/` sisältää Hugon sivut ja blogiartikkelien metatiedot.
+- `data/cv.yaml` ja `data/cv_en.yaml` sisältävät suomen- ja englanninkielisen CV:n sisällön ja otsikot. Molemmat renderöidään pohjalla `layouts/cv/list.html`. Päivitä luvut ja uudet merkinnät molempiin tiedostoihin.
 - `layouts/` sisältää sivujen renderöintipohjat. Nykyiset pohjat on migroitu pois erillisestä legacy-HTML-polkuhaun varassa toimivasta renderöinnistä, jotta Hugo-build on itsenäisempi.
 - `static/` sisältää Hugon julkaisuun kopioimat staattiset tiedostot kuten CSS:n, paikalliset fontit, faviconin, robots.txt:n ja CNAME:n.
 

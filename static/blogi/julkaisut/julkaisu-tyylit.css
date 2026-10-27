@@ -287,6 +287,15 @@
     .post-content code {
         font-size: 0.85rem;
     }
+
+    .post-content table {
+        font-size: 0.9rem;
+    }
+
+    .post-content table th,
+    .post-content table td {
+        padding: 0.5rem;
+    }
 }
 
 /* Artikkelikohtaiset täydennystyylit (siirretty sivupohjasta: kutsutaan, .cite, .toc, .sources, .num) */

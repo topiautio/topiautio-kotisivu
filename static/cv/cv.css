@@ -361,6 +361,15 @@ body {
   line-height: 1.5;
 }
 
+/* MOBILE: sivupalkki siirtyy pääsisällön alle. Vain näytöllä, jotta tulosteen kaksi saraketta säilyvät. */
+@media screen and (max-width: 720px) {
+  .page { padding: 24px 16px 40px; }
+  .header { grid-template-columns: 1fr; gap: 16px; }
+  .contacts { text-align: left; }
+  .summary { padding: 18px; }
+  .two-col { grid-template-columns: minmax(0, 1fr); gap: 0; }
+}
+
 /* PRINT */
 @media print {
   body { background: white; }
