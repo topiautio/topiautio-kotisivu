@@ -298,6 +298,18 @@
     }
 }
 
+/* Alle 346 px:n näytöllä taulukko ei mahdu edes 0,9rem:n fontilla, vaan työntyy kortin reunukseen. */
+@media (max-width: 359px) {
+    .post-content table {
+        font-size: 0.8125rem;
+    }
+
+    .post-content table th,
+    .post-content table td {
+        padding: 0.5rem 0.4rem;
+    }
+}
+
 /* Artikkelikohtaiset täydennystyylit (siirretty sivupohjasta: kutsutaan, .cite, .toc, .sources, .num) */
 .num {
     display: inline-block;
@@ -476,8 +488,9 @@ hr {
     border-top: 1px solid var(--border);
     margin: 2.5rem 0;
 }
-/* CLS: estä navin leveyden muutos ikonien latautuessa */
-nav ul li {
+/* CLS: estä navin leveyden muutos ikonien latautuessa.
+   Rajattu päänavigaatioon, ettei nowrap estä sisällysluettelon rivitystä. */
+.site-nav ul li {
     min-width: 3.5rem;
     white-space: nowrap;
 }
