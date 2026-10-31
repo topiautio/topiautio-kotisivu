@@ -95,7 +95,7 @@ education:
 
 tryhackme:
   - label: "Sijoitus"
-    value: "Top 2% (#47 303)"
+    value: "Top 2%"
   - label: "Capability Score"
     value: "56 / 100"
   - label: "Vahvin osa-alue"
