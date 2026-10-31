@@ -165,7 +165,7 @@ projects:
     description: "Kyberturvallisuuteen, automatisointiin ja Linux-ympäristöihin liittyviä henkilökohtaisia projekteja ja skriptejä."
   - name: "topiautio.fi"
     href: "https://topiautio.fi"
-    description: "Henkilökohtainen portfolio — projektiesimerkit ja lisätietoja osaamisesta. Rakennettu web-kehityksen opinnoissa."
+    description: "Henkilökohtainen portfolio — projektiesimerkit ja lisätietoja osaamisesta. Tehty alun perin web-kehityksen kurssilla ja kirjoitettu myöhemmin kokonaan uudelleen Hugolla tekoälyn avustamana."
 
 languages:
   - name: "Suomi"

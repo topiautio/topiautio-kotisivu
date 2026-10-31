@@ -165,7 +165,7 @@ projects:
     description: "Personal projects and scripts related to cybersecurity, automation and Linux environments."
   - name: "topiautio.fi"
     href: "https://topiautio.fi"
-    description: "Personal portfolio (in Finnish) with project examples and more about my skills. Built during my web development studies."
+    description: "Personal portfolio (in Finnish) with project examples and more about my skills. First built on a web development course, later rewritten from scratch in Hugo with AI assistance."
 
 languages:
   - name: "Finnish"
