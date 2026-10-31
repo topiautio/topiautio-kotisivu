@@ -6,7 +6,7 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "pa11y-ci": "4.1.1",
+    "pa11y-ci": "5.0.0",
     "puppeteer": "25.16.0"
   }
 }
