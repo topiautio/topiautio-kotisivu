@@ -493,14 +493,13 @@ footer h2 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
 }
 
 .project-card {
     display: flex;
     flex-direction: column;
-    min-height: 380px;
     padding: clamp(1.5rem, 3vw, 2.25rem);
     background: rgba(15, 30, 24, 0.72);
     border: 1px solid var(--border);
@@ -515,16 +514,9 @@ footer h2 {
 }
 
 .project-featured {
-    grid-column: 1 / -1;
-    min-height: 340px;
     background:
         linear-gradient(120deg, rgba(27, 67, 50, 0.9), rgba(15, 30, 24, 0.72)),
         var(--surface);
-}
-
-.project-wide {
-    grid-column: 1 / -1;
-    min-height: 340px;
 }
 
 .project-meta {
@@ -536,8 +528,7 @@ footer h2 {
 
 .project-card h3 {
     max-width: 680px;
-    margin-top: auto;
-    padding-top: 4rem;
+    padding-top: 2.25rem;
     font-family: var(--serif);
     font-size: clamp(1.85rem, 3.2vw, 2.6rem);
     font-weight: 400;
@@ -545,7 +536,7 @@ footer h2 {
     line-height: 1.06;
 }
 
-.project-card > p {
+.project-body > p {
     max-width: 720px;
     margin-top: 0.9rem;
     color: var(--text-muted);
@@ -570,7 +561,132 @@ footer h2 {
     font-size: 0.75rem;
 }
 
+.project-media {
+    margin-top: 1.75rem;
+}
+
+.project-media img {
+    display: block;
+    /* Allekkain asetellussa kortissa kuva ei veny koko leveydelle tableteilla. */
+    max-width: min(100%, 30rem);
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+}
+
+.project-diagram {
+    margin-top: 1.75rem;
+}
+
+.project-diagram figcaption {
+    margin-top: 0.7rem;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+}
+
+/* Kapealla näytöllä kaavio vieritetään vaakasuunnassa, jotta teksti pysyy luettavana. */
+.network-diagram {
+    overflow-x: auto;
+    padding: 1rem;
+    background: rgba(4, 9, 6, 0.45);
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+}
+
+.network-diagram svg {
+    display: block;
+    width: 100%;
+    min-width: 860px;
+    height: auto;
+}
+
+/* Kaavio mahtuu kokonaan näkyviin noin 1005 px:n leveydestä alkaen (varaa selaimen vierityspalkille). */
+@media (min-width: 1040px) {
+    .scroll-hint {
+        display: none;
+    }
+}
+
+.nd-box {
+    fill: var(--surface-strong);
+    stroke: var(--border-strong);
+}
+
+.nd-box-key {
+    stroke: var(--primary);
+}
+
+.nd-title {
+    fill: var(--heading);
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.nd-sub {
+    fill: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 12.5px;
+}
+
+.nd-label {
+    fill: var(--primary);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+}
+
+.nd-wire {
+    fill: none;
+    stroke: var(--text-muted);
+    stroke-width: 1.5;
+}
+
+.nd-tunnel {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 1.75;
+    stroke-dasharray: 7 6;
+}
+
+.nd-dot {
+    fill: var(--primary);
+}
+
+@media (min-width: 900px) {
+    /* Kuvallinen kortti: teksti vasemmalla, kuva oikealla koko kortin korkeudelta. */
+    .project-has-media {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+        grid-template-rows: auto 1fr;
+        column-gap: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .project-has-media .project-media {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: center;
+        justify-self: end;
+        margin-top: 0;
+    }
+
+    .project-has-media .project-body {
+        align-self: center;
+    }
+
+    .project-has-media .project-media img {
+        max-width: 100%;
+    }
+
+    .project-has-media .project-diagram {
+        grid-column: 1 / -1;
+        margin-top: 2rem;
+    }
+}
+
 .card-link {
+    display: inline-block;
     margin-top: 1.35rem;
 }
 
@@ -842,21 +958,8 @@ p a {
         font-size: clamp(2.35rem, 12vw, 3rem);
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-featured {
-        grid-column: auto;
-    }
-
-    .project-card,
-    .project-featured {
-        min-height: 340px;
-    }
-
     .project-card h3 {
-        padding-top: 3rem;
+        padding-top: 1.75rem;
         font-size: 2rem;
     }
 

@@ -78,7 +78,7 @@
                     <article>
                         <p class="skill-number">03</p>
                         <h3>Kyberturvallisuus</h3>
-                        <p>TryHackMe Top 3 %, Nmap, Wireshark, Burp Suite ja penetraatiotestauksen perusteet.</p>
+                        <p>TryHackMe Top 2 %, Nmap, Wireshark, Burp Suite ja penetraatiotestauksen perusteet.</p>
                     </article>
                 </div>
             </section>
@@ -93,16 +93,22 @@
                 </div>
 
                 <div class="projects-grid">
-                    <article class="project-card project-featured">
+                    <article class="project-card project-featured project-has-media">
                         <div class="project-meta">
                             <span>INFRA / PALVELIMET</span>
                             <span>OMA YMPÄRISTÖ</span>
                         </div>
-                        <h3>Kotipalvelin ja self-hosting</h3>
-                        <p>Ylläpidän Intel N100 -pohjaista TrueNAS-palvelinta ja sen verkko-, tallennus- ja konttipalveluita. Etäyhteydet toimivat Tailscalella, ja ympäristö toimii samalla käytännön laboratoriona.</p>
-                        <ul class="tag-list">
-                            <li>TrueNAS</li><li>Docker</li><li>Tailscale</li><li>Samba</li>
-                        </ul>
+                        <div class="project-body">
+                            <h3>Kotipalvelin ja self-hosting</h3>
+                            <p>Ylläpidän Intel N100 -pohjaista TrueNAS-palvelinta ja sen verkko-, tallennus- ja konttipalveluita. Etäyhteydet toimivat Tailscalella, ja ympäristö toimii samalla käytännön laboratoriona.</p>
+                            <ul class="tag-list">
+                                <li>TrueNAS</li><li>Docker</li><li>Tailscale</li><li>Samba</li>
+                            </ul>
+                        </div>
+                        <figure class="project-media">
+                            <img src="{{ "kuvat/truenas-hallintanakyma.webp" | relURL }}" width="540" height="605" loading="lazy" decoding="async" alt="TrueNAS-palvelimen hallintanäkymä: Community-versio 25.10, ylläoloaika 54 vuorokautta, suoritin Intel N100 ja keskimääräinen suoritinkuorma 15 %.">
+                        </figure>
+                        {{ partial "kotiverkko-kaavio.html" . }}
                     </article>
 
                     <article class="project-card">
@@ -110,40 +116,52 @@
                             <span>VERKOT / SYSADMIN</span>
                             <span>ILMASOTAKOULU</span>
                         </div>
-                        <h3>VBS4-simulaattoriverkon uudistus</h3>
-                        <p>Uudistin simulaattoriluokan lähiverkkorakenteen, ylläpidin palvelinympäristöjä ja koulutin seuraavat ylläpitäjät itsenäiseen työskentelyyn.</p>
-                        <ul class="tag-list">
-                            <li>Linux</li><li>Windows Server</li><li>AD</li><li>DNS / DHCP</li><li>FOG</li>
-                        </ul>
+                        <div class="project-body">
+                            <h3>VBS4-simulaattoriverkon uudistus</h3>
+                            <p>Uudistin simulaattoriluokan lähiverkkorakenteen, ylläpidin palvelinympäristöjä ja koulutin seuraavat ylläpitäjät itsenäiseen työskentelyyn.</p>
+                            <ul class="tag-list">
+                                <li>Linux</li><li>Windows Server</li><li>AD</li><li>DNS / DHCP</li><li>FOG</li>
+                            </ul>
+                        </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card project-has-media">
                         <div class="project-meta">
                             <span>KYBERTURVALLISUUS</span>
                             <span>JATKUVA HARJOITTELU</span>
                         </div>
-                        <h3>TryHackMe ja käytännön tietoturva</h3>
-                        <p>Yli 170 suoritettua huonetta ja viisi learning path -kokonaisuutta. Harjoittelen erityisesti web-testausta, Linuxia ja verkkojen tutkimista.</p>
-                        <ul class="tag-list">
-                            <li>Nmap</li><li>Burp Suite</li><li>Wireshark</li><li>Metasploit</li>
-                        </ul>
-                        <a class="card-link" href="{{ site.Params.tryhackme }}" target="_blank" rel="noopener noreferrer">TryHackMe-profiili <span aria-hidden="true">↗</span></a>
+                        <div class="project-body">
+                            <h3>TryHackMe ja käytännön tietoturva</h3>
+                            <p>Yli 170 suoritettua huonetta ja neljä learning path -kokonaisuutta. Harjoittelen erityisesti web-testausta, Linuxia ja verkkojen tutkimista.</p>
+                            <ul class="tag-list">
+                                <li>Nmap</li><li>Burp Suite</li><li>Wireshark</li><li>Metasploit</li>
+                            </ul>
+                            <a class="card-link" href="{{ site.Params.tryhackme }}" target="_blank" rel="noopener noreferrer">TryHackMe-profiili <span aria-hidden="true">↗</span></a>
+                        </div>
+                        <figure class="project-media">
+                            <img src="{{ "kuvat/tryhackme-tilastot.webp" | relURL }}" width="562" height="400" loading="lazy" decoding="async" alt="TryHackMe-profiilin tilastot: Capability score 56, sijoitus Top 2 %, pisin putki 255 päivää ja 3 246 tapahtumaa vuonna 2025.">
+                        </figure>
                     </article>
 
-                    <article class="project-card project-wide">
+                    <article class="project-card project-has-media">
                         <div class="project-meta">
                             <span>WEB / TIETOTURVA</span>
                             <span>TOPIAUTIO.FI</span>
                         </div>
-                        <h3>Tämä sivusto ja oma domain</h3>
-                        <p>Rakensin sivuston Hugolla ja julkaisen sen GitHub Pagesissa omalla .fi-verkkotunnuksella. Nimipalvelu on Cloudflarella DNSSEC- ja IPv6-tuella, ja sähköposti kulkee Proton Mailin kautta SPF-, DKIM- ja DMARC-tietueilla. Sivu ei lataa ulkoisia resursseja, joten tiukka Content-Security-Policy riittää. Jokainen muutos kulkee CI:n läpi: linkit, CSP ja saavutettavuus (WCAG 2 AA) tarkistetaan ennen julkaisua.</p>
-                        <ul class="tag-list">
-                            <li>Hugo</li><li>GitHub Actions</li><li>DNSSEC</li><li>CSP</li><li>security.txt</li><li>WCAG</li>
-                        </ul>
-                        <div class="card-links">
-                            <a class="card-link" href="{{ relref . "/blogi/julkaisut/oma-domain-kotisivu-sahkoposti" }}">Lue miten se tehtiin <span aria-hidden="true">→</span></a>
-                            <a class="card-link" href="{{ site.Params.github }}/topiautio-kotisivu" target="_blank" rel="noopener noreferrer">Lähdekoodi GitHubissa <span aria-hidden="true">↗</span></a>
+                        <div class="project-body">
+                            <h3>Tämä sivusto ja oma domain</h3>
+                            <p>Rakensin sivuston Hugolla ja julkaisen sen GitHub Pagesissa omalla .fi-verkkotunnuksella. Nimipalvelu on Cloudflarella DNSSEC- ja IPv6-tuella, ja sähköposti kulkee Proton Mailin kautta SPF-, DKIM- ja DMARC-tietueilla. Sivu ei lataa ulkoisia resursseja, joten tiukka Content-Security-Policy riittää. Jokainen muutos kulkee CI:n läpi: linkit, CSP ja saavutettavuus (WCAG 2 AA) tarkistetaan ennen julkaisua.</p>
+                            <ul class="tag-list">
+                                <li>Hugo</li><li>GitHub Actions</li><li>DNSSEC</li><li>CSP</li><li>security.txt</li><li>WCAG</li>
+                            </ul>
+                            <div class="card-links">
+                                <a class="card-link" href="{{ relref . "/blogi/julkaisut/oma-domain-kotisivu-sahkoposti" }}">Lue miten se tehtiin <span aria-hidden="true">→</span></a>
+                                <a class="card-link" href="{{ site.Params.github }}/topiautio-kotisivu" target="_blank" rel="noopener noreferrer">Lähdekoodi GitHubissa <span aria-hidden="true">↗</span></a>
+                            </div>
                         </div>
+                        <figure class="project-media">
+                            <img src="{{ "kuvat/cloudflare-dns-tietueet.webp" | relURL }}" width="680" height="761" loading="lazy" decoding="async" alt="Cloudflaren DNS-tietueet topiautio.fi-verkkotunnukselle: GitHub Pagesin A- ja AAAA-tietueet sekä Proton Mailin DKIM-, MX-, DMARC- ja SPF-tietueet.">
+                        </figure>
                     </article>
                 </div>
             </section>
