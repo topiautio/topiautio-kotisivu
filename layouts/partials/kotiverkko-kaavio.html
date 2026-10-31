@@ -4,17 +4,12 @@
     Kaaviossa ei ole IP-osoitteita, verkkojen nimiä eikä sijainteja.
 */ -}}
 <figure class="project-diagram">
-    <div class="network-diagram" tabindex="0" role="region" aria-label="Kotiverkon topologia (vieritettävä kapealla näytöllä)">
+    <div class="network-diagram" tabindex="0" role="region" aria-label="Kotiverkon topologia">
         <svg viewBox="0 0 960 400" role="img" aria-labelledby="kotiverkko-otsikko kotiverkko-kuvaus">
             <title id="kotiverkko-otsikko">Kotiverkon topologia</title>
             <desc id="kotiverkko-kuvaus">Internet-yhteys tulee GL.iNet Flint 2 -reitittimelle, joka hoitaa DHCP:n ja langattoman verkon. Reitittimeen on kaapelilla kytketty TrueNAS-palvelin, Raspberry Pi ja työpöytäkone. Reititin, palvelimet, työpöytäkone sekä läppäri ja puhelin ovat samassa Tailscale-verkossa, joten etälaitteilla pääsee kotiverkon laitteisiin WireGuard-salattua yhteyttä pitkin.</desc>
 
             <g aria-hidden="true">
-                <path class="nd-wire" d="M20 40 H52"/>
-                <text class="nd-sub" x="62" y="44">Kaapeliyhteys</text>
-                <path class="nd-tunnel" d="M20 68 H52"/>
-                <text class="nd-sub" x="62" y="72">Tailscale-verkko (tailnet)</text>
-
                 <path class="nd-wire" d="M200 185 H290"/>
                 <text class="nd-label" x="245" y="176" text-anchor="middle">WAN</text>
                 <path class="nd-wire" d="M530 185 H585 M585 58 V312 M585 58 H640 M585 185 H640 M585 312 H640"/>
@@ -52,5 +47,5 @@
             </g>
         </svg>
     </div>
-    <figcaption>Kotiverkon rakenne. Osoitteet ja verkkojen nimet on jätetty pois.<span class="scroll-hint"> Vieritä kaaviota sivusuunnassa.</span></figcaption>
+    <figcaption class="scroll-hint">Vieritä kaaviota sivusuunnassa.</figcaption>
 </figure>
