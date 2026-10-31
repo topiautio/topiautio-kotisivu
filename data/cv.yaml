@@ -27,9 +27,9 @@ summary:
   lead: "ICT-insinööriopiskelija (JAMK), jolla on"
   background: "vahva käytännön tausta"
   background_tail: " Linux-järjestelmien ylläpidosta, kyberturvallisuudesta ja IT-tuesta. Kokemusta palvelinkonfiguroinnista varusmiespalveluksen erityistehtävässä sekä IT-lähituesta useissa harjoittelupaikoissa. Erityinen kiinnostus kyberturvallisuuden suuntaan —"
-  tryhackme: "TryHackMe Top 3%"
-  capability: "Capability Score 58 (Junior Security Professional)"
-  closing: " sekä viisi learning path -kokonaisuutta suoritettuina. Haen IT-alan kesätyö- tai harjoittelupaikkaa kesäksi 2027, jossa pääsen hyödyntämään ja kasvattamaan osaamistani käytännön tehtävissä."
+  tryhackme: "TryHackMe Top 2%"
+  capability: "Capability Score 56/100"
+  closing: " sekä neljä learning path -kokonaisuutta suoritettuina. Haen IT-alan kesätyö- tai harjoittelupaikkaa kesäksi 2027, jossa pääsen hyödyntämään ja kasvattamaan osaamistani käytännön tehtävissä."
 
 header:
   name: "Topi Autio"
@@ -95,9 +95,11 @@ education:
 
 tryhackme:
   - label: "Sijoitus"
-    value: "Top 3% (#47 303)"
+    value: "Top 2%"
   - label: "Capability Score"
-    value: "58 / 100 (Junior)"
+    value: "56 / 100"
+  - label: "Vahvin osa-alue"
+    value: "Red Teaming"
   - label: "Huoneita suoritettu"
     value: "171"
   - label: "Pisin putki"
@@ -163,7 +165,7 @@ projects:
     description: "Kyberturvallisuuteen, automatisointiin ja Linux-ympäristöihin liittyviä henkilökohtaisia projekteja ja skriptejä."
   - name: "topiautio.fi"
     href: "https://topiautio.fi"
-    description: "Henkilökohtainen portfolio — projektiesimerkit ja lisätietoja osaamisesta. Rakennettu web-kehityksen opinnoissa."
+    description: "Henkilökohtainen portfolio — projektiesimerkit ja lisätietoja osaamisesta. Tehty alun perin web-kehityksen kurssilla ja kirjoitettu myöhemmin kokonaan uudelleen Hugolla tekoälyn avustamana."
 
 languages:
   - name: "Suomi"
@@ -180,8 +182,8 @@ certificates:
     date: "02/2025"
   - name: "Web Fundamentals Path"
     date: "02/2025"
-  - name: "Complete Beginner Path"
-    date: "03/2025"
+  - name: "Pre Security Path"
+    date: "01/2025"
   - name: "Cyber Security 101"
     date: "01/2025"
   - name: "SFS 6002 Sähkötyöturvallisuus"

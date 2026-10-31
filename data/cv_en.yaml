@@ -27,9 +27,9 @@ summary:
   lead: "ICT engineering student (JAMK) with"
   background: "solid hands-on experience"
   background_tail: " in Linux system administration, cybersecurity and IT support. Configured servers in a specialist role during military service and provided on-site IT support in several internships. Particularly interested in cybersecurity —"
-  tryhackme: "TryHackMe Top 3%"
-  capability: "Capability Score 58 (Junior Security Professional)"
-  closing: " and five learning paths completed. Looking for an IT summer job or internship for summer 2027 where I can put my skills to use and keep developing them in hands-on work."
+  tryhackme: "TryHackMe Top 2%"
+  capability: "Capability Score 56/100"
+  closing: " and four learning paths completed. Looking for an IT summer job or internship for summer 2027 where I can put my skills to use and keep developing them in hands-on work."
 
 header:
   name: "Topi Autio"
@@ -95,9 +95,11 @@ education:
 
 tryhackme:
   - label: "Rank"
-    value: "Top 3% (#47,303)"
+    value: "Top 2%"
   - label: "Capability Score"
-    value: "58 / 100 (Junior)"
+    value: "56 / 100"
+  - label: "Strongest area"
+    value: "Red Teaming"
   - label: "Rooms completed"
     value: "171"
   - label: "Longest streak"
@@ -163,7 +165,7 @@ projects:
     description: "Personal projects and scripts related to cybersecurity, automation and Linux environments."
   - name: "topiautio.fi"
     href: "https://topiautio.fi"
-    description: "Personal portfolio (in Finnish) with project examples and more about my skills. Built during my web development studies."
+    description: "Personal portfolio (in Finnish) with project examples and more about my skills. First built on a web development course, later rewritten from scratch in Hugo with AI assistance."
 
 languages:
   - name: "Finnish"
@@ -180,8 +182,8 @@ certificates:
     date: "02/2025"
   - name: "Web Fundamentals Path"
     date: "02/2025"
-  - name: "Complete Beginner Path"
-    date: "03/2025"
+  - name: "Pre Security Path"
+    date: "01/2025"
   - name: "Cyber Security 101"
     date: "01/2025"
   - name: "SFS 6002 Electrical Safety"
