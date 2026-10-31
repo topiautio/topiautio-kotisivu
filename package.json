@@ -3,7 +3,7 @@
   "private": true,
   "description": "Sivuston CI-tarkistusten ty\u00f6kalut: saavutettavuus (pa11y-ci) ja kuvakaappaukset (puppeteer).",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12"
   },
   "devDependencies": {
     "pa11y-ci": "5.0.0",

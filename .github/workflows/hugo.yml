@@ -17,11 +17,13 @@ on:
 permissions:
   contents: read
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Deployments (pushes to main and manual runs) share the "pages" group: only one runs at a time, a newer
+# queued run replaces an older queued one, and an in-progress production deployment is never cancelled.
+# Pull request builds get their own group per PR, so they never cancel a queued deployment or another
+# PR's build; a new push to the same PR cancels that PR's previous build.
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 # Default to bash
 defaults:
