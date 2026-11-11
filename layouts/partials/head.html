@@ -4,7 +4,9 @@
     keywords, ogType, ogLocale ja themeColor. Muun kuin suomenkielisen sivun
     kieli (<html lang>) annetaan pageLang-arvolla.
 */ -}}
-{{- $title := .Params.seoTitle | default (printf "%s | %s" .Title site.Title) -}}
+{{- $is404 := eq .Kind "404" -}}
+{{- $pageTitle := cond $is404 "Sivua ei löytynyt" .Title -}}
+{{- $title := .Params.seoTitle | default (printf "%s | %s" $pageTitle site.Title) -}}
 {{- $description := .Description | default site.Params.description -}}
 {{- $shareTitle := .Params.shareTitle | default $title -}}
 {{- $shareDescription := .Params.shareDescription | default $description -}}
@@ -18,7 +20,7 @@
 <meta name="keywords" content="{{ delimit . ", " }}">
 {{- end }}
 <meta name="author" content="{{ site.Params.author }}">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="{{ if $is404 }}noindex{{ else }}index, follow, max-image-preview:large{{ end }}">
 <meta name="theme-color" content="{{ .Params.themeColor | default "#08120f" }}">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">

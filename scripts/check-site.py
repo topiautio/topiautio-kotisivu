@@ -5,7 +5,7 @@
    tiedostoon, ja #ankkuri löytyy kohdesivulta.
 2. CSP-yhteensopivuus: sivuilla ei ole inline-tyylejä, inline-skriptejä eikä
    on*-tapahtumankäsittelijöitä, joita Content-Security-Policy estäisi.
-3. Pakolliset tiedostot: Cloudflare Pagesin _headers, security.txt, PGP-avain,
+3. Pakolliset tiedostot: Cloudflare Pagesin _headers ja 404.html, security.txt, PGP-avain,
    jakokuva ja blogin RSS-syöte.
 
 Ulkoisia linkkejä ei tarkisteta, koska niiden vastaukset vaihtelevat (esim.
@@ -23,6 +23,8 @@ LINK_ATTRS = {"href", "src"}
 DATA_SCRIPT_TYPES = {"application/ld+json"}
 REQUIRED_FILES = [
     "_headers",
+    # Ilman 404.html:ää Cloudflare Pages palauttaa etusivun koodilla 200 kaikkiin polkuihin.
+    "404.html",
     ".well-known/security.txt",
     "pgp-key.asc",
     "og-image.png",
