@@ -1,0 +1,28 @@
+{{- /*
+    404-sivu. Cloudflare Pages palauttaa tämän tilakoodilla 404 kaikkiin
+    olemattomiin osoitteisiin. Ilman tätä tiedostoa Pages tulkitsee sivuston
+    SPA:ksi ja palauttaa etusivun koodilla 200 mihin tahansa polkuun.
+*/ -}}
+{{ define "head" }}
+    <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
+    <script src="{{ "navigation.js" | relURL }}" defer></script>
+{{ end }}
+
+{{ define "body" }}
+<body>
+    <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
+    <div id="page">
+        {{ partial "site-nav.html" (dict "active" "") }}
+
+        <main id="sisalto">
+            <header class="blog-shell">
+                <p class="eyebrow">VIRHE 404</p>
+                <h1>Sivua ei löytynyt</h1>
+                <p>Etsimääsi sivua ei ole olemassa, tai se on siirretty. Jatka <a href="{{ site.Home.RelPermalink }}">etusivulta</a>, <a href="{{ "cv/" | relURL }}">CV:stä</a> tai <a href="{{ "blogi/" | relURL }}">blogista</a>.</p>
+            </header>
+        </main>
+
+        {{ partial "site-footer.html" (dict "heading" "Etsitkö jotain tiettyä?") }}
+    </div>
+</body>
+{{ end }}
