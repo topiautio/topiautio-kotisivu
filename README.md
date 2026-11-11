@@ -15,14 +15,14 @@ Suomenkielinen sivusto IT-harjoitteluun ja junior-rooleihin (painotus: kyberturv
 - Hugo (static site generator)
 - HTML5 + CSS3
 - Self-hosted DM Serif Display, DM Sans ja DM Mono -fontit
-- GitHub Pages (CNAME: topiautio.fi)
+- Cloudflare Pages: GitHub Actions rakentaa ja tarkistaa sivuston ja julkaisee sen wranglerilla (projekti `topiautio-kotisivu`, domain topiautio.fi)
 
 ## Hugo-rakenne
 - `config.toml` sisältää sivuston perusasetukset. Hugo rakentaa sivuston `public/`-hakemistoon ja käyttää tuotannossa osoitetta `https://topiautio.fi/`.
 - `content/` sisältää Hugon sivut ja blogiartikkelien metatiedot.
 - `data/cv.yaml` ja `data/cv_en.yaml` sisältävät suomen- ja englanninkielisen CV:n sisällön ja otsikot. Molemmat renderöidään pohjalla `layouts/cv/list.html`. Päivitä luvut ja uudet merkinnät molempiin tiedostoihin.
 - `layouts/` sisältää sivujen renderöintipohjat. Nykyiset pohjat on migroitu pois erillisestä legacy-HTML-polkuhaun varassa toimivasta renderöinnistä, jotta Hugo-build on itsenäisempi.
-- `static/` sisältää Hugon julkaisuun kopioimat staattiset tiedostot kuten CSS:n, paikalliset fontit, faviconin, robots.txt:n ja CNAME:n.
+- `static/` sisältää Hugon julkaisuun kopioimat staattiset tiedostot kuten CSS:n, paikalliset fontit, faviconin ja robots.txt:n.
 
 ## Paikallinen kehitys
 1. `git clone https://github.com/topiautio/topiautio-kotisivu.git`
@@ -36,7 +36,7 @@ Suomenkielinen sivusto IT-harjoitteluun ja junior-rooleihin (painotus: kyberturv
 scripts/build-site.sh
 ```
 
-Skripti rakentaa tuotantosivuston `public/`-kansioon. Tämä vastaa GitHub Pagesiin julkaistavaa rakennetta. Älä muokkaa build-outputia käsin, vaan tee Hugo-muutokset `content/`, `layouts/`, `static/` tai `config.toml` -tiedostoihin.
+Skripti rakentaa tuotantosivuston `public/`-kansioon. Tämä vastaa Cloudflare Pagesiin julkaistavaa rakennetta. Älä muokkaa build-outputia käsin, vaan tee Hugo-muutokset `content/`, `layouts/`, `static/` tai `config.toml` -tiedostoihin.
 
 ## Uuden blogiartikkelin lisääminen
 1. Luo Markdown-tiedosto kansioon `content/blogi/julkaisut/`, esimerkiksi `content/blogi/julkaisut/uusi-artikkeli.md`.
@@ -74,6 +74,8 @@ CHROME_BIN=/usr/bin/google-chrome node scripts/capture-site-screenshots.mjs publ
 
 ## Tietoturva ja jakaminen
 
+- HTTP-tietoturvaotsakkeet (CSP, HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy) tulevat tiedostosta `/_headers`, jonka Hugo rakentaa pohjasta `layouts/index.headers`. CSP:n arvo on `config.toml`:n `contentSecurityPolicy`, ja sama arvo on myös sivujen meta-tagissa. Otsakkeisiin lisätään `frame-ancestors 'none'`, koska sitä ei voi antaa meta-tagissa.
+- Julkaisu tarvitsee GitHubin `cloudflare-pages`-ympäristöön salaisuuden `CLOUDFLARE_API_TOKEN` (Cloudflare-oikeus: Account · Cloudflare Pages · Edit) ja muuttujan `CLOUDFLARE_ACCOUNT_ID`. Julkaisu ajetaan vain mainista ja vasta, kun kaikki tarkistukset ovat menneet läpi.
 - `/.well-known/security.txt` luodaan jokaisessa buildissa pohjasta `assets/security.txt`. Sen `Expires`-päiväys on 11 kuukautta buildista, joten sivusto pitää julkaista uudelleen vähintään kerran vuodessa.
 - `static/pgp-key.asc` on Proton Mailin julkinen avain osoitteelle topi@topiautio.fi.
 - Jakokuva `static/og-image.png` (1200×630) luodaan tiedostosta `scripts/og-image.html`. Ohje on tiedoston alussa.

@@ -5,7 +5,8 @@
    tiedostoon, ja #ankkuri löytyy kohdesivulta.
 2. CSP-yhteensopivuus: sivuilla ei ole inline-tyylejä, inline-skriptejä eikä
    on*-tapahtumankäsittelijöitä, joita Content-Security-Policy estäisi.
-3. Pakolliset tiedostot: security.txt, PGP-avain, jakokuva ja blogin RSS-syöte.
+3. Pakolliset tiedostot: Cloudflare Pagesin _headers, security.txt, PGP-avain,
+   jakokuva ja blogin RSS-syöte.
 
 Ulkoisia linkkejä ei tarkisteta, koska niiden vastaukset vaihtelevat (esim.
 LinkedIn estää botit) ja tekisivät tarkistuksesta epäluotettavan.
@@ -21,6 +22,7 @@ LINK_ATTRS = {"href", "src"}
 # JSON-LD ja muut data-lohkot eivät ole suoritettavaa koodia, joten CSP ei estä niitä.
 DATA_SCRIPT_TYPES = {"application/ld+json"}
 REQUIRED_FILES = [
+    "_headers",
     ".well-known/security.txt",
     "pgp-key.asc",
     "og-image.png",

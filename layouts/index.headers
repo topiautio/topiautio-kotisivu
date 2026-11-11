@@ -1,0 +1,18 @@
+{{- /*
+    Cloudflare Pages -otsakkeet (julkaistaan tiedostona /_headers).
+    CSP tulee samasta config.toml-arvosta kuin sivujen meta-tagi. HTTP-otsakkeena
+    siihen lisätään frame-ancestors, koska selaimet eivät tue sitä meta-tagissa.
+    HSTS ilman includeSubDomainsia: kaikki alidomainit eivät välttämättä ole HTTPS:n takana.
+*/ -}}
+/*
+  Content-Security-Policy: {{ site.Params.contentSecurityPolicy }}; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# pages.dev-osoite on vain tekninen julkaisuosoite: pidetään se pois hakukoneista.
+https://{{ site.Params.pagesProject }}.pages.dev/*
+  X-Robots-Tag: noindex

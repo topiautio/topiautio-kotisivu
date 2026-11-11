@@ -22,9 +22,23 @@ disableKinds = ["taxonomy", "term"]
   # Sivut eivät käytä ulkoisia resursseja eivätkä inline-skriptejä tai -tyylejä.
   # scripts/check-site.sh varmistaa buildin jälkeen, että näin on myös jatkossa.
   contentSecurityPolicy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+  # Cloudflare Pages -projektin nimi. Käytetään _headers-tiedostossa (pages.dev-osoite) ja julkaisussa.
+  pagesProject = "topiautio-kotisivu"
+
+# Cloudflare Pages lukee HTTP-otsakkeet julkaisun juuren _headers-tiedostosta.
+# Tiedosto rakennetaan pohjasta layouts/index.headers, jotta CSP on määritelty vain yhdessä paikassa.
+[mediaTypes."text/x-cloudflare-headers"]
+  delimiter = ""
+  suffixes = [""]
+
+[outputFormats.headers]
+  mediaType = "text/x-cloudflare-headers"
+  baseName = "_headers"
+  isPlainText = true
+  notAlternative = true
 
 [outputs]
-  home = ["html"]
+  home = ["html", "headers"]
   section = ["html", "rss"]
 
 [markup.highlight]
