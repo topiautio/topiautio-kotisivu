@@ -2,7 +2,7 @@
 title: "CV"
 seoTitle: "Topi Autio | CV ja ansioluettelo (ICT, kyberturvallisuus)"
 shareTitle: "Topi Autio | CV ja ansioluettelo"
-description: "Topi Aution CV: ICT-insinööriopiskelija (JAMK), työkokemus IT-tuesta ja järjestelmäylläpidosta, osaaminen kyberturvallisuudessa, Linuxissa, verkoissa ja automaatiossa."
+description: "Topi Aution CV: ICT-insinööriopiskelija (JAMK), työkokemusta IT-tuesta ja järjestelmäylläpidosta. Osaamista: kyberturvallisuus, Linux, verkot, automaatio."
 shareDescription: "Topi Aution CV: ICT-insinööriopiskelija (JAMK), IT-tuki, järjestelmäylläpito, kyberturvallisuus ja Linux-osaaminen."
 ogType: "profile"
 themeColor: "#F7F5F0"
