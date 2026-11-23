@@ -81,9 +81,9 @@ education:
     date: "2025 – nykyhetki"
     organisation: "Jyväskylän ammattikorkeakoulu (JAMK)"
     progress:
-      completed: 64
+      completed: 69
       total: 240
-      as_of: "09/2026"
+      as_of: "11/2026"
     bullets:
       - "Suuntautuminen: kyberturvallisuus ja verkkoinfrastruktuuri"
       - "Vahvimmat opintokokonaisuudet: Linux, Tietoverkot, Kyberturvallisuus, Tietokannat, Skriptaaminen — kaikki arvosanalla 5/5"
