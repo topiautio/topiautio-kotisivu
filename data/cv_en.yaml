@@ -81,9 +81,9 @@ education:
     date: "2025 – present"
     organisation: "JAMK University of Applied Sciences"
     progress:
-      completed: 64
+      completed: 69
       total: 240
-      as_of: "09/2026"
+      as_of: "11/2026"
     bullets:
       - "Specialisation: cybersecurity and network infrastructure"
       - "Strongest courses: Linux, Computer Networks, Cybersecurity, Databases and Scripting, all graded 5/5"
