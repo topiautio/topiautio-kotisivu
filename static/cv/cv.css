@@ -375,7 +375,12 @@ body {
   body { background: white; }
   .page { padding: 20px 24px; max-width: 100%; }
   .top-nav { display: none; }
-  .two-col { grid-template-columns: 1fr 260px; }
+  /* Firefox ei katkaise grid-riviä sivun keskeltä vaan siirtää koko
+     kaksipalstaisen osion seuraavalle sivulle. Floatit katkeavat
+     sivujen välillä kaikissa selaimissa. */
+  .two-col { display: flow-root; }
+  .two-col > .main { float: left; width: calc(100% - 300px); }
+  .two-col > .sidebar { float: right; width: 260px; }
 }
 
 .skill-group-spaced { margin-top: 10px; }
